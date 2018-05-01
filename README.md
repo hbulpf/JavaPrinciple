@@ -1,2 +1,3 @@
-# JavaPrinciple
-java practice
+# Java练习 #
+##1.算法##
+##2.设计模式##
