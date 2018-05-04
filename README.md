@@ -5,8 +5,8 @@
 | ---------- | ----------|
 | 1. JavaSE  |  Maven   |
 | 2. JSP	   ||
-|3. Spring  ||
-|4. Strus	||
+| 3. Spring  ||
+| 4. Strus	||
 |5. MyBatis||
 |6. SpringBoot	||
 |7. SpringCloud	||
@@ -17,7 +17,7 @@
 1. 图
 1. 排序
 1. 动态规划
-1. 贪心ßßßß
+1. 贪心
 
 ## 2.设计模式 ##
 1. 单例模式
