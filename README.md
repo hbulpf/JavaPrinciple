@@ -1,12 +1,15 @@
 # Java练习 #
 ## 0.基础  ##
-1. JavaSE
-1. JSP
-1. Spring
-1. Strus
-1. MyBatis
-1. SpringBoot
-1. SpringCloud
+
+| Basic      |   Others |
+| ---------- | ----------|
+| 1. JavaSE  |  Maven   |
+| 2. JSP	   ||
+|3. Spring  ||
+|4. Strus	||
+|5. MyBatis||
+|6. SpringBoot	||
+|7. SpringCloud	||
 
 ## 1.算法  ##
 1. 链表
@@ -14,7 +17,7 @@
 1. 图
 1. 排序
 1. 动态规划
-1. 贪心
+1. 贪心ßßßß
 
 ## 2.设计模式 ##
 1. 单例模式
