@@ -1,6 +1,5 @@
 # Java练习 #
 ## 0.基础  ##
-
 | Basic      |   Others |
 | ---------- | ----------|
 | 1. JavaSE  |  Maven   |
