@@ -26,3 +26,4 @@
 1. [代理模式](./src/designpattern)：[静态代理](./src/designpattern/proxy/staticproxy)和[动态代理](./src/designpattern/proxy/dynamicproxy)
 1. [适配器模式](./src/designpattern/adapter):[类适配器模式](./src/designpattern/adapter/classAdapter)和[对象适配器模式](./src/designpattern/adapter/objectAdapter)
 2. [建造者模式](./src/designpattern/builder)
+2. [观察者模式](./src/designpattern/observer)
