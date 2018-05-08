@@ -27,3 +27,4 @@
 1. [适配器模式](./src/designpattern/adapter):[类适配器模式](./src/designpattern/adapter/classAdapter)和[对象适配器模式](./src/designpattern/adapter/objectAdapter)
 2. [建造者模式](./src/designpattern/builder)
 2. [观察者模式](./src/designpattern/observer)
+2. [原型模式](./src/designpattern/prototype)
