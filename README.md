@@ -1,5 +1,5 @@
-# Java练习 #
-## 0.基础  ##
+# Java练习
+## 0.基础
 |Basic     |Others |
 |----------|----------|
 |1. JavaSE |  Maven   |
@@ -10,15 +10,16 @@
 |6. SpringBoot||
 |7. SpringCloud||
 
-## 1.算法  ##
+## 1.算法
 1. 链表
 1. 树
 1. 图
 1. 排序
 1. 动态规划
 1. 贪心
+1. [笔试练习题](./src/exercise/README.md)
 
-## 2.设计模式 ##
+## 2.设计模式
 1. [单例模式](./src/designpattern/singleton)
 1. [工厂方法模式](./src/designpattern/factorymethod)
 1. [抽象工厂模式](./src/designpattern/abstractfactory)
