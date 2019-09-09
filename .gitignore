@@ -26,3 +26,8 @@ hs_err_pid*
 
 #bin
 ./bin
+.idea
+*.iml
+.settings
+.project
+.classpath
