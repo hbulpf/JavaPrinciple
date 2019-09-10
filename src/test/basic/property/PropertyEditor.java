@@ -36,7 +36,7 @@ public class PropertyEditor {
     public static void setProp() throws IOException {
         Properties prop = new Properties();// 属性集合对象
         // 添加或修改sitename的属性值
-        prop.setProperty("url", "jdbc:mysql://100.95.129.189:32080/crm-sky?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true");
+        prop.setProperty("url", "jdbc:mysql://127.0.0.1:32080/testdb?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true");
         prop.setProperty("username", "root");
         prop.setProperty("password", "113456");
         prop.setProperty("driver-class-name", "com.mysql.jdbc.Driver");
