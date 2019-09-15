@@ -1,4 +1,4 @@
-package dev.leetcode;
+package leetcode;
 
 /**
  * 871. 最低加油次数
