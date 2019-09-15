@@ -1,4 +1,9 @@
-package leetcode;
+package oj;
+
+
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Scanner;
 
 /**
  * 871. 最低加油次数
