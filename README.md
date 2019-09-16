@@ -33,4 +33,4 @@
 2. [观察者模式](src/dev/designpattern/observer)
 2. [原型模式](src/dev/designpattern/prototype)
 
-## 3.Java8 新特性
+## 3.[Java8 新特性练习](./src/java8test/)
