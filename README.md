@@ -11,6 +11,7 @@
 |7. SpringCloud||
 
 ## 1.算法
+#### 算法思想
 1. 链表
 1. 树
 1. 图
@@ -18,6 +19,8 @@
 1. 动态规划
 1. 贪心
 1. [笔试练习题](src/test/exercise/README.md)
+
+#### [Leetcode](leetcode/)
 
 ## 2.设计模式
 1. [单例模式](src/dev/designpattern/singleton)
