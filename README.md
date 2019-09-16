@@ -11,7 +11,7 @@
 |7. SpringCloud||
 
 ## 1.算法
-#### 1.1算法思想
+#### 1.1 数据结构与算法
 1. 链表
 1. 树
 1. 图
@@ -20,7 +20,7 @@
 1. 贪心
 1. [笔试练习题](src/test/exercise/README.md)
 
-#### 1.2[Leetcode](src/leetcode/)
+#### 1.2 [Leetcode](src/leetcode/)
 
 ## 2.设计模式
 1. [单例模式](src/dev/designpattern/singleton)
