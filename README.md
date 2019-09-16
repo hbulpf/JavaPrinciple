@@ -20,7 +20,7 @@
 1. 贪心
 1. [笔试练习题](src/test/exercise/README.md)
 
-#### [Leetcode](leetcode/)
+#### [Leetcode](src/leetcode/)
 
 ## 2.设计模式
 1. [单例模式](src/dev/designpattern/singleton)
