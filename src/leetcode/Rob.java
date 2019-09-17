@@ -23,6 +23,7 @@ public class Rob {
 
     /**
      * 动态规划简化版
+     * dp[i] 表示考虑抢劫 nums[i...n] 中第i间房子时所能获得的最大收益
      */
     public int rob(int[] nums) {
         int n = nums.length;
