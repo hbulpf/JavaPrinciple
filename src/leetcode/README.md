@@ -4,3 +4,4 @@ leetcode练习题
 
 198.[打家劫舍](https://leetcode-cn.com/problems/house-robber/) `Simple` [解答](Rob.java)
 
+458.[可怜的小猪](https://leetcode-cn.com/problems/poor-pigs/) `Hard` [解答](PoorPigs.java)
