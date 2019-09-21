@@ -14,7 +14,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
-public class EncryptUtil {
+public class AesEncryptUtil {
 
     /**
      * 加密算法
