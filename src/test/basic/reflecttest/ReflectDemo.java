@@ -1,4 +1,4 @@
-package dev.lpf.basic.reflecttest;
+package test.basic.reflecttest;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
@@ -8,10 +8,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 
-import dev.lpf.basic.reflecttest.entity.Person;
-import dev.lpf.basic.reflecttest.proxy.ISubject;
-import dev.lpf.basic.reflecttest.proxy.MyInvocationHandler;
-import dev.lpf.basic.reflecttest.proxy.RealSubject;
+import test.basic.reflecttest.entity.Person;
+import test.basic.reflecttest.proxy.ISubject;
+import test.basic.reflecttest.proxy.MyInvocationHandler;
+import test.basic.reflecttest.proxy.RealSubject;
 
 /**
  * 反射demo

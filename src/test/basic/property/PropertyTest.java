@@ -1,4 +1,4 @@
-package dev.lpf.basic.property;
+package test.basic.property;
 
 import java.util.Enumeration;
 import java.util.Map;

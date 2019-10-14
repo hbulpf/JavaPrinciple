@@ -1,4 +1,4 @@
-package dev.lpf.basic.reflecttest.factory;
+package test.basic.reflecttest.factory;
 
 /**
  * Fruit

@@ -1,4 +1,4 @@
-package dev.lpf.basic.reflecttest.proxy;
+package test.basic.reflecttest.proxy;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

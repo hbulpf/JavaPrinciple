@@ -1,4 +1,4 @@
-package dev.lpf.basic.reflecttest.proxy;
+package test.basic.reflecttest.proxy;
 
 /**
  * 项目接口

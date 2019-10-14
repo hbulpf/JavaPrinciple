@@ -1,4 +1,4 @@
-package dev.lpf.basic.reflecttest.entity;
+package test.basic.reflecttest.entity;
 
 import java.util.Calendar;
 import java.util.Date;
