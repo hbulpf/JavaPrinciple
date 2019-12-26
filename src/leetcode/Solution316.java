@@ -13,8 +13,6 @@ import java.util.Arrays;
  * 输入: “cbacdcbc”
  * 输出: “acdb”
  *
- * @author l00523381
- * @since 2019 -12-26
  */
 class Solution316 {
     /**
