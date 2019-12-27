@@ -1,4 +1,4 @@
-package dev.lpf.leetcode;
+package dev.lpf.leetcode.solution;
 
 /**
  *  458. 可怜的小猪
