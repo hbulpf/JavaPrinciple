@@ -20,17 +20,17 @@
 1. 贪心
 1. [笔试练习题](src/dev/lpf/demo/exercise/README.md)
 
-#### 1.2 [Leetcode](dev/lpf/leetcode/)
+#### 1.2 [Leetcode](src/dev/lpf/leetcode/README.md)
 
 ## 2.设计模式
-1. [单例模式](dev/lpf/designpattern/singleton)
-1. [工厂方法模式](dev/lpf/designpattern/factorymethod)
-1. [抽象工厂模式](dev/lpf/designpattern/abstractfactory)
-1. [模板方法模式](dev/lpf/designpattern/model)
-1. [代理模式](dev/lpf/designpattern)：[静态代理](dev/lpf/designpattern/proxy/staticproxy)和[动态代理](dev/lpf/designpattern/proxy/dynamicproxy)
-1. [适配器模式](dev/lpf/designpattern/adapter):[类适配器模式](dev/lpf/designpattern/adapter/classAdapter)和[对象适配器模式](dev/lpf/designpattern/adapter/objectAdapter)
-2. [建造者模式](dev/lpf/designpattern/builder)
-2. [观察者模式](dev/lpf/designpattern/observer)
-2. [原型模式](dev/lpf/designpattern/prototype)
+1. [单例模式](src/dev/lpf/designpattern/singleton)
+1. [工厂方法模式](src/dev/lpf/designpattern/factorymethod)
+1. [抽象工厂模式](src/dev/lpf/designpattern/abstractfactory)
+1. [模板方法模式](src/dev/lpf/designpattern/model)
+1. [代理模式](src/dev/lpf/designpattern)：[静态代理](dev/lpf/designpattern/proxy/staticproxy)和[动态代理](dev/lpf/designpattern/proxy/dynamicproxy)
+1. [适配器模式](src/dev/lpf/designpattern/adapter):[类适配器模式](dev/lpf/designpattern/adapter/classAdapter)和[对象适配器模式](dev/lpf/designpattern/adapter/objectAdapter)
+2. [建造者模式](src/dev/lpf/designpattern/builder)
+2. [观察者模式](src/dev/lpf/designpattern/observer)
+2. [原型模式](src/dev/lpf/designpattern/prototype)
 
 ## 3.[Java8 新特性练习](src/dev/lpf/demo/java8test/)
