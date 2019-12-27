@@ -385,6 +385,7 @@ leetcode
 |849|[Maximize Distance to Closest Person](https://leetcode.com/problems/maximize-distance-to-closest-person/)|[Java Solution](solution/MaximizeDistanceToClosestPerson.java)|80||
 |857|[Minimum Cost to Hire K Workers](https://leetcode.com/problems/minimum-cost-to-hire-k-workers/)|[Java Solution](solution/MinimumCostToHireKWorkers.java)|70||
 |872|[Leaf-Similar Trees](https://leetcode.com/problems/leaf-similar-trees/)|[Java Solution](solution/LeafSimilarTrees.java)|80||
+|871|[Minimum Number of Refueling Stops](https://leetcode.com/problems/minimum-number-of-refueling-stops/)|[Java Solution](solution/Solution871.java)|80||
 |889|[Construct Binary Tree from Preorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/)|[Java Solution](solution/ConstructBinaryTreeFromPreorderAndPostorderTraversal.java)|80||
 |904|[Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)|[Java Solution](solution/FruitIntoBaskets.java)|90||
 |929|[Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/)|[Java Solution](solution/UniqueEmailAddresses.java)|90||

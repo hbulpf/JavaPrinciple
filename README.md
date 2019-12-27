@@ -18,7 +18,7 @@
 1. 排序
 1. 动态规划
 1. 贪心
-1. [笔试练习题](src/dev/lpf/demo/exercise/README.md)
+1. [笔试练习题](src/dev/lpf/exams/README.md)
 
 #### 1.2 [Leetcode](src/dev/lpf/leetcode/README.md)
 

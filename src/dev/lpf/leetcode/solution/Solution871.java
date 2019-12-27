@@ -1,4 +1,4 @@
-package dev.lpf.oj;
+package dev.lpf.leetcode.solution;
 
 
 import java.util.PriorityQueue;
@@ -8,7 +8,7 @@ import java.util.Scanner;
 /**
  * 871. 最低加油次数
  */
-class MinRefuelStops{
+class Solution871 {
     public static void main(String[] args) {
         solution1();
     }
