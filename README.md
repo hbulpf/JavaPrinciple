@@ -1,5 +1,6 @@
 # Java练习
-## 0.基础
+## 0.[Java基本使用练习](src/dev/lpf/demo/README.md)
+
 |Basic     |Others |
 |----------|----------|
 |1. JavaSE |  Maven   |
@@ -10,19 +11,21 @@
 |6. SpringBoot||
 |7. SpringCloud||
 
-## 1.算法
-#### 1.1 数据结构与算法
+## 1.数据结构与算法
 1. 链表
 1. 树
 1. 图
 1. 排序
 1. 动态规划
 1. 贪心
-1. [笔试练习题](src/dev/lpf/exams/README.md)
 
-#### 1.2 [Leetcode](src/dev/lpf/leetcode/README.md)
+## 2.[笔试练习题](src/dev/lpf/exams/README.md)
 
-## 2.设计模式
+## 3.[Leetcode](src/dev/lpf/leetcode/README.md)
+
+## 4.[OJ](src/dev/lpf/oj/README.md)
+
+## 5.[设计模式](src/dev/lpf/designpattern/README.md)
 1. [单例模式](src/dev/lpf/designpattern/singleton)
 1. [工厂方法模式](src/dev/lpf/designpattern/factorymethod)
 1. [抽象工厂模式](src/dev/lpf/designpattern/abstractfactory)
@@ -33,4 +36,4 @@
 2. [观察者模式](src/dev/lpf/designpattern/observer)
 2. [原型模式](src/dev/lpf/designpattern/prototype)
 
-## 3.[Java8 新特性练习](src/dev/lpf/demo/java8test/)
+## 6.[常用工具类](src/dev/lpf/utils/README.md)

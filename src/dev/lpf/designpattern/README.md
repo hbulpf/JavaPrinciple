@@ -1,4 +1,5 @@
-## 设计模式 ##
+# 设计模式
+
 1. [单例模式](./singleton)
 1. [工厂方法模式](./factorymethod)
 1. [抽象工厂模式](./abstractfactory)
