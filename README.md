@@ -18,7 +18,7 @@
 1. 排序
 1. 动态规划
 1. 贪心
-1. [笔试练习题](src/test/exercise/README.md)
+1. [笔试练习题](src/dev/lpf/demo/exercise/README.md)
 
 #### 1.2 [Leetcode](dev/lpf/leetcode/)
 
@@ -33,4 +33,4 @@
 2. [观察者模式](dev/lpf/designpattern/observer)
 2. [原型模式](dev/lpf/designpattern/prototype)
 
-## 3.[Java8 新特性练习](./src/test/java8test/)
+## 3.[Java8 新特性练习](src/dev/lpf/demo/java8test/)

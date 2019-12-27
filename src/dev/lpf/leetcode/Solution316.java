@@ -4,7 +4,8 @@ package dev.lpf.leetcode;
 import java.util.Arrays;
 
 /**
- * leetcode 316. 去除重复字母 贪心
+ * leetcode 316. 去除重复字母
+ * 贪心
  * 给定一个仅包含小写字母的字符串，去除字符串中重复的字母，使得每个字母只出现一次。需保证返回结果的字典序最小（要求不能打乱其他字符的相对位置）。
  * 示例 1:
  * 输入: “bcabc”
