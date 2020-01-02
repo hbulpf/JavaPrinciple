@@ -1,5 +1,7 @@
 
-package dev.lpf.leetcode.solution;
+package dev.lpf.algorithm.tree.bitree.balanced;
+
+import dev.lpf.algorithm.tree.bitree.TreeNode;
 
 /**
  * 给定一个二叉树，判断它是否是高度平衡的二叉树。
@@ -11,20 +13,21 @@ package dev.lpf.leetcode.solution;
  * TreeNode left;
  * TreeNode right;
  * TreeNode(int x) { val = x; }
+ *
+ *
+ * 方法2
+ *
+ * DFS递归计算树高度，如果左右子树高度差>1, 提前阻断递归过程，
+ * 避免多余的递归计算。
+ * 最差情况下，递归一遍DFS，
+ * O(n) = N;
  * }
- * 方法1:
- * 暴力破解
- * 计算子树高度，判断左右两棵子树高度之差
- * 注意点:
- * 1. 左右子树只有单分支的情况
- * 2. node 为空的情况
  */
-public class Solution110 {
+public class BalancedTree {
 
     /**
      * Tree height
-     * 求左右子树高度
-     * 
+     *
      * @param node the node
      * @return the int
      */
@@ -33,8 +36,14 @@ public class Solution110 {
             return 0;
         }
         int leftHeight = treeHeight(node.left);
+        if (leftHeight < 0) {
+            return leftHeight;
+        }
         int rightHeight = treeHeight(node.right);
-        return Math.max(leftHeight, rightHeight) + 1;
+        if (rightHeight < 0) {
+            return rightHeight;
+        }
+        return Math.abs(leftHeight - rightHeight) < 2 ? Math.max(leftHeight, rightHeight) + 1 : -1;
     }
 
     /**
@@ -47,8 +56,10 @@ public class Solution110 {
         if (root == null) {
             return true;
         }
-        return Math.abs(treeHeight(root.left) - treeHeight(root.right)) > 1 ? false : isBalanced(root.left)&&isBalanced(root.right);
+        if (treeHeight(root) < 0) {
+            return false;
+        }
+        return true;
     }
 
 }
-

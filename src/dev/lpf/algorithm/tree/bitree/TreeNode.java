@@ -1,10 +1,10 @@
-package dev.lpf.algorithm.tree.link;
+package dev.lpf.algorithm.tree.bitree;
 
-public class TBiNode {
-    int val;
-    TBiNode left;
-    TBiNode right;
-    TBiNode(int x) { val = x; }
+public class TreeNode {
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode(int x) { val = x; }
     
 	public void visit(){
 		System.out.print("\t"+this.val);

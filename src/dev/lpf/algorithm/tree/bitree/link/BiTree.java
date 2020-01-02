@@ -1,11 +1,13 @@
-package dev.lpf.algorithm.tree.link;
+package dev.lpf.algorithm.tree.bitree.link;
+
+import dev.lpf.algorithm.tree.bitree.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
 public class BiTree {
-	TBiNode root;
+	TreeNode root;
     public static void main(String[] args) {
     	int[] arr = {0,1,2,3,4,5,6,7,8,9,10};
 		BiTree tree = new BiTree(arr);
@@ -35,10 +37,10 @@ public class BiTree {
     
     
     public BiTree(int[] arr) {
-    	TBiNode[] tree=new TBiNode[arr.length];
+    	TreeNode[] tree=new TreeNode[arr.length];
 		//生成一棵树
     	for(int i=1;i<arr.length;i++) {
-    		TBiNode n = new TBiNode(arr[i]);
+    		TreeNode n = new TreeNode(arr[i]);
     		tree[i]=n;
     	}
     	for(int j=1;j<tree.length;j++) {
@@ -55,7 +57,7 @@ public class BiTree {
     /**
      * 二叉树先序递归遍历
      */
-    public static void PreOrder(TBiNode root){
+    public static void PreOrder(TreeNode root){
     	if(root!=null) {
     		root.visit();
     		PreOrder(root.left);
@@ -66,9 +68,9 @@ public class BiTree {
     /**
      * 二叉树先序非递归遍历
      */
-    public static void PreOrder2(TBiNode root){
-    	Stack<TBiNode> stack = new Stack<TBiNode>(); //初始化栈
-    	TBiNode p = root; //p是遍历指针
+    public static void PreOrder2(TreeNode root){
+    	Stack<TreeNode> stack = new Stack<TreeNode>(); //初始化栈
+    	TreeNode p = root; //p是遍历指针
     	while(p!=null || !stack.isEmpty()) {
     		if(p!=null) {
     			p.visit();
@@ -84,7 +86,7 @@ public class BiTree {
     /**
      * 二叉树中序递归遍历
      */
-    public static void InOrder(TBiNode root){
+    public static void InOrder(TreeNode root){
     	if(root!=null) {
     		InOrder(root.left);
     		root.visit();
@@ -95,9 +97,9 @@ public class BiTree {
     /**
      * 二叉树中序非递归遍历
      */
-    public static void InOrder2(TBiNode root){
-    	Stack<TBiNode> stack = new Stack<TBiNode>(); //初始化栈
-    	TBiNode p = root; //p是遍历指针
+    public static void InOrder2(TreeNode root){
+    	Stack<TreeNode> stack = new Stack<TreeNode>(); //初始化栈
+    	TreeNode p = root; //p是遍历指针
     	while( p!=null || !stack.isEmpty()) {
     		if(p!=null) {
     			stack.push(p);
@@ -113,7 +115,7 @@ public class BiTree {
     /**
      * 二叉树后序递归遍历：需借助栈来实现
      */
-    public static void PostOrder(TBiNode root){
+    public static void PostOrder(TreeNode root){
     	if(root!=null) {
     		PostOrder(root.left);
     		PostOrder(root.right);
@@ -127,7 +129,7 @@ public class BiTree {
 	 * @param root
 	 * @return
 	 */
-	public static int getMinDepth(TBiNode root) {
+	public static int getMinDepth(TreeNode root) {
         if(root == null)
             return 0;
         int l = getMinDepth(root.left);
@@ -141,9 +143,9 @@ public class BiTree {
 	 * 二叉树的层次遍历
 	 * @param root
 	 */
-	public static void LevelOrder(TBiNode root) {
-		Queue<TBiNode> queue = new LinkedList<TBiNode>();
-		TBiNode p;
+	public static void LevelOrder(TreeNode root) {
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		TreeNode p;
 		queue.offer(root);
 		while(!queue.isEmpty()) {
 			p=queue.poll();

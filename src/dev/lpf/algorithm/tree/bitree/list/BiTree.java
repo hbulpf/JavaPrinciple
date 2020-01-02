@@ -1,4 +1,4 @@
-package dev.lpf.algorithm.tree.list;
+package dev.lpf.algorithm.tree.bitree.list;
 
 /**
  * 顺序存储的二叉树
