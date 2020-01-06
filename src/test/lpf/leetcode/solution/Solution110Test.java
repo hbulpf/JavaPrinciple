@@ -1,8 +1,8 @@
 
 package test.lpf.leetcode.solution;
 
-import dev.lpf.leetcode.solution.Solution110;
-import dev.lpf.leetcode.solution.TreeNode;
+import dev.leetcode.solution.Solution110;
+import dev.leetcode.solution.TreeNode;
 import test.BaseCase;
 
 /**

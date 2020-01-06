@@ -1,6 +1,6 @@
 开发细节
 
-###### 1. [打印堆栈](src/dev/lpf/demo/basic/exception/Factorial.java)
+###### 1. [打印堆栈](src/dev/demo/basic/exception/Factorial.java)
 
 方法1:
 ```java
@@ -35,7 +35,7 @@ public static String getStackString() {
 }
 ```
 
-###### 2. [带资源的try语句自动close资源](src/dev/lpf/demo/basic/exception/ExceptionDemo.java)
+###### 2. [带资源的try语句自动close资源](src/dev/demo/basic/exception/ExceptionDemo.java)
 
 ```java
 /**
