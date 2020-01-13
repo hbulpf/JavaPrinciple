@@ -16,7 +16,7 @@
 
    ip：在虚拟机中执行`ifconfig`命令查看ip，注意键值对`inet addr:192.xxx.xx.xx.xx`，其中`192.xxx.xx.xx.xx`就是ip
 
-   ![image-20200108000258658](C:\Users\wjw\AppData\Roaming\Typora\typora-user-images\image-20200108000258658.png)
+   ![image-20200108000258658](https://github.com/wangjiawen1993year/JavaPrinciple/blob/master/knowledge/resource/picture/image-20200110213606607.png)
 
 
 
