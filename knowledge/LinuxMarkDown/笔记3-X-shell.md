@@ -24,7 +24,7 @@
 
 shell是操作linux系统的一类软件、程序，现在常用的shell的bash shell，它安装在linux系统上的。用户输入正确的用户名和密码后，才能进入bash shell对操作linux系统。方式是，通过命令来进行操作，具体过程如下图。
 
-![image-20200108224935217](C:\Users\wjw\AppData\Roaming\Typora\typora-user-images\image-20200108224935217.png)
+![image-20200108224935217](https://github.com/wangjiawen1993year/JavaPrinciple/blob/master/knowledge/image-20200108224935217.png)
 
 1. 在shell中输入命令后，则交给linux内核来执行命令。在shell的命令行中输入字符串后，用字符串中的第一个空格为分隔符，空格前的是命令，空格后的是命令的参数。若字符串中没有空格，则认为整个字符串是一个不带参数的命令。
 2. 命令分为两类，分别是内部命令和外部命令。其中内部命令是shell自带的，而外部命令则是用户自己安装的命令（或可执行文件）。需注意的是，对于外部命令，它得路径只有配置在环境变量`path`中的时候才能找到。
@@ -127,7 +127,7 @@ help cd
 ps -ef    # 打印当前bash shell中的所有进程，如下图所示，其中PID表示进程号
 ```
 
-![image-20200110213606607](E:\Projects\JavaPrinciple\knowledge\resource\picture\image-20200110213606607.png)
+![image-20200110213606607](https://github.com/wangjiawen1993year/JavaPrinciple/blob/master/knowledge/image-20200110213606607.png)
 
 这个进程组成的清单类似于windows系统中的任务管理里进程清单。
 
