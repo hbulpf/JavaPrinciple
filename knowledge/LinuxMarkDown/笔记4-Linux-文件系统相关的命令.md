@@ -72,7 +72,47 @@
    #
    ```
 
+5. `cd`命令
+
+   ```shell 
+   cd    # 切到管理员的家目录，即/root目录
+   
+   cd /    # 切到根目录
+   
+   cd ..    # 切到上一级目录
+   
+   pwd    # 查看当前目录，结果为：/root
+   ```
+
+6. `mkdir`命令：创建目录、文件夹
+
+   ```shell
+   mkdir wjw    # 在当前目录下创建wjw文件夹
+   
+   mkdir -p wjw/graduate/course    # 在当前目录下递归地创建文件夹,即有则不创建，没有则创建
+   
+   mkdir wjw/{pircture,musice,film} # 一次性创建多个文件
+   ```
+
+7. `cp`命令：拷贝
+
+   ```shell
+   ## cp source_dir target_dir
+   cp /etc/profile /root/wjw    # 将profile文件拷贝到wjw目录下
+   ```
+
+8. `mv`命令：移动，重命名文件
+
+   ```shell
+   ## mv from_dir to_dir
+   mv /root/wjw/profile /root/wjw/graduate/course    # 将profile文件移动到course
+   mv /root/wjw/profile /root/wjw/profile.bak    # 将文件名重命名为profile.bak
+   ```
+
    
 
+### 难点：Linux中的软链接和硬链
 
 
+
+（视频刷完后，回来再详细地看）
