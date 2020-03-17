@@ -36,7 +36,7 @@
         "github-buttons": {
             "buttons": [{
                 "user": "hbulpf",
-                "repo": "devbook",
+                "repo": "JavaPrinciple",
                 "type": "star",
                 "size": "small",
                 "count": true
