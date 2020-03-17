@@ -1,6 +1,4 @@
 
-# 首页
-
 - [知识总结](knowledge/README.md)
 
 # Java知识
@@ -27,7 +25,6 @@
     - [BeanUtils](knowledge/utils/BeanUtils.md)
     - [Date类](knowledge/utils/Date.md)
     - [常见加密算法](knowledge/utils/encryption.md)
-
 
 # 其他
 
