@@ -1,4 +1,4 @@
-# Maven 常用命令
+# Maven常用命令
 
 ## maven 命令的格式
 

@@ -1,11 +1,11 @@
 {
-    "title": "devbook",
+    "title": "javabook",
     "author": "HeCloud",
-    "description": "it is devbook.",
+    "description": "it is javabook.",
     "language": "zh-hans",
     "gitbook": "3.2.3",
     "styles": {
-        "website": "./styles/website.css"
+        "website": "./resource/styles/website.css"
     },
     "structure": {
         "readme": "README.md"
@@ -31,7 +31,7 @@
     ],
     "pluginsConfig": {
         "github": {
-            "url": "https://github.com/hbulpf/devbook"
+            "url": "https://github.com/hbulpf/JavaPrinciple"
         },
         "github-buttons": {
             "buttons": [{
@@ -44,10 +44,10 @@
             ]
         },
         "sitemap-general": {
-            "prefix": "http://hecloud.hnbdata.cn/devbook"
+            "prefix": "http://hecloud.hnbdata.cn/javabook"
         },
         "donate": {
-            "alipay": "./source/images/donate.png",
+            "alipay": "./resource/images/donate.png",
             "title": "",
             "button": "赞赏",
             "alipayText": "支付宝"
@@ -79,12 +79,12 @@
             "showLevel": false
         },
         "favicon":{
-            "shortcut": "./source/images/favicon.jpg",
-            "bookmark": "./source/images/favicon.jpg",
-            "appleTouch": "./source/images/apple-touch-icon.jpg",
+            "shortcut": "./resource/images/favicon.png",
+            "bookmark": "./resource/images/favicon.png",
+            "appleTouch": "./resource/images/apple-touch-icon.jpg",
             "appleTouchMore": {
-                "120x120": "./source/images/apple-touch-icon.jpg",
-                "180x180": "./source/images/apple-touch-icon.jpg"
+                "120x120": "./resource/images/apple-touch-icon.jpg",
+                "180x180": "./resource/images/apple-touch-icon.jpg"
             }
         }
     }

@@ -1,0 +1,17 @@
+ <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
+       <localRepository>D:/maven_repo</localRepository>
+	<mirrors>
+	  <mirror>
+	    <!--该镜像的id-->
+	    <id>nexus-aliyun</id>
+	    <!--该镜像用来取代的远程仓库，central是中央仓库的id-->
+	    <mirrorOf>central</mirrorOf>
+	    <name>Nexus aliyun</name>
+	    <!--该镜像的仓库地址，这里是用的阿里的仓库-->
+	    <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+	  </mirror>
+	</mirrors>
+</settings>

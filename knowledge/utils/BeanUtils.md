@@ -1,5 +1,6 @@
+# BeanUtils
 
-`BeanUtils.copyProperties` 的的使用
+## BeanUtils.copyProperties 的的使用
 
  `copyProperties` 在 `org.springframework.beans.BeanUtils` 与 `org.apache.commons.beanutils.BeanUtils` 两个类中有[较大不同](http://www.manongzj.com/blog/3-ouxecnltwenfrgs.html)
 
