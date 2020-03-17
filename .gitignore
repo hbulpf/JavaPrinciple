@@ -26,9 +26,9 @@ hs_err_pid*
 
 #bin
 bin/
-.idea
+.idea/
 *.iml
-.settings
-.project
-.classpath
+.settings/
+.project/
+.classpath/
 /out
