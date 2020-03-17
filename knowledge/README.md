@@ -12,7 +12,7 @@
     - [java和javaw的区别](java/java和javaw的区别.md)
     - [JVM参数](java/jvm.md)
         - [JVM工具](java/jvmtools.md)
-        - [JVM工具](java/jvm_gc.md)
+        - [JVM垃圾回收](java/jvm_gc.md)
     - [logback](java/logback/README.md)
     - [Maven常用命令](java/maven/mavencmd.md)
         - [pom介绍](java/maven/maven_pom.md)
