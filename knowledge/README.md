@@ -1,4 +1,4 @@
-# Java知识
+# Java相关
 
 - [Linux](Linux/README.md)
     - [Linux虚拟机](Linux/笔记2-Linux虚拟机.md)

@@ -1,19 +1,29 @@
-JVM系列三:JVM参数设置、分析
+# Java知识
 
-https://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html
+- [java](README.md)
+    - [java和javaw的区别](java和javaw的区别.md)
+    - [JVM参数](jvm.md)
+        - [JVM工具](jvmtools.md)
+        - [JVM垃圾回收](jvm_gc.md)
+    - [logback](logback/README.md)
+    - [Maven常用命令](maven/mavencmd.md)
+        - [pom介绍](maven/maven_pom.md)
+    - [Mybatis](mybatis.md)
+    - [springtest](springtest.md)
+    - [Tomcat](tomcat.md)
+    - [线程池](threadpool.md)
+    
+- [工具类](README.md)
+    - [BeanUtils](utils/BeanUtils.md)
+    - [Date类](utils/Date.md)
+    - [常见加密算法](utils/encryption.md)
 
+# 其他
 
-JVM -- JVM优化参数设置
+- [小技巧](tips.md)
+- [原型开发](prototype.md)
+        
+    
+# 推荐
 
-https://www.liangzl.com/get-article-detail-151737.html
-
-
-JDK内置工具使用
-https://www.cnblogs.com/zengweiming/p/8946195.html
-
-JVM监控工具
-
-https://www.jianshu.com/p/ccb7edb71c79
-
-聊聊线程池，这一顿操作说懵阿里面试官...
-https://www.jianshu.com/p/58f6507fb75a
+- [书单推荐](BookList.md)
