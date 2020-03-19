@@ -86,7 +86,7 @@
 
 ### 多线程与并发
 
-* [Java 并发编程实战](https://book.douban.com/subject/10484692/)
+* [《Java 并发编程实战》](https://book.douban.com/subject/10484692/)
 * [《华章专业开发者丛书·Java并发编程实战》](https://www.coderxing.com/r.php?r=https://u.jd.com/ERgtGV) - 豆瓣评分 9.1
 * [《Java多线程编程实战指南（设计模式篇）》](https://www.coderxing.com/r.php?r=https://u.jd.com/XRUB8H) - 豆瓣评分 8.5
 * [《图解Java多线程设计模式》](https://www.coderxing.com/r.php?r=https://u.jd.com/LDOFjh) - 豆瓣评分 8.4
@@ -106,7 +106,7 @@
     * [《计算机网络》](https://book.douban.com/subject/2970300/)
     * [《计算机网络 自顶向下方法》](https://book.douban.com/subject/1391207/)
     * [《TCP/IP 详解 卷 1：协议》](https://book.douban.com/subject/1088054/)
-    * [《图解 HTTP](https://book.douban.com/subject/25863515/) - 豆瓣评分 8.1
+    * [《图解 HTTP》](https://book.douban.com/subject/25863515/) - 豆瓣评分 8.1
     * [《图解TCP/IP 第5版》](https://www.coderxing.com/r.php?r=https://u.jd.com/Ip1U7X) - 豆瓣评分 7.8
 - Linux网络编程
     * [《UNIX 网络编程》](https://book.douban.com/subject/1500149/)
@@ -116,11 +116,11 @@
 
 ### 操作系统
 
-* [现代操作系统](https://book.douban.com/subject/3852290/)
-* [深入理解计算机系统](https://book.douban.com/subject/26912767/)
+* [《现代操作系统》](https://book.douban.com/subject/3852290/)
+* [《深入理解计算机系统》](https://book.douban.com/subject/26912767/)
 * [《鸟哥的Linux私房菜 基础学习篇 第四版》](https://www.coderxing.com/r.php?r=https://u.jd.com/kzDG88) * 豆瓣评分 8.2
-* [Unix 环境高级编程](https://book.douban.com/subject/25900403/)
-* [Unix/Linux 编程实践教程](https://book.douban.com/subject/1219329/)
+* [《Unix 环境高级编程》](https://book.douban.com/subject/25900403/)
+* [《Unix/Linux 编程实践教程》](https://book.douban.com/subject/1219329/)
 
 
 ### 数据结构
@@ -214,7 +214,7 @@
 
 ### 数据库
 
-- [《《数据库系统概念》](https://book.douban.com/subject/10548379/)
+- [《数据库系统概念》](https://book.douban.com/subject/10548379/)
 - MySQL
     * [《MySQL 必知必会》](https://book.douban.com/subject/3354490/)
     * [《高性能MySQL（第3版）》](https://book.douban.com/subject/23008813/) - 豆瓣评分 9.3
@@ -405,7 +405,7 @@
 * [《数学之美（第二版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/lcuOQq) - 豆瓣评分 8.9
 * [《程序员的数学2 概率统计》](https://www.coderxing.com/r.php?r=https://u.jd.com/Yte3WW) - 豆瓣评分 8.7
 * [《程序员的数学3 线性代数》](https://www.coderxing.com/r.php?r=https://u.jd.com/WiKN9k) - 豆瓣评分 8.6
-* [概率论与数理统计](https://book.douban.com/subject/2201479/)
+* [《概率论与数理统计》](https://book.douban.com/subject/2201479/)
 * [《程序员的数学》](https://www.coderxing.com/r.php?r=https://u.jd.com/iwv4Zd) - 豆瓣评分 7.2
 * [《程序员的数学思维修炼（趣味解读）》](https://www.coderxing.com/r.php?r=https://u.jd.com/qhD5IJ) - 豆瓣评分 5.4
 * [《统计之美：人工智能时代的科学思维》](https://www.coderxing.com/r.php?r=https://u.jd.com/vBLDyU)
@@ -558,7 +558,7 @@
 
 * [《C++ Primer》](https://book.douban.com/subject/25708312/)
 * [《Effective C++》](https://book.douban.com/subject/1842426/)
-* [《C++ 编程规范](https://book.douban.com/subject/1480481/)
+* [《C++ 编程规范》](https://book.douban.com/subject/1480481/)
 * [《STL 源码剖析》](https://book.douban.com/subject/1110934/)
 * [《深度探索 C++ 对象模型》](https://book.douban.com/subject/1091086/)
 
