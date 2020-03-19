@@ -429,31 +429,33 @@
 
 
 ### 职业素养提升
- * [《码农翻身：用故事给技术加点料》](https://www.coderxing.com/r.php?r=https://u.jd.com/J7iABA) - 豆瓣评分 9.1
- * [《程序员修炼之道：从小工到专家》](https://www.coderxing.com/r.php?r=https://u.jd.com/TL272C) - 豆瓣评分 8.8
- * [《极客与团队：软件工程师的团队生存秘笈》](https://www.coderxing.com/r.php?r=https://u.jd.com/mAbLoA) - 豆瓣评分 8.3
- * [《程序员思维修炼(修订版)》](https://www.coderxing.com/r.php?r=https://u.jd.com/8l5o8l) - 豆瓣评分 8.2
- * [《高效能程序员的修炼》](https://www.coderxing.com/r.php?r=https://u.jd.com/s1OiZc) - 豆瓣评分 8.2
- * [《O'Reilly：卓有成效的程序员 [Productive programmer]》](https://www.coderxing.com/r.php?r=https://u.jd.com/XxVx3J) - 豆瓣评分 8.1
- * [《Java工程师修炼之道》](https://www.coderxing.com/r.php?r=https://u.jd.com/ODjq2h) - 豆瓣评分 7.8
- * [《程序员的成长课》](https://www.coderxing.com/r.php?r=https://u.jd.com/DKrbwc) - 豆瓣评分 7.6
- * [《高效程序员的45个习惯：敏捷开发修炼之道(修订版)》](https://www.coderxing.com/r.php?r=https://u.jd.com/y36OqE) - 豆瓣评分 7.6
- * [《温伯格技术思想三部曲：颠覆完美软件 软件测试必须知道的几件事》](https://www.coderxing.com/r.php?r=https://u.jd.com/JKgll1) - 豆瓣评分 7.5
- * [《温伯格技术思想三部曲：程序开发心理学（银年纪念版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/0K8XDo) - 豆瓣评分 7.4
- * [《软件开发本质论：追求简约、体现价值、逐步构建》](https://www.coderxing.com/r.php?r=https://u.jd.com/AlxMcW) - 豆瓣评分 7.3
- * [《内外兼修：程序员的成长之路》](https://www.coderxing.com/r.php?r=https://u.jd.com/W0uA76) - 豆瓣评分 6.6
+
+* [《码农翻身：用故事给技术加点料》](https://www.coderxing.com/r.php?r=https://u.jd.com/J7iABA) - 豆瓣评分 9.1
+* [《程序员修炼之道：从小工到专家》](https://www.coderxing.com/r.php?r=https://u.jd.com/TL272C) - 豆瓣评分 8.8
+* [《极客与团队：软件工程师的团队生存秘笈》](https://www.coderxing.com/r.php?r=https://u.jd.com/mAbLoA) - 豆瓣评分 8.3
+* [《程序员思维修炼(修订版)》](https://www.coderxing.com/r.php?r=https://u.jd.com/8l5o8l) - 豆瓣评分 8.2
+* [《高效能程序员的修炼》](https://www.coderxing.com/r.php?r=https://u.jd.com/s1OiZc) - 豆瓣评分 8.2
+* [《O'Reilly：卓有成效的程序员 [Productive programmer]》](https://www.coderxing.com/r.php?r=https://u.jd.com/XxVx3J) - 豆瓣评分 8.1
+* [《Java工程师修炼之道》](https://www.coderxing.com/r.php?r=https://u.jd.com/ODjq2h) - 豆瓣评分 7.8
+* [《程序员的成长课》](https://www.coderxing.com/r.php?r=https://u.jd.com/DKrbwc) - 豆瓣评分 7.6
+* [《高效程序员的45个习惯：敏捷开发修炼之道(修订版)》](https://www.coderxing.com/r.php?r=https://u.jd.com/y36OqE) - 豆瓣评分 7.6
+* [《温伯格技术思想三部曲：颠覆完美软件 软件测试必须知道的几件事》](https://www.coderxing.com/r.php?r=https://u.jd.com/JKgll1) - 豆瓣评分 7.5
+* [《温伯格技术思想三部曲：程序开发心理学（银年纪念版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/0K8XDo) - 豆瓣评分 7.4
+* [《软件开发本质论：追求简约、体现价值、逐步构建》](https://www.coderxing.com/r.php?r=https://u.jd.com/AlxMcW) - 豆瓣评分 7.3
+* [《内外兼修：程序员的成长之路》](https://www.coderxing.com/r.php?r=https://u.jd.com/W0uA76) - 豆瓣评分 6.6
 
 
 ### 个人软技能
- * [《把时间当作朋友（第3版 全彩）》](https://www.coderxing.com/r.php?r=https://u.jd.com/I3D7Z0) - 豆瓣评分 8.5
- * [《暗时间》](https://www.coderxing.com/r.php?r=https://u.jd.com/GZgwi5) - 豆瓣评分 8.4
- * [《关键对话：如何高效能沟通（原书第2版） [Crucial Conversations: Tools for Talking When Stak]》](https://www.coderxing.com/r.php?r=https://u.jd.com/jpIkyt) - 豆瓣评分 8.1
- * [《温伯格技术思想三部曲：成为技术领导者 掌握全面解决问题的方法》](https://www.coderxing.com/r.php?r=https://u.jd.com/N6YwQD) - 豆瓣评分 8
- * [《软技能 代码之外的生存指南》](https://www.coderxing.com/r.php?r=https://u.jd.com/KkL3kA) - 豆瓣评分 8
- * [《程序员健康指南》](https://www.coderxing.com/r.php?r=https://u.jd.com/8YQH5T) - 豆瓣评分 7.5
- * [《如何把事情做到最好：改变全球9800万人的人生指导书 [Mastery]》](https://www.coderxing.com/r.php?r=https://u.jd.com/NS6cLf) - 豆瓣评分 7.2
- * [《程序员的英语》](https://www.coderxing.com/r.php?r=https://u.jd.com/Gt5VDT) - 豆瓣评分 5.9
- * [《高效能人士的七个习惯（30周年纪念版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/oG641c)
+
+* [《把时间当作朋友（第3版 全彩）》](https://www.coderxing.com/r.php?r=https://u.jd.com/I3D7Z0) - 豆瓣评分 8.5
+* [《暗时间》](https://www.coderxing.com/r.php?r=https://u.jd.com/GZgwi5) - 豆瓣评分 8.4
+* [《关键对话：如何高效能沟通（原书第2版） [Crucial Conversations: Tools for Talking When Stak]》](https://www.coderxing.com/r.php?r=https://u.jd.com/jpIkyt) - 豆瓣评分 8.1
+* [《温伯格技术思想三部曲：成为技术领导者 掌握全面解决问题的方法》](https://www.coderxing.com/r.php?r=https://u.jd.com/N6YwQD) - 豆瓣评分 8
+* [《软技能 代码之外的生存指南》](https://www.coderxing.com/r.php?r=https://u.jd.com/KkL3kA) - 豆瓣评分 8
+* [《程序员健康指南》](https://www.coderxing.com/r.php?r=https://u.jd.com/8YQH5T) - 豆瓣评分 7.5
+* [《如何把事情做到最好：改变全球9800万人的人生指导书 [Mastery]》](https://www.coderxing.com/r.php?r=https://u.jd.com/NS6cLf) - 豆瓣评分 7.2
+* [《程序员的英语》](https://www.coderxing.com/r.php?r=https://u.jd.com/Gt5VDT) - 豆瓣评分 5.9
+* [《高效能人士的七个习惯（30周年纪念版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/oG641c)
 
 
 ## 大厂出品
@@ -477,47 +479,47 @@
 
 ## 工具书
 
- * [《Linux命令行与shell脚本编程大全（第3版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/5U9zkK) - 豆瓣评分 9.1
- * [《阿里巴巴Java开发手册》](https://www.coderxing.com/r.php?r=https://u.jd.com/28U5lx) - 豆瓣评分 8.3
- * [《SQL即查即用 （全彩版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/d5ADPR)
- * [《Linux命令速查手册（第三版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/VgrIgv)
+* [《Linux命令行与shell脚本编程大全（第3版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/5U9zkK) - 豆瓣评分 9.1
+* [《阿里巴巴Java开发手册》](https://www.coderxing.com/r.php?r=https://u.jd.com/28U5lx) - 豆瓣评分 8.3
+* [《SQL即查即用 （全彩版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/d5ADPR)
+* [《Linux命令速查手册（第三版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/VgrIgv)
 
 
 ## 面试求职
 
- * [《剑指Offer：名企面试官精讲典型编程题（第2版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/IgfC55) - 豆瓣评分 9.1
- * [《编程之美：微软技术面试心得》](https://www.coderxing.com/r.php?r=https://u.jd.com/E4WimD) - 豆瓣评分 8.4
- * [《Java程序员面试笔试宝典》](https://www.coderxing.com/r.php?r=https://u.jd.com/UqcYlU) - 豆瓣评分 7.6
- * [《Java程序员面试宝典（第4版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/tm79JE) - 豆瓣评分 5
- * [《编程之法：面试和算法心得》](https://www.coderxing.com/r.php?r=https://u.jd.com/7ujWIz)
- * [《Java程序员面试算法宝典》](https://www.coderxing.com/r.php?r=https://u.jd.com/eE9uWg)
- * [《Java程序员面试笔试真题库》](https://www.coderxing.com/r.php?r=https://u.jd.com/Jc9Xlt)
- * [《Java程序员面试笔试真题与解析》](https://www.coderxing.com/r.php?r=https://u.jd.com/VqoEj5)
- * [《Java核心技术及面试指南》](https://www.coderxing.com/r.php?r=https://u.jd.com/pfIsU6)
- * [《解忧程序员：高薪编程、求职面试与成长转型宝典》](https://www.coderxing.com/r.php?r=https://u.jd.com/j0XMdh)
+* [《剑指Offer：名企面试官精讲典型编程题（第2版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/IgfC55) - 豆瓣评分 9.1
+* [《编程之美：微软技术面试心得》](https://www.coderxing.com/r.php?r=https://u.jd.com/E4WimD) - 豆瓣评分 8.4
+* [《Java程序员面试笔试宝典》](https://www.coderxing.com/r.php?r=https://u.jd.com/UqcYlU) - 豆瓣评分 7.6
+* [《Java程序员面试宝典（第4版）》](https://www.coderxing.com/r.php?r=https://u.jd.com/tm79JE) - 豆瓣评分 5
+* [《编程之法：面试和算法心得》](https://www.coderxing.com/r.php?r=https://u.jd.com/7ujWIz)
+* [《Java程序员面试算法宝典》](https://www.coderxing.com/r.php?r=https://u.jd.com/eE9uWg)
+* [《Java程序员面试笔试真题库》](https://www.coderxing.com/r.php?r=https://u.jd.com/Jc9Xlt)
+* [《Java程序员面试笔试真题与解析》](https://www.coderxing.com/r.php?r=https://u.jd.com/VqoEj5)
+* [《Java核心技术及面试指南》](https://www.coderxing.com/r.php?r=https://u.jd.com/pfIsU6)
+* [《解忧程序员：高薪编程、求职面试与成长转型宝典》](https://www.coderxing.com/r.php?r=https://u.jd.com/j0XMdh)
 
 
 ## 格局与视野
 
- * [《全球科技通史》](https://www.coderxing.com/r.php?r=https://u.jd.com/bgG9yE) - 豆瓣评分 9.4
- * [《浪潮之巅 第三版 套装上下册》](https://www.coderxing.com/r.php?r=https://u.jd.com/koCTxD) - 豆瓣评分 9.3
- * [《黑客与画家：硅谷创业之父Paul Graham文集 [Hackers and Painters Big Ldeas From the Computer Age]》](https://www.coderxing.com/r.php?r=https://u.jd.com/KbwmLQ) - 豆瓣评分 8.8
- * [《软件随想录 卷1》](https://www.coderxing.com/r.php?r=https://u.jd.com/EcKZym) - 豆瓣评分 8.8
- * [《软件随想录 卷2》](https://www.coderxing.com/r.php?r=https://u.jd.com/px8Sgu) - 豆瓣评分 8.7
- * [《编程人生：15位软件先驱访谈录》](https://www.coderxing.com/r.php?r=https://u.jd.com/6jRwgY) - 豆瓣评分 8.5
- * [《大教堂与集市（最新版） [The Cathedral & the Bazaar]》](https://www.coderxing.com/r.php?r=https://u.jd.com/6Y4Mcd) - 豆瓣评分 8.4
- * [《硅谷之谜：浪潮之巅 续集》](https://www.coderxing.com/r.php?r=https://u.jd.com/3yyV1D) - 豆瓣评分 8.4
- * [《原则 [Principles]》](https://www.coderxing.com/r.php?r=https://u.jd.com/M7OrgY) - 豆瓣评分 8.4
- * [《精益创业》](https://www.coderxing.com/r.php?r=https://u.jd.com/PxHueV) - 豆瓣评分 8.4
- * [《态度：吴军博士新书》](https://www.coderxing.com/r.php?r=https://u.jd.com/rdipjJ) - 豆瓣评分 8.1
- * [《见识》](https://www.coderxing.com/r.php?r=https://u.jd.com/cP4xDs) - 豆瓣评分 8.1
- * [《极限创新 35岁之前改变世界的全球科技精英》](https://www.coderxing.com/r.php?r=https://u.jd.com/oGJFTx) - 豆瓣评分 7.3
- * [《大学的终结：泛在大学与高等教育革命》](https://www.coderxing.com/r.php?r=https://u.jd.com/FBINiB) - 豆瓣评分 7.2
- * [《未来版图 全球聪明公司的科技创新趋势和商业化路径》](https://www.coderxing.com/r.php?r=https://u.jd.com/ZfHw4B) - 豆瓣评分 7.1
- * [《你好哇，程序员——漫话程序员面试求职、升职加薪、创业与生活》](https://www.coderxing.com/r.php?r=https://u.jd.com/cNCbEF) - 豆瓣评分 6.5
- * [《图灵和ACM图灵奖（1966-2015 第五版） 纪念计算机诞生70周年》](https://www.coderxing.com/r.php?r=https://u.jd.com/S1ZQhz)
- * [《文明之光（全彩印刷套装1-4册）入选2014中国好书/第六届中华优秀出版物获奖图书》](https://www.coderxing.com/r.php?r=https://u.jd.com/M3PkIU)
- * [《大师访谈录：成就非凡的软件人生》](https://www.coderxing.com/r.php?r=https://u.jd.com/JHxmei)
+* [《全球科技通史》](https://www.coderxing.com/r.php?r=https://u.jd.com/bgG9yE) - 豆瓣评分 9.4
+* [《浪潮之巅 第三版 套装上下册》](https://www.coderxing.com/r.php?r=https://u.jd.com/koCTxD) - 豆瓣评分 9.3
+* [《黑客与画家：硅谷创业之父Paul Graham文集 [Hackers and Painters Big Ldeas From the Computer Age]》](https://www.coderxing.com/r.php?r=https://u.jd.com/KbwmLQ) - 豆瓣评分 8.8
+* [《软件随想录 卷1》](https://www.coderxing.com/r.php?r=https://u.jd.com/EcKZym) - 豆瓣评分 8.8
+* [《软件随想录 卷2》](https://www.coderxing.com/r.php?r=https://u.jd.com/px8Sgu) - 豆瓣评分 8.7
+* [《编程人生：15位软件先驱访谈录》](https://www.coderxing.com/r.php?r=https://u.jd.com/6jRwgY) - 豆瓣评分 8.5
+* [《大教堂与集市（最新版） [The Cathedral & the Bazaar]》](https://www.coderxing.com/r.php?r=https://u.jd.com/6Y4Mcd) - 豆瓣评分 8.4
+* [《硅谷之谜：浪潮之巅 续集》](https://www.coderxing.com/r.php?r=https://u.jd.com/3yyV1D) - 豆瓣评分 8.4
+* [《原则 [Principles]》](https://www.coderxing.com/r.php?r=https://u.jd.com/M7OrgY) - 豆瓣评分 8.4
+* [《精益创业》](https://www.coderxing.com/r.php?r=https://u.jd.com/PxHueV) - 豆瓣评分 8.4
+* [《态度：吴军博士新书》](https://www.coderxing.com/r.php?r=https://u.jd.com/rdipjJ) - 豆瓣评分 8.1
+* [《见识》](https://www.coderxing.com/r.php?r=https://u.jd.com/cP4xDs) - 豆瓣评分 8.1
+* [《极限创新 35岁之前改变世界的全球科技精英》](https://www.coderxing.com/r.php?r=https://u.jd.com/oGJFTx) - 豆瓣评分 7.3
+* [《大学的终结：泛在大学与高等教育革命》](https://www.coderxing.com/r.php?r=https://u.jd.com/FBINiB) - 豆瓣评分 7.2
+* [《未来版图 全球聪明公司的科技创新趋势和商业化路径》](https://www.coderxing.com/r.php?r=https://u.jd.com/ZfHw4B) - 豆瓣评分 7.1
+* [《你好哇，程序员——漫话程序员面试求职、升职加薪、创业与生活》](https://www.coderxing.com/r.php?r=https://u.jd.com/cNCbEF) - 豆瓣评分 6.5
+* [《图灵和ACM图灵奖（1966-2015 第五版） 纪念计算机诞生70周年》](https://www.coderxing.com/r.php?r=https://u.jd.com/S1ZQhz)
+* [《文明之光（全彩印刷套装1-4册）入选2014中国好书/第六届中华优秀出版物获奖图书》](https://www.coderxing.com/r.php?r=https://u.jd.com/M3PkIU)
+* [《大师访谈录：成就非凡的软件人生》](https://www.coderxing.com/r.php?r=https://u.jd.com/JHxmei)
 
 
 ## Java之外
@@ -554,15 +556,15 @@
 
 ### C++
 
-* [C++ Primer](https://book.douban.com/subject/25708312/)
-* [Effective C++](https://book.douban.com/subject/1842426/)
-* [C++ 编程规范](https://book.douban.com/subject/1480481/)
-* [STL 源码剖析](https://book.douban.com/subject/1110934/)
-* [深度探索 C++ 对象模型](https://book.douban.com/subject/1091086/)
+* [《C++ Primer》](https://book.douban.com/subject/25708312/)
+* [《Effective C++》](https://book.douban.com/subject/1842426/)
+* [《C++ 编程规范](https://book.douban.com/subject/1480481/)
+* [《STL 源码剖析》](https://book.douban.com/subject/1110934/)
+* [《深度探索 C++ 对象模型》](https://book.douban.com/subject/1091086/)
 
 
 
 ### 其它
 
-- [《JavaScript 语言精粹](https://book.douban.com/subject/3590768/)
-- [《利用 Python 进行数据分析](https://book.douban.com/subject/25779298/)
+- [《JavaScript 语言精粹》](https://book.douban.com/subject/3590768/)
+- [《利用 Python 进行数据分析》](https://book.douban.com/subject/25779298/)
