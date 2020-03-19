@@ -35,8 +35,7 @@
 
 ## [知识总结](knowledge/README.md)
 
-- [Java书单推荐](JavaBookList.md)
-- [其他书单推荐](BookList.md)
+- [书单推荐](BookList.md)
 
 ## [设计模式](src/dev/designpattern/README.md)
 

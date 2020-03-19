@@ -34,5 +34,4 @@
     
 # 推荐
 
-- [Java书单推荐](../JavaBookList.md)
 - [书单推荐](../BookList.md)
