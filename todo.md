@@ -6,7 +6,9 @@
 1. [【互联网一线大厂面试+学习指南】](https://github.com/RunAtWorld/JavaFamily)
     1. [三太子敖丙 Java后端学习路线](https://juejin.im/post/5e5bc9a66fb9a07c817619fb?utm_source=gold_browser_extension)
 2. [LeetCode题目分类与面试问题整理](https://github.com/RunAtWorld/LeetCode-1)
-3. [【Java工程师面试复习指南](https://github.com/RunAtWorld/Java-Tutorial)
+3. [Java工程师面试复习指南](https://github.com/RunAtWorld/Java-Tutorial)
+4. [一份涵盖大部分Java程序员所需要掌握的核心知识](https://github.com/hbulpf/JavaGuide)
+5. [后端架构师技术图谱](https://github.com/hbulpf/ArchitectRoute)
 
 ## 项目
 

@@ -1,31 +1,44 @@
-# Java练习
-## 0.[Java基本使用练习](src/dev/demo/README.md)
+# Java 知识技术总结
 
-|Basic     |Others |
-|----------|----------|
-|1. JavaSE |  Maven   |
-|2. JSP	   ||
-|3. Spring ||
-|4. Strus  ||
-|5. MyBatis||
-|6. SpringBoot||
-|7. SpringCloud||
+[![知识共享协议（CC协议）](https://img.shields.io/badge/License-Creative%20Commons-DC3D24.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)
+[![GitHub stars](https://img.shields.io/github/stars/hbulpf/JavaPrinciple.svg?label=Stars)](https://github.com/hbulpf/JavaPrinciple)
+[![GitHub watchers](https://img.shields.io/github/watchers/hbulpf/JavaPrinciple.svg?label=Watchers)](https://github.com/hbulpf/JavaPrinciple/watchers)
+[![GitHub forks](https://img.shields.io/github/forks/hbulpf/JavaPrinciple.svg?label=Forks)](https://github.com/hbulpf/JavaPrinciple/fork)
 
-## 1.数据结构与算法
-1. 链表
-1. 树
-1. 图
-1. 排序
-1. 动态规划
-1. 贪心
+## [Java基本使用练习 Demo](src/dev/demo/README.md)
 
-## 2.[笔试练习题](src/dev/exams/README.md)
+基础: JavaSE,JavaSE, JSP, Strus
 
-## 3.[Leetcode](src/dev/leetcode/README.md)
+框架: Spring, SpringMVC, SpringBoot, SpringCloud
 
-## 4.[OJ](src/dev/oj/README.md)
+持久层框架: Hebernates, MyBatis
 
-## 5.[设计模式](src/dev/designpattern/README.md)
+工具: Maven
+
+## 算法练习
+
+1. 基本数据结构与算法
+    1. 链表
+    1. 树
+    1. 图
+    1. 排序
+    1. 动态规划
+    1. 贪心
+
+1. [笔试练习题](src/dev/exams/README.md)
+
+1. [Leetcode 练习](src/dev/leetcode/README.md)
+
+2. [OJ 练习](src/dev/oj/README.md)
+
+## [常用工具类](src/dev/utils/README.md)
+
+## [知识总结](knowledge/README.md)
+
+### [书单推荐](BookList.md)
+
+## [设计模式](src/dev/designpattern/README.md)
+
 1. [单例模式](src/dev/designpattern/singleton)
 1. [工厂方法模式](src/dev/designpattern/factorymethod)
 1. [抽象工厂模式](src/dev/designpattern/abstractfactory)
@@ -35,5 +48,3 @@
 2. [建造者模式](src/dev/designpattern/builder)
 2. [观察者模式](src/dev/designpattern/observer)
 2. [原型模式](src/dev/designpattern/prototype)
-
-## 6.[常用工具类](src/dev/utils/README.md)
