@@ -14,6 +14,10 @@
 6. [互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识，后端同学必看，前端同学也可学习](https://github.com/hbulpf/advanced-java)
 7. [后端架构师技术图谱](https://github.com/hbulpf/ArchitectRoute)
 
+## 文章
+
+https://juejin.im/post/5e72e97c6fb9a07cb346083f?utm_source=gold_browser_extension
+
 ## 项目
 
 1. [一个基于Spring Boot & MyBatis的种子项目，用于快速构建中小型API、RESTful API项目~](https://github.com/RunAtWorld/spring-boot-api-project-seed)
