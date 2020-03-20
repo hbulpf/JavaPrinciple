@@ -22,3 +22,10 @@
    包括 newbee-mall 商城系统及 newbee-mall-admin 商城后台管理系统，基于 Spring Boot 2.X 及相关技术栈开发。 前台商城系统包含首页门户、商品分类、新品上线、首页轮播、商品推荐、商品搜索、商品展示、购物车、订单结算、订单流程、个人订单管理、会员中心、帮助中心等模块。 后台管理系统包含数据面板、轮播图管理、商品管理、订单管理、会员管
 4. [一款基于代码生成器的JAVA快速开发平台，开源界“小普元”超越传统商业企业级开发平台](https://github.com/RunAtWorld/jeecg-boot)
 5. [微人事是一个前后端分离的人力资源管理系统，项目采用SpringBoot+Vue开发。](https://github.com/RunAtWorld/vhr)
+
+
+## 其他
+
+1. Android 
+    - [AndroidStudio快速入门（视频+资料）](https://github.com/hbulpf/AndroidStudio)
+    - [Android快速入门代码+笔记（11天学会独孤九剑）](https://github.com/hbulpf/Android-Basics-Codes)
