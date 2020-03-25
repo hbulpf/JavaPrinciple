@@ -18,6 +18,8 @@
 
 https://juejin.im/post/5e72e97c6fb9a07cb346083f?utm_source=gold_browser_extension
 
+https://kubernetes.io/zh/docs/concepts/configuration/secret/
+
 ## 项目
 
 1. [一个基于Spring Boot & MyBatis的种子项目，用于快速构建中小型API、RESTful API项目~](https://github.com/RunAtWorld/spring-boot-api-project-seed)
