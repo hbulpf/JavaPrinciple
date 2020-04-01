@@ -21,7 +21,7 @@ package dev.leetcode.solution;
  * O(n) = N;
  * }
  */
-public class Solution110Optimum {
+public class Solution110Opt1 {
 
     /**
      * Tree height

@@ -12,7 +12,7 @@ package dev.leetcode.solution;
  * TreeNode right;
  * TreeNode(int x) { val = x; }
  * }
- * 方法1:
+ *
  * 暴力破解
  * 计算子树高度，判断左右两棵子树高度之差
  * 注意点:
