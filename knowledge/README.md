@@ -9,6 +9,7 @@
     - [Linux软件安装](Linux/笔记7-Linux软件安装.md)
 
 - [java](java/README.md)
+    - [Java队列](java/basic/Java队列.md)
     - [java和javaw的区别](java/java和javaw的区别.md)
     - [JVM参数](java/jvm.md)
         - [JVM工具](java/jvmtools.md)

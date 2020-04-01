@@ -12,6 +12,7 @@
     - [Linux软件安装](knowledge/Linux/笔记7-Linux软件安装.md)
 
 - [java](knowledge/java/README.md)
+    - [Java队列](knowledge/java/basic/Java队列.md)
     - [java和javaw的区别](knowledge/java/java和javaw的区别.md)
     - [JVM参数](knowledge/java/jvm.md)
         - [JVM工具](knowledge/java/jvmtools.md)
