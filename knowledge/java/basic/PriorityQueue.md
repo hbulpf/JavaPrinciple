@@ -8,9 +8,7 @@ PriorityQueue 队列的头指排序规则最小那哥元素。如果多个元素
 
 PriorityQueue 是一个无界队列，但是初始的容量(实际是一个Object[])，随着不断向优先级队列添加元素，其容量会自动扩容，无需指定容量增加策略的细节。
 
-
-
-![img](../imgs/PriorityQueue.png)
+![img](..\imgs\PriorityQueue.jpg)
 
 ## 基本使用
 
@@ -249,7 +247,7 @@ private void siftDownComparable(int k, E x) {
 2、PriorityQueue是一种通过数组实现的，并拥有优先级的队列
 
 3、PriorityQueue存储的元素要求必须是可比较的对象， 如果不是就必须明确指定比较器
- 
+
  # 参考
- 
+
  

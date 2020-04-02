@@ -1,4 +1,4 @@
-package dev.demo.basic.list;
+package dev.demo.basic.queue;
 
 import java.util.concurrent.*;
 
