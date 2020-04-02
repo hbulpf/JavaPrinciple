@@ -378,7 +378,7 @@ leetcode练习题
 | 684  | [Redundant Connection](https://leetcode-cn.com/problems/redundant-connection/) |      |                                                              |                                                              |
 | 687  | [Longest Univalue Path](https://leetcode-cn.com/problems/longest-univalue-path/) | 70   |                                                              |                                                              |
 | 695  | [Max Area of Island](https://leetcode-cn.com/problems/max-area-of-island/) | 100  |                                                              |                                                              |
-| 703  | [数据流中第K大元素](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/) | 100  |                                                              | 优先级队列解法/小根堆解法                                    |
+| 703  | [数据流中第K大元素](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/) |  medium |                                                              | 优先级队列解法/小根堆解法                                    |
 | 771  | [Jewels and Stones](https://leetcode-cn.com/problems/jewels-and-stones/) | 100  |                                                              |                                                              |
 | 814  | [Binary Tree Pruning](https://leetcode-cn.com/problems/binary-tree-pruning/) | 80   |                                                              |                                                              |
 | 819  | [Most Common Word](https://leetcode-cn.com/problems/most-common-word/) | 85   |                                                              |                                                              |
