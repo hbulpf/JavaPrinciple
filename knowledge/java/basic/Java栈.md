@@ -3,11 +3,9 @@
 *本文对应 https://github.com/hbulpf/JavaPrinciple*
 
 
-![Java集合](..\imgs\Java集合.jpeg)
-
 栈是Vector的一个子类，它实现了一个标准的后进先出的栈。
 
-![Java堆UML](..\imgs\javastack.jpeg)
+![Java堆UML](../imgs/javastack.jpeg)
 
 堆栈只定义了默认构造函数，用来创建一个空栈。 堆栈除了包括由Vector定义的所有方法，也定义了自己的一些方法。
 
