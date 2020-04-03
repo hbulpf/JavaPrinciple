@@ -16,17 +16,17 @@ public enum ErrorCategory {
         this.content = content;
     }
 
-    public String getContent() {
-        return content;
-    }
-
     public static ErrorCategory fromId(Integer id) {
-        for (ErrorCategory errorCategory:ErrorCategory.values()){
-            if(errorCategory.id==id){
+        for (ErrorCategory errorCategory : ErrorCategory.values()) {
+            if (errorCategory.id.equals(id)) {
                 return errorCategory;
             }
         }
         return NoCategory;
+    }
+
+    public String getContent() {
+        return content;
     }
 
     @Override

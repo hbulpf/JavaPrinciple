@@ -12,10 +12,10 @@ import java.util.stream.Collectors;
  * https://blog.csdn.net/PitBXu/article/details/97672145
  * https://blog.csdn.net/qq_31564573/article/details/87906309
  * https://www.jianshu.com/p/84e4820993d3
- * @author: Li Pengfei
+ * @author: RunAtWorld
  * @create: 2019-12-28 18:23
  **/
-public class MyList {
+public class ListDemo {
     public static void main(String[] args) {
         System.out.println("-------test01---------");
         test01();
