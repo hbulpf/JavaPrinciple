@@ -55,7 +55,7 @@ leetcode练习题
 | 50   | [Pow(x, n)](https://leetcode-cn.com/problems/powx-n/)        | 80   |                                                              |                                                              |
 | 51   | [N-Queens](https://leetcode-cn.com/problems/n-queens/)       |      |                                                              |                                                              |
 | 52   | [N-Queens II](https://leetcode-cn.com/problems/n-queens-ii/) |      |                                                              |                                                              |
-| 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | easy   |  [迭代法/动态规划法/递归法](code_java/src/solution/Solution53.java)    |   DP算法 : T=O(N),S=O(1).利用nums数组本身作为DP数组                     |
+| 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | easy   |  [动态规划法](code_java/src/solution/Solution53.java)    |   DP算法 : T=O(N),S=O(1).利用nums数组本身作为DP数组                     |
 | 54   | [Spiral Matrix](https://leetcode-cn.com/problems/spiral-matrix/) | 85   |                                                              |                                                              |
 | 55   | [Jump Game](https://leetcode-cn.com/problems/jump-game/#/description) |      |                                                              |                                                              |
 | 56   | [Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/) | 70   |                                                              |                                                              |

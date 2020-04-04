@@ -20,7 +20,10 @@ public class Solution53 {
     }
 
     /**
-     * DP算法 : T=O(N),S=O(1).利用nums数组本身作为DP数组
+     * DP算法 : T=O(N),S=O(1).
+     * 利用nums数组本身作为DP数组,
+     * nums[i]代表包含第i个元素的最大和
+     *
      * @param nums
      * @return
      */
