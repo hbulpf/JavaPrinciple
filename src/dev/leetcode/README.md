@@ -55,7 +55,7 @@ leetcode练习题
 | 50   | [Pow(x, n)](https://leetcode-cn.com/problems/powx-n/)        | 80   |                                                              |                                                              |
 | 51   | [N-Queens](https://leetcode-cn.com/problems/n-queens/)       |      |                                                              |                                                              |
 | 52   | [N-Queens II](https://leetcode-cn.com/problems/n-queens-ii/) |      |                                                              |                                                              |
-| 53   | [Maximum Subarray](https://leetcode-cn.com/problems/maximum-subarray/) | 95   |                                                              |                                                              |
+| 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | easy   |  [迭代法/动态规划法/递归法](code_java/src/solution/Solution53.java)    |   DP算法 : T=O(N),S=O(1).利用nums数组本身作为DP数组                     |
 | 54   | [Spiral Matrix](https://leetcode-cn.com/problems/spiral-matrix/) | 85   |                                                              |                                                              |
 | 55   | [Jump Game](https://leetcode-cn.com/problems/jump-game/#/description) |      |                                                              |                                                              |
 | 56   | [Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/) | 70   |                                                              |                                                              |
@@ -66,7 +66,7 @@ leetcode练习题
 | 67   | [Add Binary](https://leetcode-cn.com/problems/add-binary/)   | 100  |                                                              |                                                              |
 | 68   | [Text Justification](https://leetcode-cn.com/problems/text-justification/) |      |                                                              |                                                              |
 | 69   | [Sqrt(x)](https://leetcode-cn.com/problems/sqrtx/)           | 85   |                                                              |                                                              |
-| 70   | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)  | easy | [迭代法/动态规划法/递归法](code_java/src/solution/ClimbingStairs.java) |                                                              |
+| 70   | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)  | easy | [迭代法/动态规划法/递归法](code_java/src/solution/Solution70.java) |                                                              |
 | 71   | [Simplify Path](https://leetcode-cn.com/problems/simplify-path/) | 80   |                                                              |                                                              |
 | 72   | [Edit Distance](https://leetcode-cn.com/problems/edit-distance/) | 75   |                                                              |                                                              |
 | 73   | [Set Matrix Zeroes](https://leetcode-cn.com/problems/set-matrix-zeroes/description/) | 90   |                                                              |                                                              |
