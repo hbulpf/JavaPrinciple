@@ -62,9 +62,9 @@ leetcode练习题
 | 57   | [Insert Interval](https://leetcode-cn.com/problems/insert-interval/) | 75   |                                                              | 这题要多做几遍                                               |
 | 60   | [Permutation Sequence](https://leetcode-cn.com/problems/permutation-sequence/) | 70   |                                                              | 这题思路巧妙，多做两遍                                       |
 | 61   | [Rotate List](https://leetcode-cn.com/problems/rotate-list/) | 90   |                                                              |                                                              |
-| 62   | [不同的路径](https://leetcode-cn.com/problems/rotate-list/) | 90   |                                                              |                                                              |
+| 62   | [不同的路径](https://leetcode-cn.com/problems/rotate-list/) | medium   |    [排列组合法](code_java/src/solution/Solution62.java)       |      排列组合法: 将机器人行列要走的轨迹当作要选择的方块       |
 | 66   | [Plus One](https://leetcode-cn.com/problems/plus-one/)       | 100  |                                                              | 这题多看一遍                                                 |
-| 67   | [Add Binary](https://leetcode-cn.com/problems/add-binary/)   | 100  |                                                              |                                                              |
+| 67   | [Add Binary](https://leetcode-cn.com/problems/add-binary/)   | 100  |                            |                                                            |
 | 68   | [Text Justification](https://leetcode-cn.com/problems/text-justification/) |      |                                                              |                                                              |
 | 69   | [Sqrt(x)](https://leetcode-cn.com/problems/sqrtx/)           | 85   |                                                              |                                                              |
 | 70   | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)  | easy | [迭代法/动态规划法/递归法](code_java/src/solution/Solution70.java) |                                                              |
