@@ -62,6 +62,7 @@ leetcode练习题
 | 57   | [Insert Interval](https://leetcode-cn.com/problems/insert-interval/) | 75   |                                                              | 这题要多做几遍                                               |
 | 60   | [Permutation Sequence](https://leetcode-cn.com/problems/permutation-sequence/) | 70   |                                                              | 这题思路巧妙，多做两遍                                       |
 | 61   | [Rotate List](https://leetcode-cn.com/problems/rotate-list/) | 90   |                                                              |                                                              |
+| 62   | [不同的路径](https://leetcode-cn.com/problems/rotate-list/) | 90   |                                                              |                                                              |
 | 66   | [Plus One](https://leetcode-cn.com/problems/plus-one/)       | 100  |                                                              | 这题多看一遍                                                 |
 | 67   | [Add Binary](https://leetcode-cn.com/problems/add-binary/)   | 100  |                                                              |                                                              |
 | 68   | [Text Justification](https://leetcode-cn.com/problems/text-justification/) |      |                                                              |                                                              |
