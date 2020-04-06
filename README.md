@@ -48,3 +48,6 @@
 2. [建造者模式](src/dev/designpattern/builder)
 2. [观察者模式](src/dev/designpattern/observer)
 2. [原型模式](src/dev/designpattern/prototype)
+
+**友情贡献**
+@[**iceyung**](https://github.com/iceyung)
