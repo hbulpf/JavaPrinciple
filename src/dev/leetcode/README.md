@@ -12,7 +12,7 @@ leetcode练习题
 | 7    | [Reverse Integer](https://leetcode-cn.com/problems/reverse-integer/) | 95   |                                                              |                                                              |
 | 8    | [String to Integer (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | 90   |                                                              | 很考代码能力，容易错                                         |
 | 9    | [Palindrome Number](https://leetcode-cn.com/problems/palindrome-number/) |      |                                                              |                                                              |
-| 10   | [Regular Expression Matching](https://leetcode-cn.com/problems/regular-expression-matching/) | 60   |                                                              | 这题很经典，多做几遍，和#44一起                              |
+| 10   | [正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/) | 60   |                                                              | 这题很经典，多做几遍，和#44一起                              |
 | 11   | [Container With Most Water](https://leetcode-cn.com/problems/container-with-most-water/) |      |                                                              |                                                              |
 | 12   | [Integer to Roman](https://leetcode-cn.com/problems/integer-to-roman/) |      |                                                              |                                                              |
 | 13   | [Roman to Integer](https://leetcode-cn.com/problems/roman-to-integer/) |      |                                                              |                                                              |
