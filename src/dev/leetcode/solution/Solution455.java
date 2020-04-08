@@ -31,7 +31,7 @@ public class Solution455 {
     /**
      * 贪心算法
      * 对小朋友和饼干按照从小到大排序
-     *
+     * T=O(n)
      * @param g
      * @param s
      * @return
