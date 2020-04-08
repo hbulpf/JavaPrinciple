@@ -55,19 +55,19 @@ leetcode练习题
 | 50   | [Pow(x, n)](https://leetcode-cn.com/problems/powx-n/)        | 80   |                                                              |                                                              |
 | 51   | [N-Queens](https://leetcode-cn.com/problems/n-queens/)       |      |                                                              |                                                              |
 | 52   | [N-Queens II](https://leetcode-cn.com/problems/n-queens-ii/) |      |                                                              |                                                              |
-| 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | easy   |  [动态规划法](code_java/src/solution/Solution53.java)    |   DP算法 : T=O(N),S=O(1).利用nums数组本身作为DP数组                     |
+| 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | easy   |  [动态规划法](solution/Solution53.java)    |   DP算法 : T=O(N),S=O(1).利用nums数组本身作为DP数组                     |
 | 54   | [Spiral Matrix](https://leetcode-cn.com/problems/spiral-matrix/) | 85   |                                                              |                                                              |
 | 55   | [Jump Game](https://leetcode-cn.com/problems/jump-game/#/description) |      |                                                              |                                                              |
 | 56   | [Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/) | 70   |                                                              |                                                              |
 | 57   | [Insert Interval](https://leetcode-cn.com/problems/insert-interval/) | 75   |                                                              | 这题要多做几遍                                               |
 | 60   | [Permutation Sequence](https://leetcode-cn.com/problems/permutation-sequence/) | 70   |                                                              | 这题思路巧妙，多做两遍                                       |
 | 61   | [Rotate List](https://leetcode-cn.com/problems/rotate-list/) | 90   |                                                              |                                                              |
-| 62   | [不同的路径](https://leetcode-cn.com/problems/rotate-list/) | medium   |    [排列组合法](code_java/src/solution/Solution62.java)       |      排列组合法: 将机器人行列要走的轨迹当作要选择的方块       |
+| 62   | [不同的路径](https://leetcode-cn.com/problems/rotate-list/) | medium   |    [排列组合法](solution/Solution62.java)       |      排列组合法: 将机器人行列要走的轨迹当作要选择的方块       |
 | 66   | [Plus One](https://leetcode-cn.com/problems/plus-one/)       | 100  |                                                              | 这题多看一遍                                                 |
 | 67   | [Add Binary](https://leetcode-cn.com/problems/add-binary/)   | 100  |                            |                                                            |
 | 68   | [Text Justification](https://leetcode-cn.com/problems/text-justification/) |      |                                                              |                                                              |
 | 69   | [Sqrt(x)](https://leetcode-cn.com/problems/sqrtx/)           | 85   |                                                              |                                                              |
-| 70   | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)  | easy | [迭代法/动态规划法/递归法](code_java/src/solution/Solution70.java) |                                                              |
+| 70   | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)  | easy | [迭代法/动态规划法/递归法](solution/Solution70.java) |                                                              |
 | 71   | [Simplify Path](https://leetcode-cn.com/problems/simplify-path/) | 80   |                                                              |                                                              |
 | 72   | [Edit Distance](https://leetcode-cn.com/problems/edit-distance/) | 75   |                                                              |                                                              |
 | 73   | [Set Matrix Zeroes](https://leetcode-cn.com/problems/set-matrix-zeroes/description/) | 90   |                                                              |                                                              |
@@ -316,7 +316,7 @@ leetcode练习题
 | 387  | [First Unique Character in a String](https://leetcode-cn.com/problems/first-unique-character-in-a-string/) | 100  |                                                              |                                                              |
 | 388  | [Longest Absolute File Path](https://leetcode-cn.com/problems/longest-absolute-file-path/) | 65   |                                                              | 其实不难，乍看没思路，多做几遍                               |
 | 391  | [Perfect Rectangle](https://leetcode-cn.com/problems/perfect-rectangle/) | 70   |                                                              | 这题很trick，多做两遍                                        |
-| 392  | [判断子序列](https://leetcode-cn.com/problems/is-subsequence/) | esay   |     [贪心算法/DP算法](code_java/src/solution/Solution62.java)  | DP算法：不建议使用，纯粹学习思想  |
+| 392  | [判断子序列](https://leetcode-cn.com/problems/is-subsequence/) | esay   |     [贪心算法/DP算法](solution/Solution392.java)  | DP算法：不建议使用，纯粹学习思想  |
 | 393  | [UTF-8 Validation](https://leetcode-cn.com/problems/utf-8-validation/) | 60   |                                                              | 错了很多次，多做几遍                                         |
 | 394  | [Decode String](https://leetcode-cn.com/problems/decode-string/) | 75   |                                                              | 这题容易错，多做四遍                                         |
 | 395  | [Longest Substring with At Least K Repeating Characters](https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/) | 65   |                                                              |                                                              |
@@ -343,7 +343,7 @@ leetcode练习题
 | 449  | [Serialize and Deserialize BST](https://leetcode-cn.com/problems/serialize-and-deserialize-bst) | 90   |                                                              | 和#297一样                                                   |
 | 450  | [Delete Node in a BST](https://leetcode-cn.com/problems/delete-node-in-a-bst/) | 60   |                                                              | 这题非常经典，值得多做十遍                                   |
 | 451  | [Sort Characters By Frequency](https://leetcode-cn.com/problems/sort-characters-by-frequency/) |      |                                                              |                                                              |
-| 455  | [分发饼干](https://leetcode-cn.com/problems/assign-cookies/) |  esay    |  [贪心算法](code_java/src/solution/Solution455.java)    |       贪心算法                 |
+| 455  | [分发饼干](https://leetcode-cn.com/problems/assign-cookies/) |  esay    |  [贪心算法](solution/Solution455.java)    |       贪心算法                 |
 | 458  | [可怜的小猪](https://leetcode-cn.com/problems/poor-pigs/)    | Hard |                                                              |                                                              |
 | 459  | [Repeated Substring Pattern](https://leetcode-cn.com/problems/repeated-substring-pattern/) |      |                                                              |                                                              |
 | 477  | [Total Hamming Distance](https://leetcode-cn.com/problems/total-hamming-distance/) |      |                                                              |                                                              |

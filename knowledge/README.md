@@ -8,24 +8,26 @@
     - [文本数据处理命令](Linux/笔记6-文本数据处理命令.md)
     - [Linux软件安装](Linux/笔记7-Linux软件安装.md)
 
-- [java](java/README.md)
-    - [Java队列](java/basic/Java队列.md)
+- [Java知识](java/README.md)
+    - [Java集合](java/basic/Java集合.md)
+        - [Java队列](java/basic/Java队列.md)
+        - [Java栈](java/basic/Java栈.md)
+        - [PriorityQueue](java/basic/PriorityQueue.md)
     - [java和javaw的区别](java/java和javaw的区别.md)
     - [JVM参数](java/jvm.md)
         - [JVM工具](java/jvmtools.md)
         - [JVM垃圾回收](java/jvm_gc.md)
     - [logback](java/logback/README.md)
+    - [Java工具类](java/utils/README.md)
+        - [BeanUtils](java/utils/BeanUtils.md)
+        - [Date类](java/utils/Date.md)
+        - [常见加密算法](java/utils/encryption.md)
     - [Maven常用命令](java/maven/mavencmd.md)
         - [pom介绍](java/maven/maven_pom.md)
     - [Mybatis](java/mybatis.md)
     - [springtest](java/springtest.md)
     - [Tomcat](java/tomcat.md)
     - [线程池](java/threadpool.md)
-    
-- [工具类](README.md)
-    - [BeanUtils](utils/BeanUtils.md)
-    - [Date类](utils/Date.md)
-    - [常见加密算法](utils/encryption.md)
 
 # 其他
 
