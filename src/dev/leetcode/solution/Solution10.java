@@ -5,7 +5,7 @@ package dev.leetcode.solution;
  * https://leetcode-cn.com/problems/regular-expression-matching/
  *
  *  1. 递归法求解
- *  2. dp 算法
+ *  2. dp算法
  * @Author: RunAtWorld
  * @Date: 2020/4/7 23:26
  */
@@ -31,6 +31,9 @@ public class Solution10 {
 
     /**
      * 递归法求解
+     * 时间复杂度和空间复杂度较为难算
+     * T=O((S+P)*2^(T+P/2))
+     * O=O((S+P)*2^(T+P/2))
      *
      * @param s
      * @param p
