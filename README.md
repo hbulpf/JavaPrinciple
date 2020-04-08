@@ -17,21 +17,26 @@
 
 ## 算法练习
 
-1. [基本数据结构与算法](dev/algorithm/README.md)
+1. [基本数据结构与算法](src/dev/algorithm/README.md)
     1. 链表
     1. 树
     1. 图
     1. 排序
         1. comparison sort
-            1. 插入排序
-            2. 交换排序
+            1. 插入排序 insertion
+                1. 插入排序 insertion sort
+                2. 希尔排序 shell sort
+            2. 交换排序 swap
+                1. 冒泡排序 bubble sort
+                2. 快速排序 quick sort
             3. 选择排序
-            4. 归并排序
+                1. 选择排序 selection sort
+                2. 堆排序 heap sort
+            4. 归并排序 merge sort
         1. integer sort
-            1. 
-    1. 动态规划
-    1. 贪心
-
+            1. 计数排序 counting sort
+            2. 桶排序 bucket sort
+            3. 基数排序 radix sort
 
 
 1. [笔试练习题](src/dev/exams/README.md)
