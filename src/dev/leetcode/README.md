@@ -316,6 +316,7 @@ leetcode练习题
 | 387  | [First Unique Character in a String](https://leetcode-cn.com/problems/first-unique-character-in-a-string/) | 100  |                                                              |                                                              |
 | 388  | [Longest Absolute File Path](https://leetcode-cn.com/problems/longest-absolute-file-path/) | 65   |                                                              | 其实不难，乍看没思路，多做几遍                               |
 | 391  | [Perfect Rectangle](https://leetcode-cn.com/problems/perfect-rectangle/) | 70   |                                                              | 这题很trick，多做两遍                                        |
+| 392  | [判断子序列](https://leetcode-cn.com/problems/is-subsequence/) | esay   |     [贪心算法/DP算法](code_java/src/solution/Solution62.java)  | DP算法：不建议使用，纯粹学习思想  |
 | 393  | [UTF-8 Validation](https://leetcode-cn.com/problems/utf-8-validation/) | 60   |                                                              | 错了很多次，多做几遍                                         |
 | 394  | [Decode String](https://leetcode-cn.com/problems/decode-string/) | 75   |                                                              | 这题容易错，多做四遍                                         |
 | 395  | [Longest Substring with At Least K Repeating Characters](https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/) | 65   |                                                              |                                                              |
@@ -342,6 +343,7 @@ leetcode练习题
 | 449  | [Serialize and Deserialize BST](https://leetcode-cn.com/problems/serialize-and-deserialize-bst) | 90   |                                                              | 和#297一样                                                   |
 | 450  | [Delete Node in a BST](https://leetcode-cn.com/problems/delete-node-in-a-bst/) | 60   |                                                              | 这题非常经典，值得多做十遍                                   |
 | 451  | [Sort Characters By Frequency](https://leetcode-cn.com/problems/sort-characters-by-frequency/) |      |                                                              |                                                              |
+| 455  | [分发饼干](https://leetcode-cn.com/problems/assign-cookies/) |  esay    |  [贪心算法](code_java/src/solution/Solution455.java)    |       贪心算法                 |
 | 458  | [可怜的小猪](https://leetcode-cn.com/problems/poor-pigs/)    | Hard |                                                              |                                                              |
 | 459  | [Repeated Substring Pattern](https://leetcode-cn.com/problems/repeated-substring-pattern/) |      |                                                              |                                                              |
 | 477  | [Total Hamming Distance](https://leetcode-cn.com/problems/total-hamming-distance/) |      |                                                              |                                                              |
