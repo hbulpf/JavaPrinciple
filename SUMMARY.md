@@ -32,7 +32,11 @@
     - [Tomcat](knowledge/java/tomcat.md)
     - [线程池](knowledge/java/threadpool.md)
     
+# 算法
 
+- [基本数据结构与算法](src/dev/algorithm/README.md)
+    - [五大常用算法](src/dev/algorithm/五大常用算法.md)
+- [leetcode](src/dev/leetcode/README.md)
 
 # 其他
 
