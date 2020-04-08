@@ -49,5 +49,14 @@
 2. [观察者模式](src/dev/designpattern/observer)
 2. [原型模式](src/dev/designpattern/prototype)
 
+
+----------------------------------------
+
+**项目规范**
+
+本文使用 [`Markdown`](https://www.markdownguide.org/basic-syntax) 编写, 排版符合[`中文技术文档写作规范`](https://github.com/hbulpf/document-style-guide)。Find Me On [**Github**](https://github.com/hbulpf/JavaPrinciple) , [**Gitee**](https://gitee.com/sifangcloud/JavaPrinciple)
+
 **友情贡献**
-@[**iceyung**](https://github.com/iceyung)
+
+@[**RunAtWorld**](http://www.github.com/RunAtWorld)  &nbsp;  @[**iceyung**](https://github.com/iceyung) 
+
