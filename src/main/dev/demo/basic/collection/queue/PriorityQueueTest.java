@@ -1,4 +1,5 @@
-package dev.demo.basic.queue;
+package dev.demo.basic.collection.queue;
+
 
 import dev.demo.entity.Student;
 

@@ -1,4 +1,4 @@
-package dev.demo.basic.stack;
+package dev.demo.basic.collection.stack;
 
 import java.util.EmptyStackException;
 import java.util.Stack;

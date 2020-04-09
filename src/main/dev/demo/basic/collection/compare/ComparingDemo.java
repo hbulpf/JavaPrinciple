@@ -1,16 +1,11 @@
 
-package dev.lpf.demo.basic.collection.compare;
+package dev.demo.basic.collection.compare;
+
+import dev.demo.entity.Employee;
+import dev.demo.entity.Student;
 
 import java.text.Collator;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Locale;
-
-import dev.lpf.demo.entity.Employee;
-import dev.lpf.demo.entity.Student;
+import java.util.*;
 
 /**
  * Compare 使用

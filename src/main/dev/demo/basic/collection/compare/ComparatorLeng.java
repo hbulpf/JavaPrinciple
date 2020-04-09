@@ -1,5 +1,5 @@
 
-package dev.lpf.demo.basic.collection.compare;
+package dev.demo.basic.collection.compare;
 
 import java.util.Comparator;
 

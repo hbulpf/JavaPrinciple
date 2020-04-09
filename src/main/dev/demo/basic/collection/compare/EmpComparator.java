@@ -1,8 +1,8 @@
-package dev.lpf.demo.basic.collection.compare;
+package dev.demo.basic.collection.compare;
+
+import dev.demo.entity.Employee;
 
 import java.util.Comparator;
-
-import dev.lpf.demo.entity.Employee;
 
 /**
  * 雇员信息比较

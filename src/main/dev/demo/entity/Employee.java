@@ -1,5 +1,5 @@
 
-package dev.lpf.demo.entity;
+package dev.demo.entity;
 
 import java.io.Serializable;
 
