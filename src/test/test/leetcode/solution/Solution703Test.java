@@ -1,4 +1,4 @@
-package test.lpf.leetcode.solution;
+package test.leetcode.solution;
 
 import dev.leetcode.solution.Solution703;
 import org.junit.Test;

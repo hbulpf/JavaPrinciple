@@ -1,5 +1,5 @@
 
-package test.lpf.leetcode.solution;
+package test.leetcode.solution;
 
 import dev.leetcode.solution.Solution110;
 import dev.leetcode.solution.TreeNode;
