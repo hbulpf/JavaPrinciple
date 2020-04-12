@@ -63,7 +63,7 @@ leetcode练习题
 | 60   | [Permutation Sequence](https://leetcode-cn.com/problems/permutation-sequence/) | 70   |                                                              | 这题思路巧妙，多做两遍                                       |
 | 61   | [Rotate List](https://leetcode-cn.com/problems/rotate-list/) | 90   |                                                              |                                                              |
 | 62   | [不同的路径](https://leetcode-cn.com/problems/unique-paths/) | medium   |    [排列组合法/DP算法](solution/Solution62.java)       |      排列组合法: 将机器人行列要走的轨迹当作要选择的方块       |
-| 63   | [不同的路径](https://leetcode-cn.com/problems/unique-paths-ii/) | medium   |    [动态规划法](solution/Solution63.java)       |      排列组合法: 将机器人行列要走的轨迹当作要选择的方块       |
+| 63   | [不同的路径2](https://leetcode-cn.com/problems/unique-paths-ii/) | medium   |    [DP算法](solution/Solution63.java)       |      DP算法,可以利用原先矩阵将空间复杂度降为 O(1)       |
 | 66   | [Plus One](https://leetcode-cn.com/problems/plus-one/)       | 100  |                                                              | 这题多看一遍                                                 |
 | 67   | [Add Binary](https://leetcode-cn.com/problems/add-binary/)   | 100  |                            |                                                            |
 | 68   | [Text Justification](https://leetcode-cn.com/problems/text-justification/) |      |                                                              |                                                              |
