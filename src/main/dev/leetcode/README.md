@@ -12,7 +12,7 @@ leetcode练习题
 | 7    | [Reverse Integer](https://leetcode-cn.com/problems/reverse-integer/) | 95   |                                                              |                                                              |
 | 8    | [String to Integer (atoi)](https://leetcode-cn.com/problems/string-to-integer-atoi/) | 90   |                                                              | 很考代码能力，容易错                                         |
 | 9    | [Palindrome Number](https://leetcode-cn.com/problems/palindrome-number/) |      |                                                              |                                                              |
-| 10   | [正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/) | 60   |                                                              | 这题很经典，多做几遍，和#44一起                              |
+| 10   | [正则表达式匹配](https://leetcode-cn.com/problems/regular-expression-matching/) | 60   |   [递归法](solution/Solution10.java)                          | 这题很经典，多做几遍，和#44一起                              |
 | 11   | [Container With Most Water](https://leetcode-cn.com/problems/container-with-most-water/) |      |                                                              |                                                              |
 | 12   | [Integer to Roman](https://leetcode-cn.com/problems/integer-to-roman/) |      |                                                              |                                                              |
 | 13   | [Roman to Integer](https://leetcode-cn.com/problems/roman-to-integer/) |      |                                                              |                                                              |
@@ -62,7 +62,8 @@ leetcode练习题
 | 57   | [Insert Interval](https://leetcode-cn.com/problems/insert-interval/) | 75   |                                                              | 这题要多做几遍                                               |
 | 60   | [Permutation Sequence](https://leetcode-cn.com/problems/permutation-sequence/) | 70   |                                                              | 这题思路巧妙，多做两遍                                       |
 | 61   | [Rotate List](https://leetcode-cn.com/problems/rotate-list/) | 90   |                                                              |                                                              |
-| 62   | [不同的路径](https://leetcode-cn.com/problems/rotate-list/) | medium   |    [排列组合法](solution/Solution62.java)       |      排列组合法: 将机器人行列要走的轨迹当作要选择的方块       |
+| 62   | [不同的路径](https://leetcode-cn.com/problems/unique-paths/) | medium   |    [排列组合法/DP算法](solution/Solution62.java)       |      排列组合法: 将机器人行列要走的轨迹当作要选择的方块       |
+| 63   | [不同的路径](https://leetcode-cn.com/problems/unique-paths-ii/) | medium   |    [动态规划法](solution/Solution63.java)       |      排列组合法: 将机器人行列要走的轨迹当作要选择的方块       |
 | 66   | [Plus One](https://leetcode-cn.com/problems/plus-one/)       | 100  |                                                              | 这题多看一遍                                                 |
 | 67   | [Add Binary](https://leetcode-cn.com/problems/add-binary/)   | 100  |                            |                                                            |
 | 68   | [Text Justification](https://leetcode-cn.com/problems/text-justification/) |      |                                                              |                                                              |
