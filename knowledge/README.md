@@ -13,6 +13,7 @@
         - [Java队列](java/basic/Java队列.md)
         - [Java栈](java/basic/Java栈.md)
         - [PriorityQueue](java/basic/PriorityQueue.md)
+        - [List和Array用法](java/basic/List和Array用法.md)
     - [java和javaw的区别](java/java和javaw的区别.md)
     - [JVM参数](java/jvm.md)
         - [JVM工具](java/jvmtools.md)

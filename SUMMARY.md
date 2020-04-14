@@ -16,6 +16,7 @@
         - [Java队列](knowledge/java/basic/Java队列.md)
         - [Java栈](knowledge/java/basic/Java栈.md)
         - [PriorityQueue](knowledge/java/basic/PriorityQueue.md)
+        - [List和Array用法](knowledge/java/basic/List和Array用法.md)
     - [java和javaw的区别](knowledge/java/java和javaw的区别.md)
     - [JVM参数](knowledge/java/jvm.md)
         - [JVM工具](knowledge/java/jvmtools.md)
