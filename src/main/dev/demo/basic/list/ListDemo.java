@@ -13,9 +13,9 @@ class ListDemo {
     public static void main(String[] args) {
         System.out.println("-------Array2List---------");
         array2List();
-        System.out.println("-------List2Array---------");
+        System.out.println("-------List包装String---------");
         listAndString();
-        System.out.println("-------List包装---------");
+        System.out.println("-------List包装Integer---------");
         listAndInteger();
     }
 
