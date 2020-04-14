@@ -14,7 +14,7 @@ import dev.lpf.demo.entity.Student;
 public class ListDemo2 {
     public static void main(String[] args) {
         test01();
-        test02();
+        array2List();
         test03();
         arrayList2String();
         string2ArrayList();
@@ -44,9 +44,11 @@ public class ListDemo2 {
     /**
      * Array 转成 List
      */
-    public static void test02() {
+    public static void array2List() {
         String[] array = new String[] {"aaa", "bbb"};
         System.out.println(Arrays.toString(array));
+        // 转换方法1
+        // List list = Arrays.stream(arr).boxed().collect(Collectors.toList());
         List list = Arrays.asList(array);
         System.out.println(list.toString());
         // list.add("hiss");
