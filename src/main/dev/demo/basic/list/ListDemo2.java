@@ -1,12 +1,13 @@
 
-package dev.lpf.demo.basic.collection.list;
+package dev.demo.basic.list;
+
+import dev.demo.entity.Student;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import dev.lpf.demo.entity.Student;
 
 /**
  * List Demo2

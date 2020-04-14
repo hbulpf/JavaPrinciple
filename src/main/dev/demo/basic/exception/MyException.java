@@ -1,7 +1,7 @@
 package dev.demo.basic.exception;
 
 /**
- * 功能描述
+ *  自定义 Exception
  *
  */
 public class MyException extends Exception {

@@ -1,4 +1,4 @@
-package dev.lpf.demo.basic.collection.list;
+package dev.demo.basic.list;
 
 import java.util.ArrayList;
 import java.util.Arrays;
