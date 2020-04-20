@@ -32,7 +32,9 @@
     - [springtest](knowledge/java/springtest.md)
     - [Tomcat](knowledge/java/tomcat.md)
     - [线程池](knowledge/java/threadpool.md)
-    
+
+- [Java工程师路径](knowledge/java/JavaPath.md)
+  
 # 算法
 
 - [基本数据结构与算法](src/dev/algorithm/README.md)
