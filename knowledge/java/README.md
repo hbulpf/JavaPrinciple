@@ -18,6 +18,8 @@
     - [Date类](utils/Date.md)
     - [常见加密算法](utils/encryption.md)
 
+- [Java工程师路径](JavaPath.md)
+
 # 其他
 
 - [小技巧](tips.md)
