@@ -1,4 +1,4 @@
-# JVM系列:(1)内存组成
+# JVM系列:(1)JVM内存组成
 
 > JVM虚拟机是Java应用的核心，本文主要讲了JVM的基本组成以及 -Xss/-Xms/-XX:PermSize等简单的调优参数。
 
