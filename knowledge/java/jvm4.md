@@ -1,13 +1,16 @@
-# JVM参数
+# JVM系列:(4)JVM参数优化设置
 
-不管是YGC还是Full GC,GC过程中都会对导致程序运行中中断,正确的选择[不同的GC策略](http://www.cnblogs.com/redcreen/archive/2011/05/04/2037029.html),调整JVM、GC的参数，可以极大的减少由于GC工作，而导致的程序运行中断方面的问题，进而适当的提高Java程序的工作效率。但是调整GC是以个极为复杂的过程，由于各个程序具备不同的特点，如：web和GUI程序就有很大区别（Web可以适当的停顿，但GUI停顿是客户无法接受的），而且由于跑在各个机器上的配置不同（主要cup个数，内存不同），所以使用的GC种类也会不同(如何选择见[GC种类及如何选择](http://www.cnblogs.com/redcreen/archive/2011/05/04/2037029.html))。本文将注重介绍JVM、GC的一些重要参数的设置来提高系统的性能。
+> 不管是YGC还是Full GC,GC过程中都会对导致程序运行中中断,正确的选择不同的GC策略,调整JVM、GC的参数，可以极大的减少由于GC工作，而导致的程序运行中断方面的问题，进而适当的提高Java程序的工作效率。但是调整GC是以个极为复杂的过程，由于各个程序具备不同的特点，如：web和GUI程序就有很大区别（Web可以适当的停顿，但GUI停顿是客户无法接受的），而且由于跑在各个机器上的配置不同（主要cup个数，内存不同），所以使用的GC种类也会不同(如何选择见GC种类及如何选择。本文将注重介绍JVM、GC的一些重要参数的设置来提高系统的性能。
 
-JVM内存组成及GC相关内容请见的文章:[JVM内存组成](http://www.cnblogs.com/redcreen/archive/2011/05/04/2036387.html) [GC策略&内存申请](http://www.cnblogs.com/redcreen/archive/2011/05/04/2037056.html)。
+JVM内存组成及GC相关内容请见的文章:
+
+1. [JVM内存组成](jvm1.md) 
+2. [GC策略&内存申请](jvm2.md)
 
 **JVM参数的含义** 实例见[实例分析](http://www.cnblogs.com/redcreen/archive/2011/05/05/2038331.html)
 
 | **参数名称**                | **含义**                                                   | **默认值**           |                                                              |
-| --------------------------- | ---------------------------------------------------------- | -------------------- | ------------------------------------------------------------ |
+| --------------------------| ---------------------------------------------------------| -------------------| -----------------------------------------------------------|
 | -Xms                        | 初始堆大小                                                 | 物理内存的1/64(<1GB) | 默认(MinHeapFreeRatio参数可以调整)空余堆内存小于40%时，JVM就会增大堆直到-Xmx的最大限制. |
 | -Xmx                        | 最大堆大小                                                 | 物理内存的1/4(<1GB)  | 默认(MaxHeapFreeRatio参数可以调整)空余堆内存大于70%时，JVM会减少堆直到 -Xms的最小限制 |
 | -Xmn                        | 年轻代大小                                   |                      | **注意**：此处的大小是（eden+2*survivor space).与jmap -heap中显示的New gen是不同的。 整个堆大小=年轻代大小 + 年老代大小 + 持久代大小. 持久代一般固定大小为 64m,增大年轻代后,将会减小年老代大小.此值对系统性能影响较大,Sun官方推荐配置为整个堆的3/8 |
@@ -33,8 +36,9 @@ JVM内存组成及GC相关内容请见的文章:[JVM内存组成](http://www.cnb
 
 **并行收集器相关参数**
 
+| **参数名称**                | **含义**                                                   | **默认值**           |                                                              |
+| --------------------------| ------------------------------------------------| ---| -----------------------------------------------------------|
 | -XX:+UseParallelGC          | Full GC采用parallel MSC (此项待验证)              |      | 选择垃圾收集器为并行收集器.此配置仅对年轻代有效.即上述配置下,年轻代使用并发收集,而年老代仍旧使用串行收集.(此项待验证) |
-| --------------------------- | ------------------------------------------------- | ---- | ------------------------------------------------------------ |
 | -XX:+UseParNewGC            | 设置年轻代为并行收集                              |      | 可与CMS收集同时使用 JDK5.0以上,JVM会根据系统配置自行设置,所以无需再设置此值 |
 | -XX:ParallelGCThreads       | 并行收集器的线程数                                |      | 此值最好配置与处理器数目相等 同样适用于CMS                   |
 | -XX:+UseParallelOldGC       | 年老代垃圾收集方式为并行收集(Parallel Compacting) |      | 这个是JAVA 6出现的参数选项                                   |
@@ -45,8 +49,9 @@ JVM内存组成及GC相关内容请见的文章:[JVM内存组成](http://www.cnb
 
 **CMS相关参数**
 
+| **参数名称**                | **含义**                                                   | **默认值**           |                                                              |
+| --------------------------| ------------------------------------------------| ---| -----------------------------------------------------------|
 | -XX:+UseConcMarkSweepGC                | 使用CMS内存收集                           |      | 测试中配置这个以后,-XX:NewRatio=4的配置失效了,原因不明.所以,此时年轻代大小最好用-Xmn设置.??? |
-| -------------------------------------- | ----------------------------------------- | ---- | ------------------------------------------------------------ |
 | -XX:+AggressiveHeap                    |                                           |      | 试图是使用大量的物理内存 长时间大内存使用的优化，能检查计算资源（内存， 处理器数量） 至少需要256MB内存 大量的CPU／内存， （在1.4.1在4CPU的机器上已经显示有提升） |
 | -XX:CMSFullGCsBeforeCompaction         | 多少次后进行内存压缩                      |      | 由于并发收集器不对内存空间进行压缩,整理,所以运行一段时间以后会产生"碎片",使得运行效率降低.此值设置运行多少次GC以后对内存空间进行压缩,整理. |
 | -XX:+CMSParallelRemarkEnabled          | 降低标记停顿                              |      |                                                              |
@@ -59,8 +64,9 @@ JVM内存组成及GC相关内容请见的文章:[JVM内存组成](http://www.cnb
 
 **辅助信息**
 
+| **参数名称**                | **含义**                                                   | **默认值**           |                                                              |
+| --------------------------| ------------------------------------------------| ---| -----------------------------------------------------------|
 | -XX:+PrintGC                          |                                                          |      | 输出形式:[GC 118250K->113543K(130112K), 0.0094143 secs] [Full GC 121376K->10414K(130112K), 0.0650971 secs] |
-| ------------------------------------- | -------------------------------------------------------- | ---- | ------------------------------------------------------------ |
 | -XX:+PrintGCDetails                   |                                                          |      | 输出形式:[GC [DefNew: 8614K->781K(9088K), 0.0123035 secs] 118250K->113543K(130112K), 0.0124633 secs] [GC [DefNew: 8614K->8614K(9088K), 0.0000665 secs][Tenured: 112761K->10414K(121024K), 0.0433488 secs] 121376K->10414K(130112K), 0.0436268 secs] |
 | -XX:+PrintGCTimeStamps                |                                                          |      |                                                              |
 | -XX:+PrintGC:PrintGCTimeStamps        |                                                          |      | 可与-XX:+PrintGC -XX:+PrintGCDetails混合使用 输出形式:11.851: [GC 98328K->93620K(130112K), 0.0082960 secs] |
@@ -72,21 +78,21 @@ JVM内存组成及GC相关内容请见的文章:[JVM内存组成](http://www.cnb
 | -XX:+PrintTLAB                        | 查看TLAB空间的使用情况                                   |      |                                                              |
 | XX:+PrintTenuringDistribution         | 查看每次minor GC后新的存活周期的阈值                     |      | Desired survivor size 1048576 bytes, new threshold 7 (max 15) new threshold 7即标识新的存活周期的阈值为7。 |
 
-**GC性能方面的考虑**
+## GC性能方面的考虑
 
 对于GC的性能主要有2个方面的指标：吞吐量throughput（工作时间不算gc的时间占总的时间比）和暂停pause（gc发生时app对外显示的无法响应）。
 
-1.Total Heap
+### 1. Total Heap
 
 默认情况下，vm会增加/减少heap大小以维持free space在整个vm中占的比例，这个比例由MinHeapFreeRatio和MaxHeapFreeRatio指定。
 
 一般而言，server端的app会有以下规则：
 
-- 对vm分配尽可能多的memory；
-- 将Xms和Xmx设为一样的值。如果虚拟机启动时设置使用的内存比较小，这个时候又需要初始化很多对象，虚拟机就必须重复地增加内存。
-- 处理器核数增加，内存也跟着增大。
+对vm分配尽可能多的memory；
+将Xms和Xmx设为一样的值。如果虚拟机启动时设置使用的内存比较小，这个时候又需要初始化很多对象，虚拟机就必须重复地增加内存。
+处理器核数增加，内存也跟着增大。
 
-2.The Young Generation
+### 2.The Young Generation
 
 另外一个对于app流畅性运行影响的因素是young generation的大小。young generation越大，minor collection越少；但是在固定heap size情况下，更大的young generation就意味着小的tenured generation，就意味着更多的major collection(major collection会引发minor collection)。
 
@@ -96,15 +102,15 @@ NewRatio反映的是young和tenured generation的大小比例。NewSize和MaxNew
 
 一般而言，server端的app会有以下规则：
 
-- 首先决定能分配给vm的最大的heap size，然后设定最佳的young generation的大小；
-- 如果heap size固定后，增加young generation的大小意味着减小tenured generation大小。让tenured generation在任何时候够大，能够容纳所有live的data（留10%-20%的空余）。
+首先决定能分配给vm的最大的heap size，然后设定最佳的young generation的大小；
+如果heap size固定后，增加young generation的大小意味着减小tenured generation大小。让tenured generation在任何时候够大，能够容纳所有live的data（留10%-20%的空余）。
 
-**经验&&规则**
+## 经验&&规则
 
 1. 年轻代大小选择
-   - 响应时间优先的应用:尽可能设大,直到接近系统的最低响应时间限制(根据实际情况选择).在此种情况下,年轻代收集发生的频率也是最小的.同时,减少到达年老代的对象.
-   - 吞吐量优先的应用:尽可能的设置大,可能到达Gbit的程度.因为对响应时间没有要求,垃圾收集可以并行进行,一般适合8CPU以上的应用.
-   - 避免设置过小.当新生代设置过小时会导致:1.YGC次数更加频繁 2.可能导致YGC对象直接进入旧生代,如果此时旧生代满了,会触发FGC.
+   响应时间优先的应用:尽可能设大,直到接近系统的最低响应时间限制(根据实际情况选择).在此种情况下,年轻代收集发生的频率也是最小的.同时,减少到达年老代的对象.
+   吞吐量优先的应用:尽可能的设置大,可能到达Gbit的程度.因为对响应时间没有要求,垃圾收集可以并行进行,一般适合8CPU以上的应用.
+   避免设置过小.当新生代设置过小时会导致:1.YGC次数更加频繁 2.可能导致YGC对象直接进入旧生代,如果此时旧生代满了,会触发FGC.
 2. 年老代大小选择
    1. 响应时间优先的应用:年老代使用并发收集器,所以其大小需要小心设置,一般要考虑并发会话率和会话持续时间等一些参数.如果堆设置小了,可以会造成内存碎 片,高回收频率以及应用暂停而使用传统的标记清除方式;如果堆大了,则需要较长的收集时间.最优化的方案,一般需要参考以下数据获得:
       并发垃圾收集信息、持久代并发收集次数、传统GC信息、花在年轻代和年老代回收上的时间比例。
@@ -121,7 +127,7 @@ NewRatio反映的是young和tenured generation的大小比例。NewSize和MaxNew
 9. 采用并发回收时，年轻代小一点，年老代要大，因为年老大用的是并发回收，即使时间长点也不会影响其他程序继续运行，网站不会停顿
 10. JVM参数的设置(特别是 –Xmx –Xms –Xmn -XX:SurvivorRatio -XX:MaxTenuringThreshold等参数的设置没有一个固定的公式，需要根据PV old区实际数据 YGC次数等多方面来衡量。为了避免promotion faild可能会导致Xmn设置偏小，也意味着YGC的次数会增多，处理并发访问的能力下降等问题。每个参数的调整都需要经过详细的性能测试，才能找到特定应用的最佳配置。
 
-**promotion failed:**
+promotion failed:
 
 垃圾回收时promotion failed是个很头痛的问题，一般可能是两种原因产生，第一个原因是救助空间不够，救助空间里的对象还不应该被移动到年老代，但年轻代又有很多对象需要放入救助空间；第二个原因是年老代没有足够的空间接纳来自年轻代的对象；这两种情况都会转向Full GC，网站停顿时间较长。
 
@@ -145,14 +151,21 @@ NewRatio反映的是young和tenured generation的大小比例。NewSize和MaxNew
 -XX:SoftRefLRUPolicyMSPerMB=0 -XX:+PrintClassHistogram -XX:+PrintGCDetails 
 -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC -Xloggc:log/gc.log
 ```
- 
 
-**CMSInitiatingOccupancyFraction值与Xmn的关系公式**
+
+## CMSInitiatingOccupancyFraction值与Xmn的关系公式
 
 上面介绍了promontion faild产生的原因是EDEN空间不足的情况下将EDEN与From survivor中的存活对象存入To survivor区时,To survivor区的空间不足，再次晋升到old gen区，而old gen区内存也不够的情况下产生了promontion faild从而导致full gc.那可以推断出：eden+from survivor < old gen区剩余内存时，不会出现promontion faild的情况，即：
-(Xmx-Xmn)*(1-CMSInitiatingOccupancyFraction/100)>=(Xmn-Xmn/(SurvivorRatior+2)) 进而推断出：
 
+```
+(Xmx-Xmn)*(1-CMSInitiatingOccupancyFraction/100)>=(Xmn-Xmn/(SurvivorRatior+2)) 
+```
+
+进而推断出：
+
+```
 CMSInitiatingOccupancyFraction <=((Xmx-Xmn)-(Xmn-Xmn/(SurvivorRatior+2)))/(Xmx-Xmn)*100
+```
 
 例如：
 ```
@@ -170,27 +183,18 @@ CMSInitiatingOccupancyFraction低于70% 需要调整Xmn或SurvivorRatior值。
 
 令,[网上一童鞋](http://bbs.weblogicfans.net/archiver/tid-2835.html)推断出的公式是：:(Xmx-Xmn)*(100-CMSInitiatingOccupancyFraction)/100>=Xmn 这个公式个人认为不是很严谨，在内存小的时候会影响Xmn的计算。
 
- 
-
-关于实际环境的GC参数配置见:[实例分析](http://www.cnblogs.com/redcreen/archive/2011/05/05/2038331.html)  [监测工具见JVM监测](http://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html)
 
 # 参考
-- [JVM系列三:JVM参数设置、分析](https://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html) 
-- [JVM -- JVM优化参数设置](https://www.liangzl.com/get-article-detail-151737.html)
-- [JAVA HOTSPOT VM](http://www.helloying.com/blog/archives/164)
-- [JVM 几个重要的参数](http://www.iteye.com/wiki/jvm/2870-JVM) 
-- [java jvm 参数 -Xms -Xmx -Xmn -Xss 调优总结](http://hi.baidu.com/sdausea/blog/item/c599ef13fcd3a7dbf6039e12.html)
-- [Java HotSpot VM Options](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html)
-- [Frequently Asked Questions About the Java HotSpot VM](http://www.oracle.com/technetwork/java/hotspotfaq-138619.html)
-- [Java SE HotSpot at a Glance](http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136373.html)
-- [Java性能调优笔记](http://blog.csdn.net/yang_net/archive/2010/08/22/5830820.aspx)
-- [说说MaxTenuringThreshold这个参数](http://blog.bluedavy.com/?p=70)
 
-
-
-相关文章推荐:
-
-[GC调优方法总结](http://blog.csdn.net/pigeon21/archive/2011/01/27/6166217.aspx)
-
-[Java 6 JVM参数选项大全（中文版）](http://kenwublog.com/docs/java6-jvm-options-chinese-edition.htm)
-
+1. [JVM系列三:JVM参数设置、分析](https://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html) 
+1. [JVM -JVM优化参数设置](https://www.liangzl.com/get-article-detail-151737.html)
+2. [JAVA HOTSPOT VM](http://www.helloying.com/blog/archives/164)
+3. [JVM 几个重要的参数](http://www.iteye.com/wiki/jvm/2870-JVM) 
+4. [java jvm 参数 -Xms -Xmx -Xmn -Xss 调优总结](http://hi.baidu.com/sdausea/blog/item/c599ef13fcd3a7dbf6039e12.html)
+5. [Java HotSpot VM Options](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html)
+6. [Frequently Asked Questions About the Java HotSpot VM](http://www.oracle.com/technetwork/java/hotspotfaq-138619.html)
+7. [Java SE HotSpot at a Glance](http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136373.html)
+8. [Java性能调优笔记](http://blog.csdn.net/yang_net/archive/2010/08/22/5830820.aspx)
+9. [说说MaxTenuringThreshold这个参数](http://blog.bluedavy.com/?p=70)
+10. [GC调优方法总结](http://blog.csdn.net/pigeon21/archive/2011/01/27/6166217.aspx)
+11. [Java 6 JVM参数选项大全（中文版）](http://kenwublog.com/docs/java6-jvm-options-chinese-edition.htm)
