@@ -1,5 +1,7 @@
 # JVM系列:(2)HotSpot垃圾收集器的种类
 
+> JVM垃圾收集器是GC过程的核心组件，本文以HotSpot虚拟机为例，主要介绍 serial collector、parallel collector、concurrent collector 3种垃圾收集器并比较了他们的区别。
+
 ## Collector种类   
 
 GC在 HotSpot VM 5.0里有四种：
@@ -10,9 +12,9 @@ GC在 HotSpot VM 5.0里有四种：
 | ---------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 |**介绍**                     | 单线程收集器 使用单线程去完成所有的gc工作，没有线程间的通信，这种方式会相对高效 | 并行收集器 使用多线程的方式，利用多CPU来提高GC的效率 主要以到达一定的吞吐量为目标 | 并发收集器 使用多线程的方式,利用多CPU来提高GC的效率 并发完成大部分工作，使得gc pause短 |
 |**试用场景**                 | 单处理器机器且没有pause time的要求                           | 适用于科学技术和后台处理 有中规模/大规模数据集大小的应用且运行在多处理器上，关注吞吐量(throughput) | 适合中规模/大规模数据集大小的应用，应用服务器,电信领域 关注response time，而不是throughput |
-|**使用**                     | Client模式下默认可用<br/> 可用`-XX:+UseSerialGC` 强制使用 <br/>优点:对server应用没什么优点 <br/>缺点:慢,不能充分发挥硬件资源 | Server模式下默认<br/>--YGC:PS FGC:Parallel MSC<br/>可用`-XX:+UseParallelGC` 或 `-XX:+UseParallelOldGC` 强制指定<br/>--ParallelGC代表FGC<br/>为Parallel MSC<br/>--ParallelOldGC代表FGC为Parallel Compacting**<br/>优点**:高效**<br/>缺点**:当heap变大后,造成的暂停时间会变得比较长 | 可用 `-XX:+UseConcMarkSweepGC` 强制指定 <br/>**<br/>优点**:对old进行回收时,对应用造成的暂停时间非常端,适合对latency要求比较高的应用 <br/> **<br/>缺点**:<br/>1.内存碎片和浮动垃圾<br/>2.old去的内存分配效率低<br/>3.回收的整个耗时比较长<br/>4.和应用争抢CPU` |
-|**内存回收触发**             |**YGC**<br/> eden空间不足 <br/>**FGC<br/>**<br/>old空间不足 <br/>perm空间不足 <br/>显示调用System.gc() ,包括RMI等的定时触发YGC<br/>时的悲观策略 <br/>dump live的内存信息时(jmap –dump:live) |**YGC**<br/>eden空间不足**<br/> FGC<br/>**<br/> old空间不足 <br/>perm空间不足 <br/>显示调用System.gc() ,包括RMI等的定时触发YGC的悲观策略<br/> YGC前&YGC后 <br/>dump live的内存信息时(jmap –dump:live) |**YGC**<br/> eden空间不足**<br/> CMS GC**<br/> 1.old Gen的使用率大的一定的比率 默认为92% <br/>2.配置了CMSClassUnloadingEnabled,且Perm Gen的使用达到一定的比率 默认为92% <br/>3.Hotspot自己根据估计决定是否要触法 <br/>4.在配置了ExplictGCInvokesConcurrent的情况下显示调用了System.gc.**<br/> Full GC(Serial MSC)**<br/> promotion failed 或 concurrent Mode Failure时; |
-|**内存回收触发时发生了什么** |**YGC**<br/>清空eden+from中所有no ref的对象占用的内存 <br/>将eden+from中的所有存活的对象copy到to中,在这个过程中一些对象将晋升到old中: to放不下的,存活次数超过tenuring threshold的 <br/>重新计算Tenuring Threshold; <br/>单线程做以上动作,全程暂停应用**<br/> FGC**<br/> 如果配置了CollectGen0First,则先触发YGC<br/> 清空heap中no ref的对象,permgen中已经被卸载的classloader中加载的class的信息<br/> 单线程做以上动作,全程暂停应用 |**YGC**<br/> 同serial动作基本相同,不同点: <br/>1.多线程处理 2.YGC<br/>的最后不仅重新计算Tenuring Threshold,还会重新调整Eden和From的大小**<br/> FGC<br/>** 1.如配置了ScavengeBeforeFullGC(默认),则先触发YGC<br/> 2.MSC:清空heap中的no ref对象,permgen中已经被卸载的classloader中加载的class信息,并进行压缩 3.Compacting:清空heap中部分no ref的对象,permgen中已经被卸载的classloader中加载的class信息,并进行部分压缩 多线程做以上动作. |**YGC<br/>** 同serial动作基本相同,不同点: 1.多线程处理**<br/> CMSGC:**<br/> 1.old gen到达比率时只清除old gen中no ref的对象所占用的空间 <br/>2.perm gen到达比率时只清除已被清除的classloader加载的class信息**<br/> FGC<br/>**<br/> 同serial |
+|**使用**                     | Client模式下默认可用<br/> 可用`-XX:+UseSerialGC` 强制使用 <br/>优点:对server应用没什么优点 <br/>缺点:慢,不能充分发挥硬件资源 | Server模式下默认<br/>--YGC:PS FGC:Parallel MSC<br/>可用`-XX:+UseParallelGC` 或 `-XX:+UseParallelOldGC` 强制指定<br/>--ParallelGC代表FGC<br/>为Parallel MSC<br/>--ParallelOldGC代表FGC为Parallel Compacting<br/>优点:高效**<br/>缺点**:当heap变大后,造成的暂停时间会变得比较长 | 可用 `-XX:+UseConcMarkSweepGC` 强制指定 <br/>**<br/>优点**:对old进行回收时,对应用造成的暂停时间非常端,适合对latency要求比较高的应用 <br/> **<br/>缺点**:<br/>1.内存碎片和浮动垃圾<br/>2.old区的内存分配效率低<br/>3.回收的整个耗时比较长<br/>4.和应用争抢CPU |
+|**内存回收触发**             |**YGC**<br/> eden空间不足 <br/>**FGC**<br/>old空间不足 <br/>perm空间不足 <br/>显示调用System.gc() ,包括RMI等的定时触发YGC<br/>时的悲观策略 <br/>dump live的内存信息时(jmap –dump:live) |**YGC**<br/>eden空间不足<br/> **FGC**<br/> old空间不足 <br/>perm空间不足 <br/>显示调用System.gc() ,包括RMI等的定时触发YGC的悲观策略<br/> YGC前&YGC后 <br/>dump live的内存信息时(jmap –dump:live) |**YGC**<br/> eden空间不足<br/> **CMS GC**<br/> 1.old Gen的使用率大的一定的比率 默认为92% <br/>2.配置了CMSClassUnloadingEnabled,且Perm Gen的使用达到一定的比率 默认为92% <br/>3.Hotspot自己根据估计决定是否要触法 <br/>4.在配置了ExplictGCInvokesConcurrent的情况下显示调用了System.gc.**<br/> Full GC(Serial MSC)**<br/> promotion failed 或 concurrent Mode Failure时; |
+|**内存回收触发时发生了什么** |**YGC**<br/>清空eden+from中所有no ref的对象占用的内存 <br/>将eden+from中的所有存活的对象copy到to中,在这个过程中一些对象将晋升到old中: to放不下的,存活次数超过tenuring threshold的 <br/>重新计算Tenuring Threshold; <br/>单线程做以上动作,全程暂停应用<br/> **FGC**<br/> 如果配置了CollectGen0First,则先触发YGC<br/> 清空heap中no ref的对象,permgen中已经被卸载的classloader中加载的class的信息<br/> 单线程做以上动作,全程暂停应用 |**YGC**<br/> 同serial动作基本相同,不同点: <br/>1.多线程处理 2.YGC<br/>的最后不仅重新计算Tenuring Threshold,还会重新调整Eden和From的大小<br/> FGC<br/> 1.如配置了ScavengeBeforeFullGC(默认),则先触发YGC<br/> 2.MSC:清空heap中的no ref对象,permgen中已经被卸载的classloader中加载的class信息,并进行压缩 3.Compacting:清空heap中部分no ref的对象,permgen中已经被卸载的classloader中加载的class信息,并进行部分压缩 多线程做以上动作. |**YGC**<br/> 同serial动作基本相同,不同点: 1.多线程处理<br/> **CMSGC**<br/> 1.old gen到达比率时只清除old gen中no ref的对象所占用的空间 <br/>2.perm gen到达比率时只清除已被清除的classloader加载的class信息<br/>**FGC**<br/> 同serial |
 |**细节参数**                 | `-XX:+UseSerialGC`强制使用 <br/>`-XX:SurvivorRatio=x`控制eden/s0/s1的大小 <br/>`-XX:MaxTenuringThreshold`,用于控制对象在新生代存活的最大次数 <br/>`-XX:PretenureSizeThreshold=x`,控制超过多大的字节的对象就在old分配. | `-XX:SurvivorRatio=x`,控制eden/s0/s1的大小 <br/>`-XX:MaxTenuringThreshold`,用于控制对象在新生代存活的最大次数 <br/>`-XX:UseAdaptiveSizePolicy` 去掉YGC<br/>后动态调整eden from已经tenuringthreshold的动作<br/>`-XX:ParallelGCThreads` 设置并行的线程数 | `-XX:CMSInitiatingOcCPUancyFraction` 设置old gen使用到达多少比率时触发 <br/>`-XX:CMSInitiatingPermOcCPUancyFraction`,设置Perm Gen使用到达多少比率时触发 <br/>`-XX:+UseCMSInitiatingOcCPUancyOnly`禁止hostspot自行触发CMS GC |
 
 
@@ -39,8 +41,8 @@ GC在 HotSpot VM 5.0里有四种：
 
 在Incremental mode里，每个收集过程中，会暂停两次，第二次略长。第一次用来，简单从root查询存活对象。第二次用来，详细检查存活对象。整个过程如下：
 
-1. stop all application threads; do the initial mark; resume all application threads（第一次暂停，初始话标记）
-2. do the concurrent mark (uses one procesor for the concurrent work)（运行是标记）
+1. stop all application threads; do the initial mark; resume all application threads（第一次暂停，初始化标记）
+2. do the concurrent mark (uses one procesor for the concurrent work)（运行时标记）
 3. do the concurrent pre-clean (uses one processor for the concurrent work)（准备清理）
 4. stop all application threads; do the remark; resume all application threads（第二次暂停，标记，检查）
 5. do the concurrent sweep (uses one processor for the concurrent work)(运行过程中清理)
@@ -49,7 +51,7 @@ GC在 HotSpot VM 5.0里有四种：
 当要使用Incremental mode时，需要使用以下几个变量：
 
 ```
--XX:+CMSIncrementalMode default: disabled 启动i-CMS模式（must with -XX:+UseConcMarkSweepGC）
+-XX:+CMSIncrementalMode default: disabled 启动CMS模式（must with -XX:+UseConcMarkSweepGC）
 -XX:+CMSIncrementalPacing default: disabled 提供自动校正功能
 -XX:CMSIncrementalDutyCycle=<N> default: 50 启动CMS的上线
 -XX:CMSIncrementalDutyCycleMin=<N> default: 10 启动CMS的下线
@@ -71,7 +73,7 @@ SUN推荐的使用参数是：
 -XX:-TraceClassUnloading
 ```
 
-注：如果使用throughput collector和concurrent low pause collector，这两种垃圾收集器，需要适当的挺高内存大小，以为多线程做准备。
+注：如果使用throughput collector和concurrent low pause collector，这两种垃圾收集器，需要适当的提高内存大小，以为多线程做准备。
 
 **如何选择collector:**
 
