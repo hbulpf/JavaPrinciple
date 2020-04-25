@@ -28,6 +28,7 @@ public class OptionalTester {
         //OfNullable() 如果指定的值为 null，返回一个空的 Optional
         Optional<String> op3 = Optional.ofNullable(null);
         System.out.println(op3.isPresent()); // 输出 false
+        System.out.println(op3.orElse(""));
 
         System.out.println("---orElse(obj)");
         //orElse(obj) 如果实例非空，返回该实例，否则返回 obj
