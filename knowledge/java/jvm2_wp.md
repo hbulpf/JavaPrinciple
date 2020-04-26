@@ -53,7 +53,7 @@ Client模式下默认可用
 #### 细节参数
 
 * `-XX:+UseSerialGC` 强制使用SerialGC 
-* `-XX:SurvivorRatio=x` 控制eden/s0/s1的大小 
+* `-XX:SurvivorRatio=x` 控制eden/s0/s1的大小， 默认为8，也就是说Eden占新生代的8/10，From幸存区和To幸存区各占新生代的1/10
 * `-XX:MaxTenuringThreshold` 控制对象在新生代存活的最大次数 
 * `-XX:PretenureSizeThreshold=x` 控制超过多大的字节的对象就在old分配. 
 * `-XX:SurvivorRatio=x` 控制eden/s0/s1的大小 
@@ -102,8 +102,8 @@ Client模式下默认可用
  
 **FGC**
 1. 如配置了ScavengeBeforeFullGC(默认),则先触发YGC
-2. MSC:清空heap中的no ref对象,permgen中已经被卸载的classloader中加载的class信息,并进行压缩 
-3. Compacting:清空heap中部分no ref的对象,permgen中已经被卸载的classloader中加载的class信息,并进行部分压缩 多线程做以上动作.
+2. MSC:清空heap中的no ref对象,永久代中已经被卸载的classloader中加载的class信息,并进行压缩 
+3. Compacting:清空heap中部分no ref的对象,永久代中已经被卸载的classloader中加载的class信息,并进行部分压缩 多线程做以上动作.
 
 #### 细节参数
 
@@ -187,7 +187,7 @@ Client模式下默认可用
 
 当要使用 concurrent low pause collector时，在JVM启动参数里加上 `-XX:+UseConcMarkSweepGC` 。concurrent low pause collector还有一种为CPU少的机器准备的模式，叫Incremental mode。这种模式使用一个CPU来在程序运行的过程中GC，只用很少的时间暂停程序，检查对象存活。
 
-在Incremental mode里，每个收集过程中，会暂停两次，第二次略长。第一次用来，简单从root查询存活对象。第二次用来，详细检查存活对象。整个过程如下：
+在Incremental mode里，每个收集过程中，会暂停两次，第二次略长。第一次简单从root查询存活对象。第二次详细检查存活对象。整个过程如下：
 
 1. stop all application threads; do the initial mark; resume all application threads（第一次暂停，初始化标记）
 2. do the concurrent mark (uses one procesor for the concurrent work)（运行时标记）
@@ -226,10 +226,10 @@ SUN推荐的使用参数是：
 ## 如何选择collector
 
 - app运行在单处理器机器上且没有pause time的要求，让vm选择或者 UseSerialGC.
-- 重点考虑peak application performance(高性能)，没有pause time太严格要求，让vm选择或者 UseParallelGC +UseParallelOldGC (optionally).
+- 重点考虑peak application performance(高性能)，没有pause time太严格要求，让vm选择或者 UseParallelGC + UseParallelOldGC (optionally).
 - 重点考虑response time,pause time要小 UseConcMarkSweepGC.
 
-**Summary**
+**测试**
 
 ```
 import java.util.ArrayList;
