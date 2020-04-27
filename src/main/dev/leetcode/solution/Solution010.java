@@ -9,24 +9,24 @@ package dev.leetcode.solution;
  * @Author: RunAtWorld
  * @Date: 2020/4/7 23:26
  */
-public class Solution10 {
+public class Solution010 {
 
     public static void main(String[] args) {
         String s = "aa", p = "a";
-        Solution10 solution10 = new Solution10();
-        System.out.println(solution10.isMatch(s, p));  //false
+        Solution010 solution010 = new Solution010();
+        System.out.println(solution010.isMatch(s, p));  //false
         s = "aa";
         p = "a*";
-        System.out.println(solution10.isMatch(s, p)); //true
+        System.out.println(solution010.isMatch(s, p)); //true
         s = "ab";
         p = ".*";
-        System.out.println(solution10.isMatch(s, p)); //true
+        System.out.println(solution010.isMatch(s, p)); //true
         s = "aab";
         p = "c*a*b";
-        System.out.println(solution10.isMatch(s, p));  //true
+        System.out.println(solution010.isMatch(s, p));  //true
         s = "mississippi";
         p = "mis*is*p*.";
-        System.out.println(solution10.isMatch(s, p));  //false
+        System.out.println(solution010.isMatch(s, p));  //false
     }
 
     /**

@@ -1,7 +1,5 @@
 package dev.leetcode.solution;
 
-import java.util.Arrays;
-
 /**
  * 63. 不同路径 II
  * https://leetcode-cn.com/problems/unique-paths-ii/
@@ -12,7 +10,7 @@ import java.util.Arrays;
  * @Author: RunAtWorld
  * @Date: 2020/4/12 22:27
  */
-public class Solution63 {
+public class Solution063 {
     public static void main(String[] args) {
         int[][] arr = new int[][]{
                 {0, 0, 0},
@@ -20,7 +18,7 @@ public class Solution63 {
                 {0, 0, 0}
         };
         // 预期为 : 2
-        System.out.println(new Solution63().uniquePathsWithObstacles(arr));
+        System.out.println(new Solution063().uniquePathsWithObstacles(arr));
 
     }
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {

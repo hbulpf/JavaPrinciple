@@ -15,13 +15,13 @@ import java.util.Arrays;
  * @author: RunAtWorld
  * @create: 2020-04-05 23:35
  **/
-public class Solution62 {
+public class Solution062 {
 
     public static void main(String[] args) {
-        System.out.println(new Solution62().uniquePaths(3, 2));
-        System.out.println(new Solution62().uniquePaths(7, 3));
-        System.out.println(new Solution62().uniquePaths(10, 10));
-        System.out.println(new Solution62().uniquePaths(23, 12));
+        System.out.println(new Solution062().uniquePaths(3, 2));
+        System.out.println(new Solution062().uniquePaths(7, 3));
+        System.out.println(new Solution062().uniquePaths(10, 10));
+        System.out.println(new Solution062().uniquePaths(23, 12));
     }
 
     /**

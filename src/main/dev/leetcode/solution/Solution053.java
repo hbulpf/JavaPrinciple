@@ -8,10 +8,10 @@ package dev.leetcode.solution;
  * @Author: RunAtWorld
  * @Date: 2020/4/4 22:36
  */
-public class Solution53 {
+public class Solution053 {
     public static void main(String[] args) {
         int[] arr = new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        int res = new Solution53().maxSubArray(arr);
+        int res = new Solution053().maxSubArray(arr);
         System.out.println(res);
 
         for (int k : arr) {

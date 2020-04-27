@@ -15,7 +15,7 @@ package dev.leetcode.solution;
  * @Date: 2020/4/15 23:24
  */
 
-public class Solution83 {
+public class Solution083 {
     public ListNode deleteDuplicates(ListNode head) {
         return null;
     }

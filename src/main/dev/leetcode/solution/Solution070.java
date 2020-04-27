@@ -6,7 +6,7 @@ package dev.leetcode.solution;
  * @Author: RunAtWorld
  * @Date: 2020/4/16 0:29
  */
-public class Solution70 {
+public class Solution070 {
 
     /**
      * 迭代法

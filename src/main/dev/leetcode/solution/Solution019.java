@@ -7,9 +7,9 @@ package dev.leetcode.solution;
  * @Author: RunAtWorld
  * @Date: 2020/4/15 23:28
  */
-public class Solution19 {
+public class Solution019 {
     public static void main(String[] args) {
-        Solution19 solution19 = new Solution19();
+        Solution019 solution019 = new Solution019();
         ListNode[] arr = new ListNode[]{
                 new ListNode(1),
                 new ListNode(2),
@@ -28,7 +28,7 @@ public class Solution19 {
             System.out.printf("%s,", cur.val);
             cur = cur.next;
         }
-        ListNode res = solution19.removeNthFromEnd(head, n);
+        ListNode res = solution019.removeNthFromEnd(head, n);
         System.out.println("\n处理结果");
         while (res != null) {
             System.out.printf("%s,", res.val);

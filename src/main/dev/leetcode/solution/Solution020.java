@@ -7,7 +7,7 @@ package dev.leetcode.solution;
  * @Author: RunAtWorld
  * @Date: 2020/4/3 22:38
  */
-public class Solution20 {
+public class Solution020 {
     public boolean isValid(String s) {
         return true;
     }

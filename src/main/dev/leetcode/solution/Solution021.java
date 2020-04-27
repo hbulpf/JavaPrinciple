@@ -7,7 +7,7 @@ package dev.leetcode.solution;
  * @Author: RunAtWorld
  * @Date: 2020/4/15 23:27
  */
-public class Solution21 {
+public class Solution021 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         return null;
     }

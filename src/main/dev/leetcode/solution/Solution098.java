@@ -6,5 +6,5 @@ package dev.leetcode.solution;
  * @Author: RunAtWorld
  * @Date: 2020/4/15 23:29
  */
-public class Solution98 {
+public class Solution098 {
 }
