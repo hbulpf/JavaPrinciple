@@ -2,9 +2,9 @@ package dev.leetcode.solution;
 
 /**
  * 392. 判断子序列
- * 给定字符串 s 和 t ，判断 s 是否为 t 的子序列。
  * https://leetcode-cn.com/problems/is-subsequence/
  *
+ * 给定字符串 s 和 t ，判断 s 是否为 t 的子序列。
  * 1. 贪心算法
  * 2. DP算法：不建议使用，纯粹学习思想
  *

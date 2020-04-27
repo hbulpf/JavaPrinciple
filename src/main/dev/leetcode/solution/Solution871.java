@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 /**
  * 871. 最低加油次数
+ * https://leetcode-cn.com/problems/minimum-number-of-refueling-stops/
+ *
  */
 class Solution871 {
     public static void main(String[] args) {
