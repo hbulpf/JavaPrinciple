@@ -1,4 +1,4 @@
-# Dynamic Code Evolution for Java dcevm 原理
+# JVM系列(8):Dynamic Code Evolution for Java dcevm 原理
 
 在[hostswap dcevm](http://www.cnblogs.com/redcreen/archive/2011/06/03/2071169.html)中我们对Dynamic Code Evolution VM有了一个简单的了解,这篇文章将介绍Dynamic Code Evolution VM的实现原理。
 
@@ -11,7 +11,7 @@
 
 **概述:**
 
-​    DCE是一种java在运行时修改程序（class)的技术（有点儿动态语言的感觉）。在java（面向对象语言）中，可以通过使用新版本class替换一组class的方式来实现。DCE VM通过修改JAVA HOSTSPOT虚拟机，允许对已加载的class进行任意的修改：增加或删除变量、方法，接口的继承关系等等， 这有效的提高了开发效率。在evaluation section中显示了对虚拟机的修改没有性能上的影响，fast in-place instant update算法保证了在性能上与full gc相当。DCE VM可以在标准的开发环境中使用，不需要额外的工具或依赖。
+DCE是一种java在运行时修改程序（class)的技术（有点儿动态语言的感觉）。在java（面向对象语言）中，可以通过使用新版本class替换一组class的方式来实现。DCE VM通过修改JAVA HOSTSPOT虚拟机，允许对已加载的class进行任意的修改：增加或删除变量、方法，接口的继承关系等等， 这有效的提高了开发效率。在evaluation section中显示了对虚拟机的修改没有性能上的影响，fast in-place instant update算法保证了在性能上与full gc相当。DCE VM可以在标准的开发环境中使用，不需要额外的工具或依赖。
 
 **1.Introduction**
 

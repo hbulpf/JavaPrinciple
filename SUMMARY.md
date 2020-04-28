@@ -20,7 +20,14 @@
     - [java和javaw的区别](knowledge/java/java和javaw的区别.md)
     - [JVM参数](knowledge/java/jvm.md)
         - [JVM工具](knowledge/java/jvmtools.md)
-        - [JVM垃圾回收](knowledge/java/jvm_gc.md)
+        - [JVM1:内存组成](knowledge/java/jvm1.md)
+        - [JVM2:HotSpot垃圾收集器的种类](knowledge/java/jvm2.md)
+        - [JVM3:GC策略&内存申请、对象衰老](knowledge/java/jvm3.md)
+        - [JVM4:JVM参数优化设置](knowledge/java/jvm4.md)
+        - [JVM5:生产环境实例分析](knowledge/java/jvm5.md)
+        - [JVM6:JVM监测工具](knowledge/java/jvm6.md)
+        - [JVM7:classLoader的卸载机制](knowledge/java/jvm7.md)
+        - [JVM8:Dynamic Code Evolution for Java dcevm原理](knowledge/java/jvm8.md)
     - [Java工具类](knowledge/java/utils/README.md)
         - [BeanUtils](knowledge/java/utils/BeanUtils.md)
         - [Date类](knowledge/java/utils/Date.md)
@@ -32,7 +39,10 @@
     - [springtest](knowledge/java/springtest.md)
     - [Tomcat](knowledge/java/tomcat.md)
     - [线程池](knowledge/java/threadpool.md)
-
+    - Java8
+        - [Lambda表达式](knowledge/java/java8/Lambda.md)
+       
+    
 - [Java工程师路径](knowledge/java/JavaPath.md)
   
 # 算法
@@ -46,7 +56,7 @@
 - [小技巧](knowledge/tips.md)
 - [原型开发](knowledge/prototype.md)
         
-    
+  
 # 推荐
 
 - [书单推荐](BookList.md)
