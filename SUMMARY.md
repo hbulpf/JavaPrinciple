@@ -39,8 +39,7 @@
     - [springtest](knowledge/java/springtest.md)
     - [Tomcat](knowledge/java/tomcat.md)
     - [线程池](knowledge/java/threadpool.md)
-    - Java8
-        - [Lambda表达式](knowledge/java/java8/Lambda.md)
+    - [Lambda表达式](knowledge/java/java8/Lambda.md)
        
     
 - [Java工程师路径](knowledge/java/JavaPath.md)
