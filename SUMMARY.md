@@ -46,8 +46,8 @@
   
 # 算法
 
-- [基本数据结构与算法](src/dev/algorithm/README.md)
-    - [五大常用算法](src/dev/algorithm/五大常用算法.md)
+- [基本数据结构与算法](src/main/dev/algorithm/README.md)
+    - [五大常用算法](src/main/dev/algorithm/五大常用算法.md)
 - [leetcode](src/dev/leetcode/README.md)
 
 # 其他
