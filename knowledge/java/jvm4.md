@@ -1,13 +1,7 @@
-# JVM系列:(4)JVM参数优化设置
+# JVM系列:(4)JVM参数优化
 
 > 不管是YGC还是Full GC,GC过程中都会对导致程序运行中中断,正确的选择不同的GC策略,调整JVM、GC的参数，可以极大的减少由于GC工作，而导致的程序运行中断方面的问题，进而适当的提高Java程序的工作效率。但是调整GC是以个极为复杂的过程，由于各个程序具备不同的特点，如：web和GUI程序就有很大区别（Web可以适当的停顿，但GUI停顿是客户无法接受的），而且由于跑在各个机器上的配置不同（主要cup个数，内存不同），所以使用的GC种类也会不同(如何选择见GC种类及如何选择。本文将注重介绍JVM、GC的一些重要参数的设置来提高系统的性能。
 
-JVM内存组成及GC相关内容请见的文章:
-
-1. [JVM内存组成](jvm1.md) 
-2. [GC策略&内存申请](jvm2.md)
-
-**JVM参数的含义** 实例见[实例分析](http://www.cnblogs.com/redcreen/archive/2011/05/05/2038331.html)
 
 | **参数名称**                | **含义**                                                   | **默认值**           |                                                              |
 | --------------------------| ---------------------------------------------------------| -------------------| -----------------------------------------------------------|
@@ -88,22 +82,20 @@ JVM内存组成及GC相关内容请见的文章:
 
 一般而言，server端的app会有以下规则：
 
-对vm分配尽可能多的memory；
-将Xms和Xmx设为一样的值。如果虚拟机启动时设置使用的内存比较小，这个时候又需要初始化很多对象，虚拟机就必须重复地增加内存。
-处理器核数增加，内存也跟着增大。
+1. 对vm分配尽可能多的memory；
+2. 将Xms和Xmx设为一样的值。如果虚拟机启动时设置使用的内存比较小，这个时候又需要初始化很多对象，虚拟机就必须重复地增加内存。
+3. 处理器核数增加，内存也跟着增大。
 
-### 2.The Young Generation
+### 2. The Young Generation
 
-另外一个对于app流畅性运行影响的因素是young generation的大小。young generation越大，minor collection越少；但是在固定heap size情况下，更大的young generation就意味着小的tenured generation，就意味着更多的major collection(major collection会引发minor collection)。
-
-NewRatio反映的是young和tenured generation的大小比例。NewSize和MaxNewSize反映的是young generation大小的下限和上限，将这两个值设为一样就固定了young generation的大小（同Xms和Xmx设为一样）。
-
-如果希望，SurvivorRatio也可以优化survivor的大小，不过这对于性能的影响不是很大。SurvivorRatio是eden和survior大小比例。
+- 另外一个对于app流畅性运行影响的因素是young generation的大小。young generation越大，minor collection越少；但是在固定heap size情况下，更大的young generation就意味着小的tenured generation，就意味着更多的major collection(major collection会引发minor collection)。
+- NewRatio反映的是young和tenured generation的大小比例。NewSize和MaxNewSize反映的是young generation大小的下限和上限，将这两个值设为一样就固定了young generation的大小（同Xms和Xmx设为一样）。
+- 如果希望，SurvivorRatio也可以优化survivor的大小，不过这对于性能的影响不是很大。SurvivorRatio是eden和survior大小比例。
 
 一般而言，server端的app会有以下规则：
 
-首先决定能分配给vm的最大的heap size，然后设定最佳的young generation的大小；
-如果heap size固定后，增加young generation的大小意味着减小tenured generation大小。让tenured generation在任何时候够大，能够容纳所有live的data（留10%-20%的空余）。
+1. 首先决定能分配给vm的最大的heap size，然后设定最佳的young generation的大小；
+2. 如果heap size固定后，增加young generation的大小意味着减小tenured generation大小。让tenured generation在任何时候够大，能够容纳所有live的data（留10%-20%的空余）。
 
 ## 经验&&规则
 
