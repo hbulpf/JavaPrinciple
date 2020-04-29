@@ -1,11 +1,11 @@
 
 package dev.demo.java8.lambda;
 
+import dev.demo.entity.Item;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.function.Consumer;
-
-import dev.demo.entity.Item;
 
 /**
  * Lambda List

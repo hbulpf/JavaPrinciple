@@ -1,6 +1,6 @@
-package dev.demo.java8test;
+package dev.demo.java8;
 
-import dev.demo.java8test.entity.Person;
+import dev.demo.entity.Person;
 
 import java.util.ArrayList;
 import java.util.List;

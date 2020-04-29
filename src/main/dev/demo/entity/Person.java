@@ -1,4 +1,4 @@
-package dev.demo.java8test.entity;
+package dev.demo.entity;
 
 /**
  * 人

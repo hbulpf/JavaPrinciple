@@ -1,4 +1,4 @@
-package dev.demo.java8test;
+package dev.demo.java8;
 
 /**
  * Java8 Lambda 测试
