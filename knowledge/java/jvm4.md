@@ -1,6 +1,8 @@
 # JVM系列:(4)JVM参数优化
 
-> 不管是YGC还是Full GC,GC过程中都会对导致程序运行中中断,正确的选择不同的GC策略,调整JVM、GC的参数，可以极大的减少由于GC工作，而导致的程序运行中断方面的问题，进而适当的提高Java程序的工作效率。但是调整GC是以个极为复杂的过程，由于各个程序具备不同的特点，如：web和GUI程序就有很大区别（Web可以适当的停顿，但GUI停顿是客户无法接受的），而且由于跑在各个机器上的配置不同（主要cup个数，内存不同），所以使用的GC种类也会不同(如何选择见GC种类及如何选择。本文将注重介绍JVM、GC的一些重要参数的设置来提高系统的性能。
+> 不管是YGC还是Full GC,GC过程中都会对导致程序运行中中断,正确的选择不同的GC策略,调整JVM、GC的参数，可以极大的减少由于GC工作，而导致的程序运行中断方面的问题，进而适当的提高Java程序的工作效率。但是调整GC
+>是一个极为复杂的过程，由于各个程序具备不同的特点，如：web和GUI程序就有很大区别（Web可以适当的停顿，但GUI停顿是客户无法接受的），而且由于跑在各个机器上的配置不同（主要cup个数，内存不同），所以使用的GC
+>种类也会不同(如何选择见GC种类及如何选择。本文将注重介绍JVM、GC的一些重要参数的设置来提高系统的性能。
 
 
 | **参数名称**                | **含义**                                                   | **默认值**           |                                                              |
@@ -70,7 +72,7 @@
 | -Xloggc:filename                      | 把相关日志信息记录到文件以便分析. 与上面几个配合使用     |      |                                                              |
 | -XX:+PrintClassHistogram              | garbage collects before printing the histogram.          |      |                                                              |
 | -XX:+PrintTLAB                        | 查看TLAB空间的使用情况                                   |      |                                                              |
-| XX:+PrintTenuringDistribution         | 查看每次minor GC后新的存活周期的阈值                     |      | Desired survivor size 1048576 bytes, new threshold 7 (max 15) new threshold 7即标识新的存活周期的阈值为7。 |
+| XX:+PrintTenuringDistribution         | 查看每次minor GC后新的存活周期的阈值                     |      | Desired survivor size 1048576 bytes, new threshold 7 (max 15) new threshold 7，新的存活周期的阈值为7。 |
 
 ## GC性能方面的考虑
 

@@ -13,7 +13,7 @@ JVM里的GC(Garbage Collection)的算法有很多种，如标记清除收集器�
 最后，**tenured generation**满之后触发**major collection**。**major collection（Full gc）**会触发整个heap的回收，包括回收 young generation。
 permanet generation区域（也称为非堆区域）比较稳定，主要存放classloader信息。
 
-young generation 有eden、2个survivor 区域组成。其中一个survivor区域一直是空的，是eden区域和另一个survivor区域在下一次copy collection后活着的object
+young generation 由eden、2个survivor 区域组成。其中一个survivor区域一直是空的，是eden区域和另一个survivor区域在下一次copy collection后活着的object
 的目的地。object在survivo区域被复制,直到转移到tenured区。
 
 ![](imgs/jvm3.jpg)
@@ -50,7 +50,7 @@ GC不会在主程序运行期对PermGen Space进行清理，所以如果应用�
 | **GC类型** | **触发条件**                                                 | **触发时发生了什么**                                         | **注意**                                                     | **查看方式**         |
 | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | -------------------- |
 | YGC        | eden空间不足                                                 | 1.清空Eden+from survivor中所有no ref的对象占用的内存;将eden+from survivor(S0)中所有存活的对象copy到to survivor(S1)中;<br/> 2.一些对象将晋升到tenured中:to survivor放不下的,存活次数超过turning threshold中的;<br/> 3.重新计算tenuring threshold(serial parallel GC会触发此项)重新调整Eden 和from的大小(parallel GC会触发此项) | 全过程暂停应用,是否为多线程处理由具体的GC决定                | `jstat –gcutil gc log` |
-| FGC        | 1.tenured空间不足;<br/> 2.PermGen空间不足<br/>  3.显示调用System.GC<br/> 4.RMI等的定时触发<br/>  5.YGC时的悲观策略<br/> 6.dump live的内存信息时(jmap –dump:live) | 1.清空heap中no ref的对象<br/> 2.清空PermGen中已经被卸载的classloader中加载的class信息<br/>  3.如配置了CollectGenOFirst,则先触发YGC(针对serial GC),如配置了ScavengeBeforeFullGC,则先触发YGC(针对serial GC) | 全过程暂停应用,是否为多线程处理由具体的GC决定  是否压缩需要看配置的具体GC | `jstat –gcutil gc log`|
+| FGC        | 1.tenured空间不足;<br/> 2.PermGen空间不足<br/>  3.显示调用System.GC<br/> 4.RMI等定时触发<br/>  5.YGC时的悲观策略<br/> 6.dump live的内存信息时(jmap –dump:live) | 1.清空heap中no ref的对象<br/> 2.清空PermGen中已经被卸载的classloader中加载的class信息<br/>  3.如配置了CollectGenOFirst,则先触发YGC(针对serial GC),如配置了ScavengeBeforeFullGC,则先触发YGC(针对serial GC) | 全过程暂停应用,是否为多线程处理由具体的GC决定  是否压缩需要看配置的具体GC | `jstat –gcutil gc log`|
 
 注意： permanent generation空间不足会引发Full GC,仍然不够会引发PermGen Space错误。
 
