@@ -16,3 +16,5 @@ https://www.jb51.net/article/142668.htm
 Java 集合系列12之 TreeMap详细介绍(源码解析)和使用示例 https://www.cnblogs.com/skywang12345/p/3310928.html
 
 TreeMap用法总结  https://www.jianshu.com/p/e11fe1760a3d
+
+https://www.30secondsofcode.org/css/s/toggle-switch/
