@@ -18,3 +18,5 @@ Java 集合系列12之 TreeMap详细介绍(源码解析)和使用示例 https://
 TreeMap用法总结  https://www.jianshu.com/p/e11fe1760a3d
 
 https://www.30secondsofcode.org/css/s/toggle-switch/
+
+https://www.cnblogs.com/liuxianan/p/vscode-plugin-overview.html
