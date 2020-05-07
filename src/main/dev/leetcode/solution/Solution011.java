@@ -4,8 +4,8 @@ package dev.leetcode.solution;
  * 11. 盛最多水的容器
  * https://leetcode-cn.com/problems/container-with-most-water/
  *
- * (1) 暴力法 T=O(N^2)
- * (2) 双指针法 T=O(N)
+ * (1) 暴力法 T=O(N^2),S=O(1)
+ * (2) 双指针法 T=O(N),S=O(1)
  * @Author: RunAtWorld
  * @Date: 2020/5/7 23:22
  */
