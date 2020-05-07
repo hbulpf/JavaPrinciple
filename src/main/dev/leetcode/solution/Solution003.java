@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
  * 3. 无重复字符的最长子串
  * https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
  *
- * (1) 暴力法 T=O(N^3)
- * (2) 双指针法 T=O(N)
+ * (1) 暴力法 T=O(N^3),S=O(Σ)=128
+ * (2) 双指针法 T=O(N),S=O(Σ)=128
  * @Author: RunAtWorld
  * @Date: 2020/4/28 0:11
  */
@@ -67,7 +67,7 @@ public class Solution003 {
         HashSet uniqueSet = new HashSet<Character>();
         for (int i = 0; i < len; i++) {
             if (i != 0) {
-                //这里要去除掉前一个字符，大意大意！！！
+                //这里要去除前一个字符，大意大意！！！
                 uniqueSet.remove(s.charAt(i-1));
             }
             while (rk + 1 < len && !uniqueSet.contains(s.charAt(rk + 1))) {
@@ -75,12 +75,7 @@ public class Solution003 {
                 rk++;
             }
             max = Math.max(max, rk - i + 1);
-            System.out.println(String.valueOf(uniqueSet.stream().collect(Collectors.toList())));
         }
         return max;
-    }
-
-    public int lengthOfLongestSubstring(String s) {
-        return lengthOfLongestSubstring1(s);
     }
 }
