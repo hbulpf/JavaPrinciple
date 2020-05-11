@@ -22,14 +22,24 @@ public class Solution042 {
      */
     public static int trap3(int[] height) {
         Stack<Integer> stack = new Stack<Integer>();
-        if (height.length <= 1) {
+        if (height == null) {
             return 0;
         }
-        int current = 1;
-        stack.push(height[0]);
-        while (!stack.empty()&&current<height.length){
-
+        int ans = 0;
+        int current = 0;
+        while (current < height.length) {
+            while (!stack.empty() && height[stack.peek()] < height[current]) {
+                int top = stack.peek();
+                stack.pop();
+                if (stack.empty()) {
+                    break;
+                }
+                int boundedHeight = Math.min(height[stack.peek()], height[current]) - height[top];
+                int width = current - stack.peek() - 1;
+                ans += boundedHeight * width;
+            }
+            stack.push(current++);
         }
-        return 0;
+        return ans;
     }
 }
