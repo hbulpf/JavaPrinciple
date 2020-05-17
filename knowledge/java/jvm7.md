@@ -21,8 +21,6 @@ public static Map pool = new HashMap();    public static void main(String[] args
 
 
 
- 
-
 **推测:**
 
    osgi的bundle进行热部署时有个条件:export class 必须是兼容的.否则需要重启整个应用才会生效,为什么呢?
