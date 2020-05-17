@@ -1,6 +1,6 @@
 # JVM系列:(4)JVM参数设置与优化
 
-> 不管是YGC还是FGC,GC过程中都会对导致程序运行中断,正确选择不同的GC策略,调整GC的参数可以极大减少由于GC导致的程序运行中断，从而提高Java程序的效率。然而调整GC参数是一个极为复杂的过程，由于各类程序具有不同的特点，如：web和GUI程序就有很大区别（Web可以适当的停顿，但GUI停顿是客户无法接受的），另外机器配置不同（主要cup个数，内存不同），使用的GC配置也会不同本文将注重介绍JVM、GC的一些重要参数的设置来提高系统的性能。
+> 不管是YGC还是FGC,GC过程中都会对导致程序运行中断,正确选择不同的GC策略,调整GC的参数可以极大减少由于GC导致的程序运行中断，从而提高Java程序的效率。然而调整GC参数是一个极为复杂的过程，由于各类程序具有不同的特点，如：web和GUI程序就有很大区别（Web可以适当的停顿，但GUI停顿是客户无法接受的），另外机器配置不同（主要cup个数，内存不同），使用的GC配置也会不同。本文将注重介绍JVM、GC的一些重要参数的设置来提高系统的性能。
 
 
 
@@ -196,16 +196,15 @@ CMSInitiatingOccupancyFraction低于70% 需要调整Xmn或SurvivorRatio值。
 
 # 参考
 
-1. [JVM系列三:JVM参数设置、分析](https://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html) .https://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html)
-1. [JVM -JVM优化参数设置](https://www.liangzl.com/get-article-detail-151737.html).https://www.liangzl.com/get-article-detail-151737.html
-2. [JAVA HOTSPOT VM](http://www.helloying.com/blog/archives/164).http://www.helloying.com/blog/archives/164
-3. [JVM 几个重要的参数](http://www.iteye.com/wiki/jvm/2870-JVM) .http://www.iteye.com/wiki/jvm/2870-JVM
-4. [java jvm 参数 -Xms -Xmx -Xmn -Xss 调优总结](http://hi.baidu.com/sdausea/blog/item/c599ef13fcd3a7dbf6039e12.html).http://hi.baidu.com/sdausea/blog/item/c599ef13fcd3a7dbf6039e12.html
-5. [Java HotSpot VM Options](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html) . http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html
-6. [Frequently Asked Questions About the Java HotSpot VM](http://www.oracle.com/technetwork/java/hotspotfaq-138619.html) . http://www.oracle.com/technetwork/java/hotspotfaq-138619.html
-7. [Java SE HotSpot at a Glance](http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136373.html) . http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136373.html
-8. [Java性能调优笔记](http://blog.csdn.net/yang_net/archive/2010/08/22/5830820.aspx) . http://blog.csdn.net/yang_net/archive/2010/08/22/5830820.aspx
-9. [说说MaxTenuringThreshold这个参数](http://blog.bluedavy.com/?p=70). http://blog.bluedavy.com/?p=70
-10. [GC调优方法总结](http://blog.csdn.net/pigeon21/archive/2011/01/27/6166217.aspx).http://blog.csdn.net/pigeon21/archive/2011/01/27/6166217.aspx
-11. [Java 6 JVM参数选项大全（中文版）](http://kenwublog.com/docs/java6-jvm-options-chinese-edition.htm).http://kenwublog.com/docs/java6-jvm-options-chinese-edition.htm
-
+1. [JVM系列三:JVM参数设置、分析](https://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html) 
+2. [JVM -JVM优化参数设置](https://www.liangzl.com/get-article-detail-151737.html)
+3. [JAVA HOTSPOT VM](http://www.helloying.com/blog/archives/164)
+4. [JVM 几个重要的参数](http://www.iteye.com/wiki/jvm/2870-JVM)
+5. [java jvm 参数 -Xms -Xmx -Xmn -Xss 调优总结](http://hi.baidu.com/sdausea/blog/item/c599ef13fcd3a7dbf6039e12.html)
+6. [Java HotSpot VM Options](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html) 
+7. [Frequently Asked Questions About the Java HotSpot VM](http://www.oracle.com/technetwork/java/hotspotfaq-138619.html)
+8. [Java SE HotSpot at a Glance](http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136373.html)
+9. [Java性能调优笔记](http://blog.csdn.net/yang_net/archive/2010/08/22/5830820.aspx)
+10. [说说MaxTenuringThreshold这个参数](http://blog.bluedavy.com/?p=70)
+11. [GC调优方法总结](http://blog.csdn.net/pigeon21/archive/2011/01/27/6166217.aspx)
+12. [Java 6 JVM参数选项大全（中文版）](http://kenwublog.com/docs/java6-jvm-options-chinese-edition.htm)
