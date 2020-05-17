@@ -1,8 +1,10 @@
-# JVM系列:(4)JVM参数优化
+# JVM系列:(4)JVM参数设置与优化
 
-> 不管是YGC还是Full GC,GC过程中都会对导致程序运行中中断,正确的选择不同的GC策略,调整JVM、GC的参数，可以极大的减少由于GC工作，而导致的程序运行中断方面的问题，进而适当的提高Java程序的工作效率。但是调整GC
->是一个极为复杂的过程，由于各个程序具备不同的特点，如：web和GUI程序就有很大区别（Web可以适当的停顿，但GUI停顿是客户无法接受的），而且由于跑在各个机器上的配置不同（主要cup个数，内存不同），所以使用的GC
->种类也会不同(如何选择见GC种类及如何选择。本文将注重介绍JVM、GC的一些重要参数的设置来提高系统的性能。
+> 不管是YGC还是FGC,GC过程中都会对导致程序运行中断,正确选择不同的GC策略,调整GC的参数可以极大减少由于GC导致的程序运行中断，从而提高Java程序的效率。然而调整GC参数是一个极为复杂的过程，由于各类程序具有不同的特点，如：web和GUI程序就有很大区别（Web可以适当的停顿，但GUI停顿是客户无法接受的），另外机器配置不同（主要cup个数，内存不同），使用的GC配置也会不同本文将注重介绍JVM、GC的一些重要参数的设置来提高系统的性能。
+
+
+
+## JVM的基本参数
 
 
 | **参数名称**                | **含义**                                                   | **默认值**           |                                                              |
@@ -30,7 +32,7 @@
 | -XX:TLABWasteTargetPercent  | TLAB占eden区的百分比                                       | 1%                   |                                                              |
 | -XX:+*CollectGen0First*     | FullGC时是否先YGC                                          | false                |                                                              |
 
-**并行收集器相关参数**
+## 并行收集器相关参数
 
 | **参数名称**                | **含义**                                                   | **默认值**           |                                                              |
 | --------------------------| ------------------------------------------------| ---| -----------------------------------------------------------|
@@ -43,7 +45,7 @@
 | -XX:GCTimeRatio             | 设置垃圾回收时间占程序运行时间的百分比            |      | 公式为1/(1+n)                                                |
 | -XX:+*ScavengeBeforeFullGC* | Full GC前调用YGC                                  | true | Do young generation GC prior to a full GC. (Introduced in 1.4.1.) |
 
-**CMS相关参数**
+## CMS相关参数
 
 | **参数名称**                | **含义**                                                   | **默认值**           |                                                              |
 | --------------------------| ------------------------------------------------| ---| -----------------------------------------------------------|
@@ -58,7 +60,7 @@
 | -XX:+CMSIncrementalMode                | 设置为增量模式                            |      | 用于单CPU情况                                                |
 | -XX:+CMSClassUnloadingEnabled          |                                           |      |                                                              |
 
-**辅助信息**
+## 辅助信息
 
 | **参数名称**                | **含义**                                                   | **默认值**           |                                                              |
 | --------------------------| ------------------------------------------------| ---| -----------------------------------------------------------|
@@ -74,7 +76,7 @@
 | -XX:+PrintTLAB                        | 查看TLAB空间的使用情况                                   |      |                                                              |
 | XX:+PrintTenuringDistribution         | 查看每次minor GC后新的存活周期的阈值                     |      | Desired survivor size 1048576 bytes, new threshold 7 (max 15) new threshold 7，新的存活周期的阈值为7。 |
 
-## GC性能方面的考虑
+## GC性能的考虑
 
 对于GC的性能主要有2个方面的指标：吞吐量throughput（工作时间不算gc的时间占总的时间比）和暂停pause（gc发生时app对外显示的无法响应）。
 
@@ -99,7 +101,7 @@
 1. 首先决定能分配给vm的最大的heap size，然后设定最佳的young generation的大小；
 2. 如果heap size固定后，增加young generation的大小意味着减小tenured generation大小。让tenured generation在任何时候够大，能够容纳所有live的data（留10%-20%的空余）。
 
-## 经验&&规则
+## 经验规则
 
 1. 年轻代大小选择
    响应时间优先的应用:尽可能设大,直到接近系统的最低响应时间限制(根据实际情况选择).在此种情况下,年轻代收集发生的频率也是最小的.同时,减少到达年老代的对象.
@@ -175,20 +177,20 @@ CMSInitiatingOccupancyFraction<=((3000.0-600)-(600-600/(1+2)))/(3000-600)*100=83
 CMSInitiatingOccupancyFraction低于70% 需要调整Xmn或SurvivorRatior值。
 ```
 
-令,[网上一童鞋](http://bbs.weblogicfans.net/archiver/tid-2835.html)推断出的公式是：:(Xmx-Xmn)*(100-CMSInitiatingOccupancyFraction)/100>=Xmn 这个公式个人认为不是很严谨，在内存小的时候会影响Xmn的计算。
+令,[网上一童鞋](http://bbs.weblogicfans.net/archiver/tid-2835.html)推断出的公式是: (Xmx-Xmn)*(100-CMSInitiatingOccupancyFraction)/100>=Xmn 这个公式个人认为不是很严谨，在内存小的时候会影响Xmn的计算。
 
 
 # 参考
 
-1. [JVM系列三:JVM参数设置、分析](https://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html) 
-1. [JVM -JVM优化参数设置](https://www.liangzl.com/get-article-detail-151737.html)
-2. [JAVA HOTSPOT VM](http://www.helloying.com/blog/archives/164)
-3. [JVM 几个重要的参数](http://www.iteye.com/wiki/jvm/2870-JVM) 
-4. [java jvm 参数 -Xms -Xmx -Xmn -Xss 调优总结](http://hi.baidu.com/sdausea/blog/item/c599ef13fcd3a7dbf6039e12.html)
-5. [Java HotSpot VM Options](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html)
-6. [Frequently Asked Questions About the Java HotSpot VM](http://www.oracle.com/technetwork/java/hotspotfaq-138619.html)
-7. [Java SE HotSpot at a Glance](http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136373.html)
-8. [Java性能调优笔记](http://blog.csdn.net/yang_net/archive/2010/08/22/5830820.aspx)
-9. [说说MaxTenuringThreshold这个参数](http://blog.bluedavy.com/?p=70)
-10. [GC调优方法总结](http://blog.csdn.net/pigeon21/archive/2011/01/27/6166217.aspx)
-11. [Java 6 JVM参数选项大全（中文版）](http://kenwublog.com/docs/java6-jvm-options-chinese-edition.htm)
+1. [JVM系列三:JVM参数设置、分析](https://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html) .https://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html)
+1. [JVM -JVM优化参数设置](https://www.liangzl.com/get-article-detail-151737.html).https://www.liangzl.com/get-article-detail-151737.html
+2. [JAVA HOTSPOT VM](http://www.helloying.com/blog/archives/164).http://www.helloying.com/blog/archives/164
+3. [JVM 几个重要的参数](http://www.iteye.com/wiki/jvm/2870-JVM) .http://www.iteye.com/wiki/jvm/2870-JVM
+4. [java jvm 参数 -Xms -Xmx -Xmn -Xss 调优总结](http://hi.baidu.com/sdausea/blog/item/c599ef13fcd3a7dbf6039e12.html).http://hi.baidu.com/sdausea/blog/item/c599ef13fcd3a7dbf6039e12.html
+5. [Java HotSpot VM Options](http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html) . http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html
+6. [Frequently Asked Questions About the Java HotSpot VM](http://www.oracle.com/technetwork/java/hotspotfaq-138619.html) . http://www.oracle.com/technetwork/java/hotspotfaq-138619.html
+7. [Java SE HotSpot at a Glance](http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136373.html) . http://www.oracle.com/technetwork/java/javase/tech/index-jsp-136373.html
+8. [Java性能调优笔记](http://blog.csdn.net/yang_net/archive/2010/08/22/5830820.aspx) . http://blog.csdn.net/yang_net/archive/2010/08/22/5830820.aspx
+9. [说说MaxTenuringThreshold这个参数](http://blog.bluedavy.com/?p=70). http://blog.bluedavy.com/?p=70
+10. [GC调优方法总结](http://blog.csdn.net/pigeon21/archive/2011/01/27/6166217.aspx).http://blog.csdn.net/pigeon21/archive/2011/01/27/6166217.aspx
+11. [Java 6 JVM参数选项大全（中文版）](http://kenwublog.com/docs/java6-jvm-options-chinese-edition.htm).http://kenwublog.com/docs/java6-jvm-options-chinese-edition.htm
