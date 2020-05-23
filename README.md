@@ -43,7 +43,9 @@
 
 1. [Leetcode 练习](src/dev/leetcode/README.md)
 
-2. [OJ 练习](src/dev/oj/README.md)
+1. [OJ 练习](src/dev/oj/README.md)
+
+1. [google code jam](https://codingcompetitions.withgoogle.com/codejam)
 
 ## [常用工具类](src/dev/utils/README.md)
 
