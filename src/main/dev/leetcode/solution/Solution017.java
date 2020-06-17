@@ -11,7 +11,8 @@ import java.util.Map;
  * <p>
  * 解法：
  * 1. 递归/回溯：最后一次递归才加入结果列表
- *
+ * O(T) = 3^N*4*M
+ * O(S) = 3^N*4*M
  * @Author: RunAtWorld
  * @Date: 2020/6/18 0:23
  */
@@ -42,6 +43,12 @@ public class Solution017 {
         }
     }
 
+    /**
+     * O(T) = 3^N*4*M
+     * O(S) = 3^N*4*M
+     * @param digits
+     * @return
+     */
     public List<String> letterCombinations(String digits) {
         if (digits != null && digits.length() != 0) {
             backTrack("", digits);
