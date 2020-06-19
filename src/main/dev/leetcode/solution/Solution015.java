@@ -18,10 +18,17 @@ class Solution015 {
 
     public static void main(String[] args) {
         int[] nums = new int[] {-1, 0, 1, 2, -1, -4};
-        System.out.println(threeSum(nums));
+        System.out.println(threeSum1(nums));
     }
 
-    public static List<List<Integer>> threeSum(int[] nums) {
+    /**
+     * 双指针法
+     *  O(T)=O(N^2)+O(N*logN)
+     *  O(S)=O(N)
+     * @param nums
+     * @return
+     */
+    public static List<List<Integer>> threeSum1(int[] nums) {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         Arrays.sort(nums);
