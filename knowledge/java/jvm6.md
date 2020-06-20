@@ -1,339 +1,430 @@
-# JVM系列(6):JVM监测工具
+# JVM常用监控分析工具
 
-## 需要监测的数据
+> 在日常Java开发中，JVM工具是分析各种线上问题的利器。本文重点介绍常见的JVM工具的简单使用:**jinfo**,**jps**,**jstack**,**jstat**，**jmap**,**jmap**,**jconsole**，**jvisualvm**,**jprofiler**，还有阿里巴巴开源的 **[arthas](https://alibaba.github.io/arthas/)**，这些工具的组合使用将大大提高JVM内存问题分析定位的效率。
 
- 需要监测的数据：(内存使用情况 谁使用了内存 GC的状况)
+jvm监控分析工具一般分为两类，一种是jdk自带的工具，一种是第三方的分析工具。jdk自带工具一般在jdk bin目录下面，以exe的形式直接点击就可以使用，其中包含分析工具已经很强大，几乎涉及了方方面面，但是我们最常使用的只有两款：jconsole.exe和jvisualvm.exe；第三方的分析工具有很多，各自的侧重点不同，比较有代表性如：jprofiler、arthas、MAT(Memory Analyzer Tool)、GChisto等。
 
-### 内存使用情况--heap&PermGen
+- **jps**(Java Virtual Machine Process Status Tool): 查看所有的jvm进程，包括进程ID，进程启动的路径等等。
+- **jinfo**(Java Configuration Info): 观察进程运行环境参数，包括Java System属性和JVM命令行参数
+- **jstack**(Java Stack Trace): 查看jvm中当前所有线程栈的运行情况和线程当前状态
+- **jstat**(Java Virtual Machine Statistics Monitoring Tool):监视JVM内存资源，包括各种堆和非堆的大小及其内存使用量
+- **jmap**(Java Memory Map):监视进程运行中的jvm物理内存的占用情况，该进程内存内，所有对象的情况，例如产生了哪些对象，对象数量。
+- **jconsole**
+- **jvisualvm**
+- **jprofiler**： JVM性能分析工具
+- **[arthas](https://alibaba.github.io/arthas/)**: 阿里巴巴开源的JVM问题分析神器。
 
-```
-@ 表示通过jmap –heap *pid* 可以获取的值
-# 表示通过jstat –gcutil *pid* 可以获取的值
-```
+## jstack
 
-参数的查看可以通过多种方法 本文中只随机列出一种。
+观察jvm中当前所有线程的运行情况和线程当前状态。
 
-| 描述                            | 最大值                                                       | 当前值                                                 | 报警值 |
-| ------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------ | ------ |
-| 堆内存                          | @Heap Configuration::MaxHeapSize *sum(eden+servivor+old)*    | *sum(eden+servivor+old)*                               | 自设   |
-| 非堆内存                        | sum(perm+native)                                             |                                                        | 无     |
-| Eden                            | @Eden Space::capacity                                        | @Eden Space::used                                      | 无     |
-| Survivor0                       | @From Space::capacity                                        | @From Space::used                                      | 无     |
-| Survivor1                       | @To Space::capacity                                          | @To Space::used                                        | 无     |
-| New gen (注意区别于Xmn参数设置) | @New Generation::capacity *Eden + 1 Survivor Space*          | @New Generation::used                                  | 无     |
-| Old gen                         | @concurrent mark-sweep generation::capacity (CMS是对old区的gc,所以此处即表示old gen) | @concurrent mark-sweep generation::capacity(CMS)::used | 自设   |
-| Perm Gen                        | @Perm Generation::capacity                                   | @Perm Generation::used                                 | 自设   |
+如果java程序崩溃生成core文件，jstack工具可以用来获得core文件的java stack和native stack的信息，从而可以轻松地知道java程序是如何崩溃和在程序何处发生问题。jstack工具还可以附属到正在运行的java程序中，看到当时运行的java程序的java stack和native stack的信息, 如果现在运行的java程序呈现hung的状态，jstack是非常有用的。目前只有在Solaris和Linux的JDK版本里面才有。
 
-### 内存使用情况--config
+参数很简单，查看帮助 `jstack -h`
 
-### 内存使用情况—C heap
-
-- top or ps aux
-
-### 谁使用了内存
-
-- Heap
-  jmap –histo
-  jmap –dump ,then mat
-- C heap
-  google perftools
-
-### GC的状况
-
-| 描述     | 收集次数 | 收集时间 | 应用暂停时间                                                 |
-| -------- | -------- | -------- | ------------------------------------------------------------ |
-| Full GC  | #FGC     | #FGCT    | [设置-XX:+PrintGCApplicationStoppedTime](http://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html)后在日志中查看 |
-| Young GC | #YGC     | #YGCT    | 同上                                                         |
-
--XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintHeapAtGC [-XX:+PrintGCApplicationStoppedTime](http://www.cnblogs.com/redcreen/archive/2011/05/04/2037057.html) -Xloggc:logs/gc.log
-
- 
-
-## 常用[工具](http://stl-www.htw-saarland.de/syst-lab/java/jdk-1_5_0/docs/tooldocs/share/)介绍:jinfo jmap jstack jstat
-
-### [jinfo](http://stl-www.htw-saarland.de/syst-lab/java/jdk-1_5_0/docs/tooldocs/share/jinfo.html) 
-
-- 可以从一个给定的java进程或core文件或远程debug服务器上获取java配置信息。包括java系统属性及JVM参数(command line flags)。注意在jvm启动参数中没有配置的参数也可使用jinfo –flag xxx pid输出默认值(很有用,但貌似一些简写的参数查不出来)。
-- 可以修改运行时的java 进程的opts。
-- 只有solaris和linux的JDK版本里有。
-- 使用方式可使用jinfo –h 查询。
-
-### [jmap](http://stl-www.htw-saarland.de/syst-lab/java/jdk-1_5_0/docs/tooldocs/share/jmap.html)
-
-​    观察运行中的jvm物理内存的占用情况。
-
-​    如果连用SHELL jmap -histo pid>a.log可以将其保存到文本中去，在一段时间后，使用文本对比工具，可以对比出GC回收了哪些对象。
-
-​    参数很简单，直接查看jmap -h
-
-​    举例：
-
-```
-jmap -heap pidjmap -dump:format=b,file=heap.hprof <pid>
-```
-
- 
-
-dump文件可以通过MemoryAnalyzer分析查看.网址：http://www.eclipse.org/mat/，可以查看dump时对象数量，内存占用，线程情况等。
-
-[jmap -dump:live为啥会触发Full GC](http://qa.taobao.com/?p=10010)
-
-### [jstack](http://stl-www.htw-saarland.de/syst-lab/java/jdk-1_5_0/docs/tooldocs/share/jstack.html)
-
-​    观察jvm中当前所有线程的运行情况和线程当前状态
-
-​    如果java程序崩溃生成core文件，jstack工具可以用来获得core文件的java stack和native stack的信息，从而可以轻松地知道java程序是如何崩溃和在程序何处发生问题。另外，jstack工具还可以附属到正在运行的java程序中，看到当时运行的java程序的java stack和native stack的信息, 如果现在运行的java程序呈现hung的状态，jstack是非常有用的。目前只有在Solaris和Linux的JDK版本里面才有。
-
-​    参数很简单，直接查看jstack -h
-
-​    举例：
+举例：
 
 ```
 jstack pid
 ```
 
-### [jstat](http://stl-www.htw-saarland.de/syst-lab/java/jdk-1_5_0/docs/tooldocs/share/jstat.html)
+## jps
 
-​    JVM监测工具(Java Virtual Machine Statistics Monitoring Tool)。利用了JVM内建的指令对Java应用程序的资源和性能进行实时的命令行的监控，包括各种堆和非堆的大小及其内存使用量、classloader、compiler、垃圾回收状况等。
-
-举例:
+列出系统中所有的java进程
 
 ```
-jstat –printcompilation -h10 3024 250 600
+jps
+##################
+2306 Bootstrap
+3370 Jps 2058 xxxxxxxxx
 ```
 
-   每250毫秒打印一次，一共打印600次 每隔10行显示一次head
+## jinfo
 
-语法结构:
-
-```
-Usage: jstat -help|-options       jstat -<option> [-t] [-h<lines>] <vmid> [<interval> [<count>]]
-```
-
-参数介绍：
-
-- -h n 每隔几行输出标题
-- vmid VM的进程号，即当前运行的java进程号
-- -t 在第一列显示自JVM启动以来的时间戳
-- -J 修改java进程的参数。类似jinfo -flag <name>=<value>。例如-J-Xms48m 设置初始堆为48M。[详见这里](http://stl-www.htw-saarland.de/syst-lab/java/jdk-1_5_0/docs/tooldocs/linux/java.html)。这个参数挺有用的，可以在运行中调整参数以方便测试、监测。
-- -option option为要检测的参数。参数列表可通过jstat –options 获取。下面将分别介绍每个参数及输出字段的含义。
-
-| [class](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#class_option) | 统计class loader行为信息                |
-| ------------------------------------------------------------ | --------------------------------------- |
-| [compiler](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#compiler_option) | 统计编译行为信息                        |
-| [gc](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#gc_option) | 统计jdk gc时heap信息                    |
-| [gccapacity](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#gccapacity_option) | 统计堆内存不同代的heap容量信息          |
-| [gccause](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#gccause_option) | 统计gc的情况（同-gcutil）和引起gc的事件 |
-| [gcnew](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#gcnew_option) | 统计gc时新生代的信息(相比gcutil更详细)  |
-| [gcnewcapacity](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#gcnewcapacity_option) | 统计gc时新生代heap容量                  |
-| [gcold](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#gcold_option) | 统计gc时，老年区的情况                  |
-| [gcoldcapacity](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#gcoldcapacity_option) | 统计gc时，老年区heap容量                |
-| [gcpermcapacity](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#gcpermcapacity_option) | 统计gc时，permanent区heap容量           |
-| [gcutil](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#gcutil_option) | 统计gc时，heap情况                      |
-| [printcompilation](https://www.cnblogs.com/redcreen/archive/2011/05/09/2040977.html#printcompilation_option) | 统计编译行为信息                        |
-
--class option:Class Loader Statistics
-
-| Column | Description                                         |
-| ---------- | ------------------------------------------------------- |
-| Loaded     | Number of classes loaded.                               |
-| Bytes      | Number of Kbytes loaded.                                |
-| Unloaded   | Number of classes unloaded.                             |
-| Bytes      | Number of Kbytes unloaded.                              |
-| Time       | Time spent performing class load and unload operations. |
-
--compiler:HotSpot Just-In-Time Compiler Statistics
-
-| Column   | Description                                        |
-| ------------ | ------------------------------------------------------ |
-| Compiled     | Number of compilation tasks performed.                 |
-| Failed       | Number of compilation tasks that failed.               |
-| Invalid      | Number of compilation tasks that were invalidated.     |
-| Time         | Time spent performing compilation tasks.               |
-| FailedType   | Compile type of the last failed compilation.           |
-| FailedMethod | Class name and method for the last failed compilation. |
-
--gc Option:Garbage-collected heap statistics
-
-| Column | Description                           |
-| ---------- | ----------------------------------------- |
-| S0C        | Current survivor space 0 capacity (KB).   |
-| S1C        | Current survivor space 1 capacity (KB).   |
-| S0U        | Survivor space 0 utilization (KB).        |
-| S1U        | Survivor space 1 utilization (KB).        |
-| EC         | Current eden space capacity (KB).         |
-| EU         | Eden space utilization (KB).              |
-| OC         | Current old space capacity (KB).          |
-| OU         | Old space utilization (KB).               |
-| PC         | Current permanent space capacity (KB).    |
-| PU         | Permanent space utilization (KB).         |
-| YGC        | Number of young generation GC Events.     |
-| YGCT       | Young generation garbage collection time. |
-| FGC        | Number of full GC events.                 |
-| FGCT       | Full garbage collection time.             |
-| GCT        | Total garbage collection time.            |
-
--gccapacity Option:Memory Pool Generation and Space Capacities
-
-| Column | Description                             |
-| ---------- | ------------------------------------------- |
-| NGCMN      | Minimum new generation capacity (KB).       |
-| NGCMX      | Maximum new generation capacity (KB).       |
-| NGC        | Current new generation capacity (KB).       |
-| S0C        | Current survivor space 0 capacity (KB).     |
-| S1C        | Current survivor space 1 capacity (KB).     |
-| EC         | Current eden space capacity (KB).           |
-| OGCMN      | Minimum old generation capacity (KB).       |
-| OGCMX      | Maximum old generation capacity (KB).       |
-| OGC        | Current old generation capacity (KB).       |
-| OC         | Current old space capacity (KB).            |
-| PGCMN      | Minimum permanent generation capacity (KB). |
-| PGCMX      | Maximum Permanent generation capacity (KB). |
-| PGC        | Current Permanent generation capacity (KB). |
-| PC         | Current Permanent space capacity (KB).      |
-| YGC        | Number of Young generation GC Events.       |
-| FGC        | Number of Full GC Events.                   |
-
--gccause Option:Garbage Collection Statistics, Including GC Events
-
-| Column | Description                      |
-| ---------- | ------------------------------------ |
-| LGCC       | Cause of last Garbage Collection.    |
-| GCC        | Cause of current Garbage Collection. |
-
-​    前面的字段与gcutil相同.
-
--gcnew Option:New Generation Statistics
-
-| Column | Description                           |
-| ---------- | ----------------------------------------- |
-| S0C        | Current survivor space 0 capacity (KB).   |
-| S1C        | Current survivor space 1 capacity (KB).   |
-| S0U        | Survivor space 0 utilization (KB).        |
-| S1U        | Survivor space 1 utilization (KB).        |
-| TT         | Tenuring threshold.                       |
-| MTT        | Maximum tenuring threshold.               |
-| DSS        | Desired survivor size (KB).               |
-| EC         | Current eden space capacity (KB).         |
-| EU         | Eden space utilization (KB).              |
-| YGC        | Number of young generation GC events.     |
-| YGCT       | Young generation garbage collection time. |
-
--gcnewcapacity Option:New Generation Space Size Statistics
-
-| Column | Description                         |
-| ---------- | --------------------------------------- |
-| NGCMN      | Minimum new generation capacity (KB).   |
-| NGCMX      | Maximum new generation capacity (KB).   |
-| NGC        | Current new generation capacity (KB).   |
-| S0CMX      | Maximum survivor space 0 capacity (KB). |
-| S0C        | Current survivor space 0 capacity (KB). |
-| S1CMX      | Maximum survivor space 1 capacity (KB). |
-| S1C        | Current survivor space 1 capacity (KB). |
-| ECMX       | Maximum eden space capacity (KB).       |
-| EC         | Current eden space capacity (KB).       |
-| YGC        | Number of young generation GC events.   |
-| FGC        | Number of Full GC Events.               |
-
--gcold Option:Old and Permanent Generation Statistics
-
-| Column | Description                        |
-| ---------- | -------------------------------------- |
-| PC         | Current permanent space capacity (KB). |
-| PU         | Permanent space utilization (KB).      |
-| OC         | Current old space capacity (KB).       |
-| OU         | old space utilization (KB).            |
-| YGC        | Number of young generation GC events.  |
-| FGC        | Number of full GC events.              |
-| FGCT       | Full garbage collection time.          |
-| GCT        | Total garbage collection time.         |
-
--gcoldcapacity Option:Old Generation Statistics
-
-| Column | Description                       |
-| ---------- | ------------------------------------- |
-| OGCMN      | Minimum old generation capacity (KB). |
-| OGCMX      | Maximum old generation capacity (KB). |
-| OGC        | Current old generation capacity (KB). |
-| OC         | Current old space capacity (KB).      |
-| YGC        | Number of young generation GC events. |
-| FGC        | Number of full GC events.             |
-| FGCT       | Full garbage collection time.         |
-| GCT        | Total garbage collection time.        |
-
--gcpermcapacity Option: Permanent Generation Statistics
-
-| Column | Description                             |
-| ---------- | ------------------------------------------- |
-| PGCMN      | Minimum permanent generation capacity (KB). |
-| PGCMX      | Maximum permanent generation capacity (KB). |
-| PGC        | Current permanent generation capacity (KB). |
-| PC         | Current permanent space capacity (KB).      |
-| YGC        | Number of young generation GC events.       |
-| FGC        | Number of full GC events.                   |
-| FGCT       | Full garbage collection time.               |
-| GCT        | Total garbage collection time.              |
-
--gcutil Option:Summary of Garbage Collection Statistics
-
-| Column | Description                                              |
-| ---------- | ------------------------------------------------------------ |
-| S0         | Survivor space 0 utilization as a percentage of the space's current capacity. |
-| S1         | Survivor space 1 utilization as a percentage of the space's current capacity. |
-| E          | Eden space utilization as a percentage of the space's current capacity. |
-| O          | Old space utilization as a percentage of the space's current capacity. |
-| P          | Permanent space utilization as a percentage of the space's current capacity. |
-| YGC        | Number of young generation GC events.                        |
-| YGCT       | Young generation garbage collection time.                    |
-| FGC        | Number of full GC events.                                    |
-| FGCT       | Full garbage collection time.                                |
-| GCT        | Total garbage collection time.                               |
-
--printcompilation Option: HotSpot Compiler Method Statistics
-
-| Column | Description                                              |
-| ---------- | ------------------------------------------------------------ |
-| Compiled   | Number of compilation tasks performed.                       |
-| Size       | Number of bytes of bytecode for the method.                  |
-| Type       | Compilation type.                                            |
-| Method     | Class name and method name identifying the compiled method. Class name uses "/" instead of "." as namespace separator. Method name is the method within the given class. The format for these two fields is consistent with the HotSpot - XX:+PrintComplation option. |
-
- 
-
-## Java api方式监测
-
-​    jre中提供了一些查看运行中的[jvm](http://www.huomo.cn/t/jvm/)内部信息的api，这些api包含在java.lang.management包中，此包中的接口是在jdk 5中引入的，所以只有在jdk 5及其以上版本中才能通过这种方式访问这些信息。下面简单介绍一下这包括哪些信息，以及如何访问。
-
-​    可以通过此api访问到运行中的jvm的类加载的信息、jit编译器的信息、内存分配的情况、线程的相关信息以及运行jvm的操作系统的信息。java.lang.management包中提供了9个接口来访问这些信息，使用ManagementFactory的静态get方法可以获得相应接口的实例，可以通过这些实例来获取你需要的相关信息。
-
-​    更详细的关于MBean的介绍参见[Java SE 6 新特性: JMX 与系统管理](http://www.ibm.com/developerworks/cn/java/j-lo-jse63/index.html)
-
-​    demo1:查看一下当前运行的jvm中加载了多少个类。想详细了解如何使用这些api，可以参考java.lang.management包中的详细api文档。
+观察进程运行环境参数，包括Java System属性和JVM命令行参数
 
 ```
-public class ClassLoaderChecker {    public static void main( String[] args ) throws Exception {      ClassLoadingMXBean bean = ManagementFactory.getClassLoadingMXBean();      System.out.println( bean.getLoadedClassCount() );    }}
+#查看java进程的配置信息
+jinfo 2058
+################
+Attaching to process ID 2058, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 24.0-b56
+Java System Properties:
+
+java.runtime.name = Java(TM) SE Runtime Environment
+project.name = Amoeba-MySQL
+java.vm.version = 24.0-b56
+sun.boot.library.path = /usr/local/java/jdk1.7/jre/lib/amd64
+................................................
+
+# 查看2058的MaxPerm大小可以用
+jinfo -flag MaxPermSize 2058
+#####################
+-XX:MaxPermSize=100663296
 ```
 
-demo2:自定义Mbean Type,记录的数据可通过jconsole等工具或自写代码查看,
+## jstat
+
+1. jstat利用JVM内建的指令对Java应用程序的资源和性能进行实时的命令行的监控，包括了对进程的classloader，compiler，gc情况；
+2. 监视JVM内存内的各种堆和非堆的大小及其内存使用量，以及加载类的数量。
 
 ```
-//工具方法public static ObjectName register(String name, Object mbean) {        try {            ObjectName objectName = new ObjectName(name);            MBeanServer mbeanServer = ManagementFactory                    .getPlatformMBeanServer();            try {                mbeanServer.registerMBean(mbean, objectName);            } catch (InstanceAlreadyExistsException ex) {                mbeanServer.unregisterMBean(objectName);                mbeanServer.registerMBean(mbean, objectName);            }            return objectName;        } catch (JMException e) {            throw new IllegalArgumentException(name, e);        }}//步骤一:定义Mbean接口://随便定义public interface DemoMBean {      public AtomicLong getInvokeCount();}//步骤二:实现接口,并注册:public class DemoImpl implements DemoMBean{      public final static String DEFAULT_OBJECT_NAME_PREFIX = "com.redcreen.demo:type=demo";      register("com.redcreen.demo:type=demo",DemoImpl.instance);}//可以通过jconsole中查看数据了
+-help 显示帮助信息。
+-version 显示版本信息
+-options 显示统计选项列表。
 ```
 
- 
+outputOptions 
 
-## 参考
+```
+参数：
+    -class：统计类装载器的行为
+    -compiler：统计HotSpot Just-in-Time编译器的行为
+    -gc：统计堆各个分区的使用情况
+    -gccapacity：统计新生区，老年区，permanent区的heap容量情况 
+    -gccause：统计最后一次gc和当前gc的原因
+    -gcnew：统计gc时，新生代的情况 
+    -gcnewcapacity：统计新生代大小和空间
+    -gcold：统计老年代和永久代的行为
+    -gcoldcapacity：统计老年代大小 
+    -gcpermcapacity：统计永久代大小 
+    -gcutil：统计gc时，heap情况 
+    -printcompilation：HotSpot编译方法统计
+```
 
-1. [在 Java SE 6 中监视和诊断性能问题](http://www.ibm.com/developerworks/cn/java/j-java6perfmon/index.html)
+-class
 
-2. http://www.51testing.com/?uid-183198-action-viewspace-itemid-185174
+```
+#每隔1秒监控一次，一共做10次
+[root@lq225 conf]# jstat -class 2058 1000 10
+Loaded  Bytes  Unloaded  Bytes     Time   
+  1697  3349.5        0     0.0       1.79
+  1697  3349.5        0     0.0       1.79
+  1697  3349.5        0     0.0       1.79
+  1697  3349.5        0     0.0       1.79
+  ...................................................
+################## 术语分隔符 ##################
+#Loaded 类加载数量
+#Bytes  加载的大小（k） 
+#Unloaded 类卸载的数量 
+#Bytes 卸载的大小（k） 
+#Time 时间花费在执行类加载和卸载操作
+```
 
-3. [JVM监控工具介绍jstack, jconsole, jinfo, jmap, jdb, jstat](http://blog.csdn.net/kelly859/archive/2010/08/20/5827363.aspx)
+-compiler
 
-4. http://stl-www.htw-saarland.de/syst-lab/java/jdk-1_5_0/docs/tooldocs/share/jinfo.html
+```
+Compiled Failed Invalid   Time   FailedType FailedMethod
+      302      0       0     1.27          0
+.....................................................
+################## 术语分隔符 ##################
+#Compiled 编译任务的执行次数
+#Failed   编译任务的失败次数 
+#Invalid  编译任务无效的次数
+#Time     编译任务花费的时间
+#FailedType 最后一次编译错误的类型
+#FailedMethod 最后一次编译错误的类名和方法
+```
 
-5. http://qa.taobao.com/?p=10010
+-gc
 
-6. [运用Jconsole监控JVM](http://blog.csdn.net/lengyuhong/archive/2011/02/22/6200355.aspx)
+```
+#每隔2秒监控一次，共20次
+[root@lq225 conf]#  jstat -gc 2058 2000 20
+#######################
+  S0C    S1C    S0U    S1U      EC       EU        OC         OU       PC     PU    YGC     YGCT    FGC    FGCT     GCT   
+8704.0 8704.0 805.5   0.0   69952.0  64174.5   174784.0    2644.5   16384.0 10426.7      2    0.034   0      0.000    0.034
+8704.0 8704.0 805.5   0.0   69952.0  64174.5   174784.0    2644.5   16384.0 10426.7      2    0.034   0      0.000    0.034
+8704.0 8704.0 805.5   0.0   69952.0  64174.5   174784.0    2644.5   16384.0 10426.7      2    0.034   0      0.000    0.034
+.............................................
+################## 术语分隔符 ##################
+#S0C 生还者区0 容量(KB)
+#S1C 生还者区1 容量(KB)
+#S0U 生还者区0 使用量(KB)
+#S1U 生还者区1 使用量(KB)
+#EC 年轻区Eden容量(KB)
+#EU 年轻区Eden使用量(KB) 
+#OC 老年区容量(KB)
+#OU 老年区使用量(KB)
+#PC 永久区容量(KB) 
+#PU 永久区使用量(KB)
+#YGC 新生代GC次数
+#YGCT 新生代GC时间
+#FGC full GC 事件的次数
+#FGCT full GC的时间 
+#GCT 总GC时间
+```
 
-7. http://www.coderanch.com/t/329407/java/java/find-all-loaded-classes-classloaders
+-gccapacity
+
+```
+NGCMN    NGCMX     NGC     S0C   S1C       EC      OGCMN      OGCMX       OGC         OC      PGCMN    PGCMX     PGC       PC     YGC    FGC
+131072.0 131072.0 131072.0 13056.0 13056.0 104960.0   393216.0   393216.0   393216.0   393216.0  65536.0  65536.0  65536.0  65536.0      1     0
+..........................................................................................................
+################## 术语分隔符 ##################
+#NGCMN 最小新生代容量(KB)
+#NGCMX 最大新生代容量(KB)
+#NGC 当前新生代容量(KB)
+#S0C 当前生存者0区容量(KB)
+#S1C 当前生存者1区容量(KB)
+#OGCMN 老年代最小容量(KB)
+#OGCMX 老年代最大容量(KB)
+#OGC 当前老年代容量(KB)
+#OC 当前老年代，Current old space capacity (KB) 
+#PGCMN 永久区最小容量(KB)
+#PGCMX 永久区最大容量(KB)
+#PGC 当前永久区容量(KB)
+#PC 当前永久区，Current Permanent space capacity (KB)
+#YGC young GC事件的次数 
+#FGC Full GC次数
+```
+
+-gccause
+
+```
+S0     S1     E      O      P     YGC     YGCT    FGC    FGCT     GCT    LGCC                 GCC
+0.00  99.84  12.76   0.92  46.23      1    0.016     0    0.000    0.016 unknown GCCause      No GC
+................................................
+################## 术语分隔符 ##################
+#S0 年轻代中第一个survivor（幸存区）已使用的占当前容量百分比
+#S1 年轻代中第二个survivor（幸存区）已使用的占当前容量百分比
+#E 年轻代中Eden已使用的占当前容量百分比
+#O old代已使用的占当前容量百分比
+#P perm代已使用的占当前容量百分比
+#YGC 从应用程序启动到采样时年轻代中gc次数
+#YGCT 从应用程序启动到采样时年轻代gc所用时间(s)
+#FGC 从应用程序启动到采样时old代(全gc)gc次数
+#FGCT 从应用程序启动到采样时old代(全gc)gc所用时间(s)
+#GCT 从应用程序启动到采样时gc用的总时间(s)
+#LGCC 最后一次GC的原因
+#GCC 当前GC的原因
+```
+
+-gcutil  
+
+```
+#每隔1秒监控一次，共10次
+jstat -gcutil 2058 1000 10
+########################
+[root@lq225 conf]# jstat -gcutil 2058 1000 10
+  S0     S1     E      O      P     YGC     YGCT    FGC    FGCT     GCT   
+  9.25   0.00  96.73   1.51  63.64      2    0.034     0    0.000    0.034
+  9.25   0.00  96.73   1.51  63.64      2    0.034     0    0.000    0.034
+  9.25   0.00  96.73   1.51  63.64      2    0.034     0    0.000    0.034
+  9.25   0.00  96.73   1.51  63.64      2    0.034     0    0.000    0.034
+```
+
+## jmap
+
+- 监视进程运行中的jvm物理内存的占用情况和在该进程内存内，所有对象的情况，例如产生了哪些对象，对象数量。
+- 使用hprof二进制形式,输出jvm的heap内容到文件。然后使用jhat工具进行分析，在OOM（内存溢出）时，分析大对象非常有用。
+
+```
+#参数
+    -dump:[live,]format=b,file=<filename> 使用hprof二进制形式,输出jvm的heap内容到文件=. live子选项是可选的，假如指定live选项,那么只输出活的对象到文件. 
+    -finalizerinfo 打印正等候回收的对象的信息.
+    -heap 打印heap的概要信息，GC使用的算法，heap的配置及wise heap的使用情况.
+    -histo[:live] 打印每个class的实例数目,内存占用,类全名信息. JVM的内部类名字开头会加上前缀"*". 如果live子参数加上后,只统计活的对象数量. 
+    -permstat 打印classload和jvm heap长久层的信息. 包含每个classloader的名字,活泼性,地址,父classloader和加载的class数量. 另外,内部String的数量和占用内存数也会打印出来. 
+    -F 强迫.在pid没有相应的时候使用-dump或者-histo参数. 在这个模式下,live子参数无效. 
+    -h | -help 打印辅助信息 
+    -J 传递参数给jmap启动的jvm. 
+    pid 需要被打印信息的java进程id.
+```
+
+-histo 
+
+```
+jmap -histo  2058
+#####################
+  num     #instances         #bytes  class name
+----------------------------------------------
+    1:           206        3585312  [I
+    2:         19621        2791880  <constMethodKlass>
+    3:         19621        2520048  <methodKlass>
+    4:         21010        2251616  [C
+............................................................
+```
+
+-dump：
+
+```
+#将堆输出到hprof文件。可以使用jhat工具进行分析，在OOM（内存溢出）时，分析大对象非常有用
+jmap -dump:live,format=b,file=data.hprof 2058
+
+#通过使用如下参数启动JVM，也可以获取到dump文件：
+  -XX:+HeapDumpOnOutOfMemoryError
+  -XX:HeapDumpPath=./java_pid<pid>.hprof
+```
+
+jhat
+
+```
+#如果在虚拟机中导出的heap信息文件可以拿到WINDOWS上进行分析，可以查找诸如内存方面的问题，如：
+jhat data.hprof  
+#执行成功后，访问http://localhost:7000即可查看内存信息。
+```
+
+
+
+## jconsole
+
+jconsole 是一个java GUI监视工具，可以以图表化的形式显示各种数据。并可通过远程连接监视远程的服务器VM。 在jdk安装目录找到jconsole.exe，双击即可启动。
+
+方式一：指定密码，增加安全性
+
+```ruby
+java  -Dcom.sun.management.jmxremote.port=5000  
+  -Dcom.sun.management.jmxremote.password.file=/Users/aihe/Documents/jmxremote.password   
+  -Dcom.sun.management.jmxremote.authenticate=true 
+  -Dcom.sun.management.jmxremote.ssl=false 
+  -Dcom.sun.management.jmxremote.access.file=/Users/aihe/Documents/jmxremote.access 
+  -jar target/jmxdemo-0.0.1-SNAPSHOT.jar
+```
+
+
+![查看jconsole连接密码](./imgs/jconsole3.png)
+
+![jconsole新建连接](./imgs/jconsole2.jpg)
+
+![jconsole数据](./imgs/jconsole1.jpg)
+
+
+
+## jvisualvm
+
+jconsole 和 jvisualvm 一样，也是一个java GUI监视工具，可以以图表化的形式显示各种数据。在jdk安装目录找到jvisualvm.exe，双击即可启动。
+
+使用visualvm监控tomcat，修改catalina.sh，添加下面一行：
+
+```
+CATALINA_OPTS="$CATALINA_OPTS \
+  -Dcom.sun.management.jmxremote=true \
+  -Djava.rmi.server.hostname=192.168.55.255  \
+  -Dcom.sun.management.jmxremote.port=8086 \
+  -Dcom.sun.management.jmxremote.ssl=false \
+  -Dcom.sun.management.jmxremote.authenticate=false"
+```
+
+注意点：
+1、用 `hostname -i` 查看是否为127.0.01，如果是，则必须配置 `-Djava.rmi.server.hostname` 为本机IP。
+2、检查防火墙（iptables）是否开启，以及是否开放jmxremote.port所指定的端口。
+
+![jvisualvm监控主界面](./imgs/jvisualvm1.png)
+
+![jvisualvm实时线程信息](./imgs/jvisualvm2.png)
+
+![jvisualvm查看线程快照信息](./imgs/jvisualvm3.png)
+
+
+
+> 以上这些工具都是 JDK 内置工具。  
+> jconsole 和 jvisualvm 都是通过jmx来访问JVM然后进行统计的，在启动JVM的时候，要指定jmx的内容。
+
+## JProfiler
+
+JProfiler是由ej-technologies GmbH公司开发的一款性能瓶颈分析工具.有以下特点
+* 对被分析的应用影响小
+* CPU,Thread,Memory分析功能尤其强大
+* 支持对jdbc,noSql, jsp, servlet, socket等进行分析
+* 支持多种模式(离线，在线)的分析
+
+
+![JProfiler](./imgs/jprofier.png)
+
+##### A1. 分析的数据主要来自于两部分
+
+1. 一部分来自于jvm的分析接口**JVMTI**(JVM Tool Interface) , JDK必须>=1.6. 主要采集 例如: 对象的生命周期，thread的生命周期等信息
+
+> JVMTI is an event-based system. The profiling agent library can register handler functions for different events. It can then enable or disable selected events
+
+2. 一部分来自于instruments classes(可理解为class的重写,增加JProfiler相关统计功能)：主要采集 例如：方法执行时间，次数，方法栈等信息
+
+##### 2. 数据收集的原理
+1. 用户在JProfiler GUI中下达监控的指令(一般就是点击某个按钮)
+2. JProfiler GUI JVM 通过socket(默认端口8849)，发送指令给被分析的jvm中的JProfile Agent。
+3. JProfiler Agent(如果不清楚Agent请看文章第三部分"启动模式") 收到指令后，将该指令转换成相关需要监听的事件或者指令,来注册到JVMTI上或者直接让JVMTI去执行某功能(例如dump jvm内存)
+4. JVMTI 根据注册的事件，来收集当前jvm的相关信息。 例如: 线程的生命周期; jvm的生命周期;classes的生命周期;对象实例的生命周期;堆内存的实时信息等等
+5. JProfiler Agent将采集好的信息保存到**内存**中，按照一定规则统计好(如果发送所有数据JProfiler GUI，会对被分析的应用网络产生比较大的影响)
+6. 返回给JProfiler GUI Socket.
+7. JProfiler GUI Socket 将收到的信息返回 JProfiler GUI Render
+8. JProfiler GUI Render 渲染成最终的展示效果
+
+
+## Arthas
+
+[Arthas](https://alibaba.github.io/arthas/) 是阿里开源的一款好用的jvm监控工具，有点像是把jdk中自带的命令行工具做了集合。
+
+##### 安装
+
+```php
+# 安装方式一
+curl -L https://alibaba.github.io/arthas/install.sh | sh
+# 安装方式二
+java -jar arthas-boot.jar --repo-mirror aliyun --use-http
+```
+
+##### 启动
+
+启动 arthas-boot.jar
+```css
+java -jar arthas-boot.jar
+```
+
+![Arthas启动](./imgs/arthas.jpg)
+
+
+# 参考
+
+1. [JDK内置工具使用](https://www.cnblogs.com/zengweiming/p/8946195.html)
+2. [JVM监控工具](https://www.jianshu.com/p/ccb7edb71c79)
+3. [Arthas官方文档](https://alibaba.github.io/arthas/)
+4. [Java性能分析神器-JProfiler详解（一）](https://blog.csdn.net/u013613428/article/details/53926825)
+5. [Intellij IDEA集成JProfiler性能分析神器](https://blog.csdn.net/wytocsdn/article/details/79258247?utm_medium=distribute.pc_relevant.none-task-blog-baidujs-2)
+6. [jvm系列(七):jvm调优-工具篇](https://yq.aliyun.com/articles/385650?spm=a2c4e.11153940.0.0.10443c4aaDCCaj)
+7. [Jvisualvm简单使用教程](https://www.cnblogs.com/mzq123/p/11166640.html)
+
+
+# 附录
+
+一些中文解释
+
+```
+S0C：年轻代中第一个survivor（幸存区）的容量 (字节)
+S1C：年轻代中第二个survivor（幸存区）的容量 (字节)
+S0U：年轻代中第一个survivor（幸存区）目前已使用空间 (字节)
+S1U：年轻代中第二个survivor（幸存区）目前已使用空间 (字节)
+EC：年轻代中Eden的容量 (字节)
+EU：年轻代中Eden目前已使用空间 (字节)
+OC：Old代的容量 (字节)
+OU：Old代目前已使用空间 (字节)
+PC：Perm(持久代)的容量 (字节)
+PU：Perm(持久代)目前已使用空间 (字节)
+YGC：从应用程序启动到采样时年轻代中gc次数
+YGCT：从应用程序启动到采样时年轻代中gc所用时间(s)
+FGC：从应用程序启动到采样时old代(全gc)gc次数
+FGCT：从应用程序启动到采样时old代(全gc)gc所用时间(s)
+GCT：从应用程序启动到采样时gc用的总时间(s)
+NGCMN：年轻代(young)中初始化(最小)的大小 (字节)
+NGCMX：年轻代(young)的最大容量 (字节)
+NGC：年轻代(young)中当前的容量 (字节)
+OGCMN：old代中初始化(最小)的大小 (字节) 
+OGCMX：old代的最大容量 (字节)
+OGC：old代当前新生成的容量 (字节)
+PGCMN：perm代中初始化(最小)的大小 (字节) 
+PGCMX：perm代的最大容量 (字节)   
+PGC：perm代当前新生成的容量 (字节)
+S0：年轻代中第一个survivor（幸存区）已使用的占当前容量百分比
+S1：年轻代中第二个survivor（幸存区）已使用的占当前容量百分比
+E：年轻代中Eden（伊甸园）已使用的占当前容量百分比
+O：old代已使用的占当前容量百分比
+P：perm代已使用的占当前容量百分比
+S0CMX：年轻代中第一个survivor（幸存区）的最大容量 (字节)
+S1CMX：年轻代中第二个survivor（幸存区）的最大容量 (字节)
+ECMX：年轻代中Eden（伊甸园）的最大容量 (字节)
+DSS：当前需要survivor（幸存区）的容量 (字节)（Eden区已满）
+TT： 持有次数限制
+MTT ： 最大持有次数限制
+```

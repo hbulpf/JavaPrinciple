@@ -231,7 +231,7 @@ jstat -gcutil 2058 1000 10
     -F 强迫.在pid没有相应的时候使用-dump或者-histo参数. 在这个模式下,live子参数无效. 
     -h | -help 打印辅助信息 
     -J 传递参数给jmap启动的jvm. 
-    pid 需要被打印配相信息的java进程id.
+    pid 需要被打印信息的java进程id.
 ```
 
 -histo 
@@ -271,7 +271,7 @@ jhat data.hprof
 
 ## jconsole
 
-jconsole 是一个java GUI监视工具，可以以图表化的形式显示各种数据。并可通过远程连接监视远程的服务器VM。 
+jconsole 是一个java GUI监视工具，可以以图表化的形式显示各种数据。并可通过远程连接监视远程的服务器VM。 在jdk安装目录找到jconsole.exe，双击即可启动。
 
 方式一：指定密码，增加安全性
 
@@ -284,15 +284,18 @@ java  -Dcom.sun.management.jmxremote.port=5000
   -jar target/jmxdemo-0.0.1-SNAPSHOT.jar
 ```
 
-![img](./imgs/jconsole1.jpg)
 
-![img](./imgs/jconsole2.jpg)
+![查看jconsole连接密码](./imgs/jconsole3.png)
 
-![img](./imgs/jconsole3.png)
+![jconsole新建连接](./imgs/jconsole2.jpg)
+
+![jconsole数据](./imgs/jconsole1.jpg)
+
+
 
 ## jvisualvm
 
-jconsole 和 jvisualvm 一样，也是一个java GUI监视工具，可以以图表化的形式显示各种数据。
+jconsole 和 jvisualvm 一样，也是一个java GUI监视工具，可以以图表化的形式显示各种数据。在jdk安装目录找到jvisualvm.exe，双击即可启动。
 
 使用visualvm监控tomcat，修改catalina.sh，添加下面一行：
 
@@ -309,6 +312,13 @@ CATALINA_OPTS="$CATALINA_OPTS \
 1、用 `hostname -i` 查看是否为127.0.01，如果是，则必须配置 `-Djava.rmi.server.hostname` 为本机IP。
 2、检查防火墙（iptables）是否开启，以及是否开放jmxremote.port所指定的端口。
 
+![jvisualvm监控主界面](./imgs/jvisualvm1.png)
+
+![jvisualvm实时线程信息](./imgs/jvisualvm2.png)
+
+![jvisualvm查看线程快照信息](./imgs/jvisualvm3.png)
+
+
 
 > 以上这些工具都是 JDK 内置工具。  
 > jconsole 和 jvisualvm 都是通过jmx来访问JVM然后进行统计的，在启动JVM的时候，要指定jmx的内容。
@@ -322,7 +332,7 @@ JProfiler是由ej-technologies GmbH公司开发的一款性能瓶颈分析工具
 * 支持多种模式(离线，在线)的分析
 
 
-![img](./imgs/jprofier.png)
+![JProfiler](./imgs/jprofier.png)
 
 #### A1. 分析的数据主要来自于两部分
 
@@ -343,7 +353,7 @@ JProfiler是由ej-technologies GmbH公司开发的一款性能瓶颈分析工具
 8. JProfiler GUI Render 渲染成最终的展示效果
 
 
-## [Arthas](https://alibaba.github.io/arthas/)
+## Arthas
 
 [Arthas](https://alibaba.github.io/arthas/) 是阿里开源的一款好用的jvm监控工具，有点像是把jdk中自带的命令行工具做了集合。
 
@@ -363,7 +373,7 @@ java -jar arthas-boot.jar --repo-mirror aliyun --use-http
 java -jar arthas-boot.jar
 ```
 
-![img](./imgs/arthas.jpg)
+![Arthas启动](./imgs/arthas.jpg)
 
 
 # 参考
@@ -374,6 +384,8 @@ java -jar arthas-boot.jar
 4. [Java性能分析神器-JProfiler详解（一）](https://blog.csdn.net/u013613428/article/details/53926825)
 5. [Intellij IDEA集成JProfiler性能分析神器](https://blog.csdn.net/wytocsdn/article/details/79258247?utm_medium=distribute.pc_relevant.none-task-blog-baidujs-2)
 6. [jvm系列(七):jvm调优-工具篇](https://yq.aliyun.com/articles/385650?spm=a2c4e.11153940.0.0.10443c4aaDCCaj)
+7. [Jvisualvm简单使用教程](https://www.cnblogs.com/mzq123/p/11166640.html)
+
 
 # 附录
 
