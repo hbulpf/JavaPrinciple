@@ -57,7 +57,7 @@
 |          | 52   | [N-Queens II](https://leetcode-cn.com/problems/n-queens-ii/) |        |                                                      |                                                              |
 | 通过     | 53   | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | easy   | [动态规划法](solution/Solution53.java)               | DP算法 : T=O(N),S=O(1).利用nums数组本身作为DP数组            |
 |          | 54   | [Spiral Matrix](https://leetcode-cn.com/problems/spiral-matrix/) | 85     |                                                      |                                                              |
-|          | 55   | [Jump Game](https://leetcode-cn.com/problems/jump-game/#/description) |        |                                                      |                                                              |
+|          | 55   | [Jump Game](https://leetcode-cn.com/problems/jump-game/#/description) |        |     [贪心法](solution/Solution055.java)                                                   |                                                              |
 |          | 56   | [Merge Intervals](https://leetcode-cn.com/problems/merge-intervals/) | 70     |                                                      |                                                              |
 |          | 57   | [Insert Interval](https://leetcode-cn.com/problems/insert-interval/) | 75     |                                                      | 这题要多做几遍                                               |
 |          | 60   | [Permutation Sequence](https://leetcode-cn.com/problems/permutation-sequence/) | 70     |                                                      | 这题思路巧妙，多做两遍                                       |
