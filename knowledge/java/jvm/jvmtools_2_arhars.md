@@ -1,6 +1,17 @@
-# [Arthas](https://alibaba.github.io/arthas/) 的使用
+# 介绍一款JVM神器：Arthas
 
-[Arthas](https://alibaba.github.io/arthas/) 是阿里开源的一款好用的jvm监控工具，有点像是把jdk中自带的命令行工具做了集合。
+[Arthas](https://alibaba.github.io/arthas/) 是阿里开源的一款好用的jvm监控工具，有点像是把jdk中自带的命令行工具做了集合, 堪称​JVM 问题定位的神器。​
+
+当遇到以下类似问题而束手无策时，Arthas 可以帮助你解决：
+
+1. 这个类从哪个 jar 包加载的？为什么会报各种类相关的 Exception？
+2. 我改的代码为什么没有执行到？难道是我没 commit？分支搞错了？
+3. 遇到问题无法在线上 debug，难道只能通过加日志再重新发布吗？
+4. 线上遇到某个用户的数据处理有问题，但线上同样无法 debug，线下无法重现！
+5. 是否有一个全局视角来查看系统的运行状况？
+6. 有什么办法可以监控到JVM的实时运行状态？
+
+Arthas 采用命令行交互模式，同时提供丰富的 Tab 自动补全功能，进一步方便进行问题的定位和诊断。
 
 ## 安装
 
@@ -18,9 +29,9 @@ java -jar arthas-boot.jar --repo-mirror aliyun --use-http
 java -jar arthas-boot.jar
 ```
 
-![img](https:////upload-images.jianshu.io/upload_images/426671-34a1e4be7946861c.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+![arthas1](imgs/arthas1.png)
 
-![img](https:////upload-images.jianshu.io/upload_images/426671-bf62df693a748078.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+![arthas2](imgs/arthas2.png)
 
 ## 使用
 
@@ -78,7 +89,7 @@ java -jar arthas-boot.jar
 
 ### profiler/火焰图
 
-- [profiler](https://alibaba.github.io/arthas/profiler.html)–使用[async-profiler](https://github.com/jvm-profiling-tools/async-profiler)对应用采样，生成火焰图
+- [profiler](https://alibaba.github.io/arthas/profiler.html)——使用[async-profiler](https://github.com/jvm-profiling-tools/async-profiler)对应用采样，生成火焰图
 
 ### options
 
@@ -137,6 +148,10 @@ Arthas支持使用管道对上述命令的结果进行进一步的处理，如`s
 4. 可能需要使用arthas改值的基础类型成员，不要用 `static final` 修饰符,因为这种数据在编译期会被优化掉,就算使用arthas修改数据也无法在使用的地方生效
 5. 使用spring的工程，可以添加SpringContext，这为对spring对象操作做下了关键铺垫点
 6. 方法不要太长，否则关键时刻使用arthas找不到调试点 
+
+## 其他
+
+[arthas技能图谱](imgs/arthas3.png)
 
 # 参考
 

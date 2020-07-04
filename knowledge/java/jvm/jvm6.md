@@ -285,11 +285,11 @@ java  -Dcom.sun.management.jmxremote.port=5000
 ```
 
 
-![查看jconsole连接密码](./imgs/jconsole3.png)
+![查看jconsole连接密码](../imgs/jconsole3.png)
 
-![jconsole新建连接](./imgs/jconsole2.jpg)
+![jconsole新建连接](../imgs/jconsole2.jpg)
 
-![jconsole数据](./imgs/jconsole1.jpg)
+![jconsole数据](../imgs/jconsole1.jpg)
 
 
 
@@ -312,11 +312,11 @@ CATALINA_OPTS="$CATALINA_OPTS \
 1、用 `hostname -i` 查看是否为127.0.01，如果是，则必须配置 `-Djava.rmi.server.hostname` 为本机IP。
 2、检查防火墙（iptables）是否开启，以及是否开放jmxremote.port所指定的端口。
 
-![jvisualvm监控主界面](./imgs/jvisualvm1.png)
+![jvisualvm监控主界面](../imgs/jvisualvm1.png)
 
-![jvisualvm实时线程信息](./imgs/jvisualvm2.png)
+![jvisualvm实时线程信息](../imgs/jvisualvm2.png)
 
-![jvisualvm查看线程快照信息](./imgs/jvisualvm3.png)
+![jvisualvm查看线程快照信息](../imgs/jvisualvm3.png)
 
 
 
@@ -332,7 +332,7 @@ JProfiler是由ej-technologies GmbH公司开发的一款性能瓶颈分析工具
 * 支持多种模式(离线，在线)的分析
 
 
-![JProfiler](./imgs/jprofier.png)
+![JProfiler](../imgs/jprofier.png)
 
 ##### A1. 分析的数据主要来自于两部分
 
@@ -373,7 +373,7 @@ java -jar arthas-boot.jar --repo-mirror aliyun --use-http
 java -jar arthas-boot.jar
 ```
 
-![Arthas启动](./imgs/arthas.jpg)
+![Arthas启动](../imgs/arthas.jpg)
 
 
 # 参考

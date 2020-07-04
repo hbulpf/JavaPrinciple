@@ -2,8 +2,8 @@
 
 - [java](README.md)
     - [java和javaw的区别](java和javaw的区别.md)
-    - [JVM参数](jvm.md)
-        - [JVM工具](jvmtools.md)
+    - [JVM参数](jvm/jvm.md)
+        - [JVM工具](jvm/jvmtools.md)
         - [JVM垃圾回收](jvm_gc.md)
     - [logback](logback/README.md)
     - [Maven常用命令](maven/mavencmd.md)

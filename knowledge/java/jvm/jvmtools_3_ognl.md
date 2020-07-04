@@ -1,6 +1,9 @@
-# [Arthas活用ognl表达式](https://github.com/alibaba/arthas/issues/11)
+# 使用Arthas活用ognl表达式
 
-> [OGNL是Object Graphic Navigation Language(对象图导航语言)的缩写](https://www.cnblogs.com/cenyu/p/6233942.html)，是一个开源项目。Struts框架使用OGNL作为默认的表达式语言。 
+> [OGNL是Object Graphic Navigation Language(对象图导航语言)的缩写](https://www.cnblogs.com/cenyu/p/6233942.html)，是一个开源项目。Struts框架使用OGNL作为默认的表达式语言。 本文使用Arthas作为例子，通过ognl表达式来完成一系列JVM的问题定位和处理。
+
+
+## 测试类的代码
 
 ```
 package dev.demo.jvm.arthas;
@@ -94,7 +97,7 @@ public enum Type {
 
 ```
 
-#### 查看第一个参数
+## 查看第一个参数
 
 params是参数列表，是一个数组，可以直接通过下标方式访问
 
@@ -112,7 +115,7 @@ Affect(class-cnt:1 , method-cnt:1) cost in 26 ms.
 
 > 这里的-n表示只输出一次
 
-#### 查看数组中的元素
+## 查看数组中的元素
 
 第一个参数是一个List，想要看List中第一个Pojo对象，可以通过下标方式，也可以通过List的get方法访问。
 
@@ -136,7 +139,7 @@ Affect(class-cnt:1 , method-cnt:1) cost in 14 ms.
 ]
 ```
 
-#### 查看Pojo的属性
+## 查看Pojo的属性
 
 拿到这个Pojo可以，直接访问Pojo的属性，如age
 
@@ -165,7 +168,7 @@ Affect(class-cnt:1 , method-cnt:1) cost in 25 ms.
 @Integer[2]
 ```
 
-#### 集合投影
+## 集合投影
 
 有时候我们只需要抽取对象数组中的某一个属性，这种情况可以通过投影来实现，比如要将Pojo对象列表中的name属性单独抽出来，可以通过`params[0].{name}`这个表达式来实现。 ognl会便利params[0]这个List取出每个对象的name属性，重新组装成一个新的数组。用法相当于Java stream中的map函数。
 
@@ -187,7 +190,7 @@ Affect(class-cnt:1 , method-cnt:1) cost in 56 ms.
 ]
 ```
 
-#### 集合过滤
+## 集合过滤
 
 有时候还需要针对集合对象按某种条件进行过滤，比如想找出所有age大于5的Pojo的name，可以这样写
 
@@ -225,7 +228,7 @@ Affect(class-cnt:1 , method-cnt:1) cost in 43 ms.
 ]
 ```
 
-#### 多行表达式
+## 多行表达式
 
 有些表达式一行之内无法表达，需要多行才能表达，应该怎么写的？比如，假设我们要把所有Pojo的name拿出来，再往里面新加一个新的元素，在返回新的列表，应该如何写？可以通过中括号将多个表达式串联起来，最后一个表达式的返回值代表整个表达式的最终结果。临时变量可以用`#`来表示。
 
@@ -248,7 +251,7 @@ Affect(class-cnt:1 , method-cnt:1) cost in 28 ms.
 ]
 ```
 
-#### 调用构造函数
+## 调用构造函数
 
 调用构造函数，必须要指定要创建的类的`全类名`。比如下面的例子中，创建一个新的list，然后添加一个新的元素，然后返回添加后的list。
 
@@ -261,7 +264,7 @@ Affect(class-cnt:1 , method-cnt:1) cost in 37 ms.
 ]
 ```
 
-#### 访问静态变量
+## 访问静态变量
 
 可以通过`@class@filed`方式访问，注意需要填写全类名
 
@@ -275,7 +278,7 @@ Affect(class-cnt:1 , method-cnt:1) cost in 35 ms.
 ]
 ```
 
-#### 调用静态方法
+## 调用静态方法
 
 可以通过`@class@method(args)`方式访问，注意需要填写全类名
 
@@ -298,7 +301,7 @@ Affect(class-cnt:1 , method-cnt:1) cost in 84 ms.
 ]
 ```
 
-#### 访问Map中的元素
+## 访问Map中的元素
 
 Test.n是一个HashMap，假设要获取这个Map的所有key，ongl针对Map接口提供了`keys`, `values`这两个虚拟属性，可以像普通属性一样访问。
 
@@ -332,7 +335,7 @@ Affect(class-cnt:1 , method-cnt:1) cost in 72 ms.
 ]
 ```
 
-#### 附: ognl内置的ognl的虚拟属性
+## 附: ognl内置的ognl的虚拟属性
 
 - Collection:
   - size
@@ -358,3 +361,5 @@ Affect(class-cnt:1 , method-cnt:1) cost in 72 ms.
 1. [Arthas官方文档](https://alibaba.github.io/arthas/)
 2. [Ognl表达式基本原理和使用方法](https://www.cnblogs.com/cenyu/p/6233942.html)
 3. [OGNL表达式官方指南](https://commons.apache.org/proper/commons-ognl/language-guide.html )
+4. [Arthas使用ognl表达式Issue](https://github.com/alibaba/arthas/issues/11)
+

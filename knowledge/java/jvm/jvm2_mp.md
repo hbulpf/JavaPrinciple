@@ -167,7 +167,7 @@ Client模式下默认可用
 
 
 
-![](imgs/jvm3.jpg)
+![](../imgs/jvm3.jpg)
 
 注：
 
