@@ -7,7 +7,7 @@
         - [PriorityQueue](basic/PriorityQueue.md)
         - [List和Array用法](basic/List和Array用法.md)
     - [java和javaw的区别](java和javaw的区别.md)
-    - [JVM参数](jvm/jvm.md)
+    - [JVM](jvm/jvm.md)
         - [JVM基础工具](jvm/jvmtools_1_基础工具.md)
         - [JVM: arthas](jvm/jvmtools_2_arthas.md)
         - [Arthas活用ognl表达式](jvm/jvmtools_3_ognl.md)

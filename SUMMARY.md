@@ -18,7 +18,7 @@
         - [PriorityQueue](knowledge/java/basic/PriorityQueue.md)
         - [List和Array用法](knowledge/java/basic/List和Array用法.md)
     - [java和javaw的区别](knowledge/java/java和javaw的区别.md)
-    - [JVM参数](knowledge/java/jvm/jvm.md)
+    - [JVM](knowledge/java/jvm/jvm.md)
         - [JVM基础工具](knowledge/java/jvm/jvmtools_1_基础工具.md)
         - [JVM: arthas](knowledge/java/jvm/jvmtools_2_arthas.md)
         - [Arthas活用ognl表达式](knowledge/java/jvm/jvmtools_3_ognl.md)
