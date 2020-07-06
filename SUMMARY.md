@@ -18,6 +18,7 @@
         - [PriorityQueue](knowledge/java/basic/PriorityQueue.md)
         - [List和Array用法](knowledge/java/basic/List和Array用法.md)
     - [java和javaw的区别](knowledge/java/java和javaw的区别.md)
+    - [Java的classpath指什么](knowledge/java/Java的classpath指什么.md)
     - [JVM](knowledge/java/jvm/jvm.md)
         - [JVM基础工具](knowledge/java/jvm/jvmtools_1_基础工具.md)
         - [JVM: arthas](knowledge/java/jvm/jvmtools_2_arthas.md)
@@ -35,6 +36,7 @@
         - [BeanUtils](knowledge/java/utils/BeanUtils.md)
         - [Date类](knowledge/java/utils/Date.md)
         - [常见加密算法](knowledge/java/utils/encryption.md)
+        - [RSA数字证书生成](knowledge/java/utils/RSA数字证书生成.md)
     - [logback](knowledge/java/logback/README.md)
     - [Maven常用命令](knowledge/java/maven/mavencmd.md)
         - [pom介绍](knowledge/java/maven/maven_pom.md)
@@ -43,6 +45,7 @@
     - [Tomcat](knowledge/java/tomcat.md)
     - [线程池](knowledge/java/threadpool.md)
     - [Lambda表达式](knowledge/java/java8/Lambda.md)
+    - [springboot同时支持http和https访问](knowledge/java/spring/springboot/springboot同时支持http和https访问.md)
        
     
 - [Java工程师路径](knowledge/java/JavaPath.md)
