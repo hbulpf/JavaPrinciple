@@ -269,3 +269,7 @@ keytool -exportcert -alias sun -keystore f:/demo.jks -rfc -file f:/demo.cer -sto
 
 1. [亚洲诚信](https://myssl.com/csr_create.html)
 2. [SSL Tools](https://tools.ssldun.com/)
+
+# 参考
+
+1. [java中RSA数字证书生成，jks文件生成以及读取](https://blog.csdn.net/maguanghui_2012/article/details/80381476)
