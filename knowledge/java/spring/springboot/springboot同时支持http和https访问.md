@@ -264,3 +264,5 @@ public class HttpsConfig {
 # 参考
 
 1. [spring cloud/spring boot同时支持http和https访问](https://www.cnblogs.com/lianggp/p/8136540.html)
+2. [SSL在线工具](http://www.ssleye.com/)
+3. [腾讯云SSL申请](https://cloud.tencent.com/product/ssl)
