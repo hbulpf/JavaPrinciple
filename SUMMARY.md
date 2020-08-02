@@ -46,9 +46,9 @@
     - [线程池](knowledge/java/threadpool.md)
     - [Lambda表达式](knowledge/java/java8/Lambda.md)
     - [springboot同时支持http和https访问](knowledge/java/spring/springboot/springboot同时支持http和https访问.md)
-       
-    
-- [Java工程师路径](knowledge/java/JavaPath.md)
+    - [SpringBoot使用腾讯云SSL证书并开启HTTPS访问](knowledge/java/spring/springboot/SpringBoot使用腾讯云SSL证书并开启HTTPS访问.md)
+
+- [Java工程师](knowledge/java/JavaPath.md)
   
 # 算法
 
