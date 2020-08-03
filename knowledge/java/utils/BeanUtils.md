@@ -83,6 +83,44 @@ ConvertUtils.register(dateConverter,Date.class);
 org.apache.commons.beanutils.BeanUtils.copyProperties(addr2, addr1);//进行复制,注意 addr2 是 target , addr1 是source
 ```
 
+# 应该使用哪个 BeanUtils
+
+很多BeanUtisl工具类，比较常用的有
+
+1. Spring BeanUtils
+2. Cglib BeanCopier
+3. Apache BeanUtils
+4. Apache PropertyUtils
+5. Dozer
+
+对 bean 做 100,1000,10000,100000,,1000000 次复制，耗费时间如下
+```
+cglibBeanCopier cost :73
+cglibBeanCopier cost :3
+cglibBeanCopier cost :11
+cglibBeanCopier cost :33
+cglibBeanCopier cost :84
+--------------------------
+apachePropertyUtils cost :317
+apachePropertyUtils cost :11
+apachePropertyUtils cost :20
+apachePropertyUtils cost :93
+apachePropertyUtils cost :734
+--------------------------
+apacheBeanUtils cost :0
+apacheBeanUtils cost :2
+apacheBeanUtils cost :7
+apacheBeanUtils cost :62
+apacheBeanUtils cost :623
+--------------------------
+springBeanUtils cost :54
+springBeanUtils cost :4
+springBeanUtils cost :12
+springBeanUtils cost :39
+springBeanUtils cost :294
+```
+
+从上面的测试来看，映带尽量避免使用 apachePropertyUtils 和 apacheBeanUtils。尽量使用 springBeanUtils 和 cglibBeanCopier。
 
 # 参考
 1. [`org.apache.commons.beanutils.BeanUtils` 使用自定义的Converter类进行类型转换](https://blog.csdn.net/imonHu/article/details/77772745)
