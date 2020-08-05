@@ -1,22 +1,23 @@
-# BeanUtils的使用
+# 你真的会使用BeanUtils完成Bean拷贝吗
 
 项目中经常要用到Bean之间的属性复制，如果自己使用 set 方法逐个设值，不仅运行效率低，如果用到的地方很多，代码维护也很困难。实际上，已经有很多可以完成 Bean 属性复制的工具。本文就来重点讨论一下。本文主要包括以下内容:
 * 使用 BeanUtils.copyProperties 完成Bean的属性复制
 * 选择哪个框架的Bean工具效率最高
-* 
+* 封装springBean工具自定义copyBeanProperties实现Bean拷贝
+* apacheBean工具实现时间类字段向字符串字段拷贝
+* apacheBean工具自定义Converter实现Bean拷贝
 
 
 ## 使用 BeanUtils.copyProperties 完成Bean的属性复制
 
-## 哪个框架 BeanUtils效率最高
+## 哪个BeanUtils效率最高
 
-很多BeanUtisl工具类，比较常用的有
+当前有很多用于Bean拷贝的BeanBeanUtisl工具类，常见的主要有
 
 1. Spring BeanUtils
 2. Cglib BeanCopier
 3. Apache BeanUtils
 4. Apache PropertyUtils
-5. Dozer
 
 
 ```
@@ -134,7 +135,7 @@ springBeanUtils cost :47
 从测试结果看，如果效率上考虑，应尽量使用 springBeanUtils 和 cglibBeanCopier, 避免使用 apachePropertyUtils 和 apacheBeanUtils。
 
 
-## 对于springframework Bean工具未实现的功能可以自定义copyBeanProperties方法完成属性赋值
+## 封装springBean工具自定义copyBeanProperties实现Bean拷贝
 
 对于 `org.springframework.beans.copyProperties` 未实现的功能可以自定义copyBeanProperties方法完成属性赋值，如使用自定义方式完成 `java.sql.Timestamp`向字符串转换.
 
@@ -232,7 +233,7 @@ Address1{city='beijing', createAt=2020-08-04}
 Address2{city='beijing', createAt='null'}
 ```
 
-## 对 apacheBean工具的自定义功能
+## apacheBean工具自定义Converter实现Bean拷贝
 
 当遇到 springframework Bean工具实现的功能不满足需求时，使用反射方式在 springframework Bean工具外面封装了一层，而对 apacheBean工具可以直接扩展其功能，使用起来更方便。
 
@@ -286,7 +287,15 @@ Person{id='12', name='WangZhi', age=19, dept='TEG', birthday='20010804130907'}
 PersonCopy{id='12', name='WangZhi', age=19, dept='TEG', birthday=Sat Aug 04 13:09:07 CST 2001}
 ```
 
-本文代码下载: 
+
+## 总结
+
+本文主要介绍了几种常见的Bean拷贝工具: Spring BeanUtils、Cglib BeanCopier、Apache BeanUtils、Apache PropertyUtils。
+通过示例实验发现，springBeanUtils 和 cglibBeanCopier 的效率更高，因此如果要拷贝的Bean数量较多，应首先考虑这两个工具。
+
+另外本文也介绍了几种在Bean拷贝过程中根据需要实现Bean字段类型转换的方法，尤其是封装springBean工具自定义copyBeanProperties实现Bean拷贝 和 使用apacheBean工具自定义Converter实现Bean拷贝两种方法在实际开发中十分有用。
+
+本文代码: https://gitee.com/sifangcloud/mavensample/blob/master/src/main/java/dev/utils/demos/BeanUtilsTestDemo.java
 
 # 参考
 1. [`org.apache.commons.beanutils.BeanUtils` 使用自定义的Converter类进行类型转换](https://blog.csdn.net/imonHu/article/details/77772745)
