@@ -1,14 +1,12 @@
 # 你真的会使用BeanUtils完成Bean拷贝吗
 
+> 项目中经常要用到Bean之间的属性复制，本文主要介绍了几种常见的Bean拷贝工具以及几种在Bean拷贝过程中根据需要实现Bean字段类型转换的方法。​
+
 项目中经常要用到Bean之间的属性复制，如果自己使用 set 方法逐个设值，不仅运行效率低，如果用到的地方很多，代码维护也很困难。实际上，已经有很多可以完成 Bean 属性复制的工具。本文就来重点讨论一下。本文主要包括以下内容:
-* 使用 BeanUtils.copyProperties 完成Bean的属性复制
 * 选择哪个框架的Bean工具效率最高
 * 封装springBean工具自定义copyBeanProperties实现Bean拷贝
 * apacheBean工具实现时间类字段向字符串字段拷贝
 * apacheBean工具自定义Converter实现Bean拷贝
-
-
-## 使用 BeanUtils.copyProperties 完成Bean的属性复制
 
 ## 哪个BeanUtils效率最高
 
@@ -132,6 +130,8 @@ springBeanUtils cost :15
 springBeanUtils cost :47
 ```
 
+结论:
+
 从测试结果看，如果效率上考虑，应尽量使用 springBeanUtils 和 cglibBeanCopier, 避免使用 apachePropertyUtils 和 apacheBeanUtils。
 
 
@@ -194,7 +194,7 @@ PersonCopy{id='12', name='WangZhi', age=19, dept='TEG', birthday=Sat Aug 04 13:0
 
 ## apacheBean工具实现时间类字段向字符串字段拷贝
 
-`org.springframework.beans.copyProperties` 使用 `SqlDateConverter` 工具实现时间类字段向字符串字段拷贝
+`org.springframework.beans.copyProperties` 使用 `SqlDateConverter` 实现时间类字段向字符串字段拷贝
 
 测试代码
 ```
