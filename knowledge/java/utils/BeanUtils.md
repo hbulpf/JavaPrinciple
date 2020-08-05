@@ -134,19 +134,6 @@ springBeanUtils cost :47
 从测试结果看，如果效率上考虑，应尽量使用 springBeanUtils 和 cglibBeanCopier, 避免使用 apachePropertyUtils 和 apacheBeanUtils。
 
 
-## springframework Bean工具实现时间类向字符串转换
-
-`org.springframework.beans.copyProperties` 使用 `SqlDateConverter` 实现时间类向字符串转换
-
-测试代码
-```
-Address1 addr1=new Address1(); //Address1中的date是String
-Address2 addr2=new Address2(); //Address2中的date是java.util.Date
-addr1.setDate("1596470787498");
-ConvertUtils.register(new SqlDateConverter(),String.class);
-org.springframework.beans.copyProperties(addr2, addr1);//进行复制,注意 addr1 是 target , addr2 是source
-```
-
 ## 对于springframework Bean工具未实现的功能可以自定义copyBeanProperties方法完成属性赋值
 
 对于 `org.springframework.beans.copyProperties` 未实现的功能可以自定义copyBeanProperties方法完成属性赋值，如使用自定义方式完成 `java.sql.Timestamp`向字符串转换.
@@ -178,10 +165,76 @@ public static void copyBeanProperties(Object source, Object target) throws Refle
 }
 ```
 
+测试代码
+
+```
+/**
+    * 基于 springBeanUtils 改造的 Bean 工具
+    *
+    * @throws ReflectiveOperationException
+    */
+private static void surperSpringBeanUtilTest() throws ReflectiveOperationException {
+    //springBeanUtils
+    Address1 addr3 = new Address1("beijing", new Date(1596470797498L));
+    Address2 addr4 = new Address2();
+    BeanUtil.copyBeanProperties(addr3, addr4);//addr3 是 target , addr2 是source
+    System.out.println(addr3);
+    System.out.println(addr4);
+}
+```
+
+结果
+
+```
+Person{id='12', name='WangZhi', age=19, dept='TEG', birthday='20010804130907'}
+PersonCopy{id='12', name='WangZhi', age=19, dept='TEG', birthday=Sat Aug 04 13:09:07 CST 2001}
+```
+
+
+## apacheBean工具实现时间类字段向字符串字段拷贝
+
+`org.springframework.beans.copyProperties` 使用 `SqlDateConverter` 工具实现时间类字段向字符串字段拷贝
+
+测试代码
+```
+/**
+    * 基于 apacheBean 工具从 Date 字段的Bean复制到 String 字段的Bean
+    *
+    * @throws InvocationTargetException
+    * @throws IllegalAccessException
+    */
+private static void apacheBeanCopyFromDate2String() throws InvocationTargetException, IllegalAccessException {
+    // apacheBeanUtils
+    Address1 addr1 = new Address1("wuhan", new Date(1596470787498L));
+    Address2 addr2 = new Address2();
+    ConvertUtils.register(new SqlDateConverter(), String.class);
+    //addr1 是 source , addr2 是 target
+    org.apache.commons.beanutils.BeanUtils.copyProperties(addr2, addr1);
+    System.out.println(addr1);
+    System.out.println(addr2);
+
+    //springBeanUtils
+    Address1 addr3 = new Address1("beijing", new Date(1596470797498L));
+    Address2 addr4 = new Address2();
+    //addr3 是 target , addr2 是source
+    org.springframework.beans.BeanUtils.copyProperties(addr3, addr4);
+    System.out.println(addr3);
+    System.out.println(addr4);
+}
+```
+
+结果
+
+```
+Address1{city='wuhan', createAt=2020-08-04}
+Address2{city='wuhan', createAt='2020-08-04'}
+Address1{city='beijing', createAt=2020-08-04}
+Address2{city='beijing', createAt='null'}
+```
 
 ## 对 apacheBean工具的自定义功能
 
-当遇到 springframework Bean工具实现的功能不满足需求时，以上方式是在 springframework Bean工具外面封装了一层，而对 apacheBean工具可以直接扩展其功能，使用起来更方便。
+当遇到 springframework Bean工具实现的功能不满足需求时，使用反射方式在 springframework Bean工具外面封装了一层，而对 apacheBean工具可以直接扩展其功能，使用起来更方便。
 
 具体方式为 使用 `org.apache.commons.beanutils.BeanUtils.copyProperties` 自定义的Converter类进行类型转换。
 
@@ -210,14 +263,30 @@ public class CustomerDateConverter implements Converter {
 
 测试代码
 ```
-Address1 addr1=new Address1(); //Address1中的date是String
-Address2 addr2=new Address2(); //Address2中的date是java.util.Date
-addr1.setDate("20130224201210");
-CustomerDateConverter dateConverter = new CustomerDateConverter (); 
-ConvertUtils.register(dateConverter,Date.class);
-org.apache.commons.beanutils.BeanUtils.copyProperties(addr2, addr1);//进行复制,注意 addr2 是 target , addr1 是source
+/**
+    * 基于 apacheBean 工具从 String 字段的Bean复制到 Date 字段的Bean
+    * @throws InvocationTargetException
+    * @throws IllegalAccessException
+    */
+private static void apacheBeanCopyFromString2Date() throws InvocationTargetException, IllegalAccessException {
+    Person p1 = new Person("12", "WangZhi", 19, "TEG", "20010804130907");
+    PersonCopy p2 = new PersonCopy();
+    CustomerDateConverter dateConverter = new CustomerDateConverter();
+    ConvertUtils.register(dateConverter, java.util.Date.class);
+    org.apache.commons.beanutils.BeanUtils.copyProperties(p2, p1);
+    System.out.println(p1);
+    System.out.println(p2);
+}
 ```
 
+结果
+
+```
+Person{id='12', name='WangZhi', age=19, dept='TEG', birthday='20010804130907'}
+PersonCopy{id='12', name='WangZhi', age=19, dept='TEG', birthday=Sat Aug 04 13:09:07 CST 2001}
+```
+
+本文代码下载: 
 
 # 参考
 1. [`org.apache.commons.beanutils.BeanUtils` 使用自定义的Converter类进行类型转换](https://blog.csdn.net/imonHu/article/details/77772745)
