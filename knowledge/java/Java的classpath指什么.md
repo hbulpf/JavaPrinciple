@@ -1,6 +1,6 @@
 # Java的classpath指什么
 
-> 只知道把配置文件如：mybatis.xml、spring-web.xml、applicationContext.xml等放到src目录（就是存放代码.java文件的目录），然后使用“classpath：xxx.xml”来读取，都放到src目录准没错，那么到底classpath到底指的什么位置呢？ 
+> 开发项目时只知道把配置文件如：mybatis.xml、spring-web.xml、applicationContext.xml等放到src目录（就是存放代码.java文件的目录），然后使用“classpath：xxx.xml”来读取，都放到src目录准没错，那么到底classpath指的是什么位置呢？ 
 
 
 ## classpath路径指在哪里
