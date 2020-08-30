@@ -6,8 +6,6 @@
 涵盖领域：Java入门书籍，Java基础及进阶书籍，框架与中间件，架构设计，设计模式，数学与算法，JVM周边语言，项目管理&领导力&流程，职业素养与个人成长，格局与视野，面试参考书等。
 
 推荐书籍可以点击 -> **[点击这里](https://github.com/hbulpf/JavaPrinciple/issues)**
-
-书籍列表 -> **[点击这里](https://github.com/hbulpf/JavaPrinciple/README.md)**
  
 <h3>目录：</h3>
 
