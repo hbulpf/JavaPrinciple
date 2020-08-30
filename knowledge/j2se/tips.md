@@ -1,4 +1,4 @@
-开发细节
+# 常用开发技巧
 
 ###### 1. [打印堆栈](../src/dev/demo/basic/exception/Factorial.java)
 
