@@ -62,6 +62,8 @@
 
 - [数据结构与算法](knowledge/算法/README.md)
     - [五大常用算法](knowledge/算法/五大常用算法.md)
+    - [oj](knowledge/算法/oj.md)
+    - [笔试练习题](knowledge/算法/笔试练习题.md)
 - [leetcode](knowledge/leetcode/README.md)
 
 # 设计模式

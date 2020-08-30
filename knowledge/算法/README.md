@@ -132,6 +132,12 @@
 1. [回溯]()
 1. [分支界定]()
 
+# 练习总结
+1. [笔试练习题](exams.md)
+2. [OJ 练习](oj.md)
+3. [google code jam](https://codingcompetitions.withgoogle.com/codejam)
+
+
 # 参考
 
 1. [常见十大(内部)排序算法](https://blog.csdn.net/real_lisa/article/details/82685407)
