@@ -55,7 +55,7 @@
         2. 桶排序 bucket sort
         3. 基数排序 radix sort
 5. 堆/栈/队列
-   1. [栈](stack)
+   1. [栈](../../src/main/dev/algorithm/stack)
       1. 顺序栈
       2. 链栈
       3. 共享栈
@@ -63,7 +63,7 @@
       1. 链式队列
       2. 循环队列
       3. 双端队列
-   3. [堆](heap)
+   3. [堆](../../src/main/dev/algorithm/heap)
        1. 大根堆
        2. 小根堆
 6. 查找
@@ -80,10 +80,10 @@
 2. 线性表数组大小和空间在动态分配下可以调整，但也是申请一块更大的空间替换原始空间
 3. 随机访问：查找某个下标的元素, 复杂度为O(1)；按元素值查找某个元素，复杂度为O(N) ； 插入和增加需要大量元素，复杂度为O(N)
 
-### [链表](linkedlist)
+### [链表](../../src/main/dev/algorithm/linkedlist)
 
 
-## [树](tree)
+## [树](../../src/main/dev/algorithm/tree)
 
 1. 二叉树
     * [平衡二叉树](tree/bitree/link/balanced/BalancedTree.java): 一个二叉树每个节点的左右两个子树的高度差的绝对值不超过1。
@@ -93,10 +93,10 @@
 3. 多叉树
 4. 红黑树
 
-## [图](graph)
+## [图](../../src/main/dev/algorithm/graph)
 
 
-## [排序算法](sort)
+## [排序算法](../../src/main/dev/algorithm/sort)
 
 
 ### 复杂度概览
@@ -117,17 +117,17 @@
 
 ## 堆/栈/队列
 
-1. [栈](stack)
+1. [栈](../../src/main/dev/algorithm/stack)
 1. [队列](queue)
-1. [堆](heap)
+1. [堆](../../src/main/dev/algorithm/heap)
     1. 大根堆
     2. 小根堆
 
 
 # [五大常用算法](五大常用算法.md)
 
-1. [动态规划](dp)
-1. [贪心](greedy)
+1. [动态规划](../../src/main/dev/algorithm/dp)
+1. [贪心](../../src/main/dev/algorithm/greedy)
 1. [分治]()
 1. [回溯]()
 1. [分支界定]()

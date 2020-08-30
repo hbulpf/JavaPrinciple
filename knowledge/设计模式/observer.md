@@ -19,5 +19,5 @@ ConcreteObserver 具体的观察者
 * 老师讲课，老师是被观察者，学生是观察者。
 
 ###其他
-- [自己实现观察者模式接口](./myObserver)
-- [使用Java自带的观察者模式接口](./javaObserver)
+- [自己实现观察者模式接口](../../src/main/dev/designpattern/observer/myObserver)
+- [使用Java自带的观察者模式接口](../../src/main/dev/designpattern/observer/javaObserver)

@@ -28,6 +28,7 @@
     - [java和javaw的区别](knowledge/j2se/java和javaw的区别.md)
     - [线程池](knowledge/j2se/threadpool.md)
     - [常用开发技巧](knowledge/j2se/tips.md)
+    - [常用工具类](knowledge/j2se/常用工具类.md)
 - [Spring](knowledge/spring/README.md)
   - [spring框架](knowledge/spring/springframework/README.md)
     - [Spring常用注解总结](knowledge/spring/springframework/Spring常用注解总结.md)
@@ -59,13 +60,25 @@
 
 # 算法
 
-- [基本数据结构与算法](src/main/dev/algorithm/README.md)
-    - [五大常用算法](src/main/dev/algorithm/五大常用算法.md)
-- [leetcode](src/dev/leetcode/README.md)
+- [数据结构与算法](knowledge/算法/README.md)
+    - [五大常用算法](knowledge/算法/五大常用算法.md)
+- [leetcode](knowledge/leetcode/README.md)
+
+# 设计模式
+
+* [单例模式](knowledge/设计模式/singleton.md)
+* [工厂方法模式](knowledge/设计模式/factorymethod.md)
+* [抽象工厂模式](knowledge/设计模式/abstractfactory.md)
+* [模板方法模式](knowledge/设计模式/model.md)
+* [代理模式](knowledge/设计模式/proxy.md)
+* [适配器模式](knowledge/设计模式/adapter.md)
+* [建造者模式](knowledge/设计模式/builder.md)
+* [观察者模式](knowledge/设计模式/observer.md)
+* [原型模式](knowledge/设计模式/prototype.md)
+
 
 # 其他
 
-- [小技巧](knowledge/j2se/tips.md)
 - [原型开发](knowledge/prototype.md)
         
   
