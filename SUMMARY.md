@@ -1,6 +1,3 @@
-
-# Java体系学习
-
 # Linux基础
 
 - [Linux](knowledge/Linux/README.md)
@@ -58,6 +55,8 @@
     - [JVM8:Dynamic Code Evolution for Java dcevm原理](knowledge/jvm/jvm8.md)
     - [一文看懂JVM的GC](knowledge/jvm/一文看懂JVM的GC.md)  
 
+
+
 # 算法
 
 - [数据结构与算法](knowledge/算法/README.md)
@@ -83,7 +82,7 @@
 # 其他
 
 - [原型开发](knowledge/prototype.md)
-        
+- [技术架构从零到一](knowledge/技术架构从零到一.md)       
   
 # 推荐
 
