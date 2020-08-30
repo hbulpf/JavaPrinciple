@@ -66,16 +66,16 @@
 
 # 设计模式
 
-* [设计模式](knowledge/设计模式/README.md)
-  * [单例模式](knowledge/设计模式/singleton.md)
-  * [工厂方法模式](knowledge/设计模式/factorymethod.md)
-  * [抽象工厂模式](knowledge/设计模式/abstractfactory.md)
-  * [模板方法模式](knowledge/设计模式/model.md)
-  * [代理模式](knowledge/设计模式/proxy.md)
-  * [适配器模式](knowledge/设计模式/adapter.md)
-  * [建造者模式](knowledge/设计模式/builder.md)
-  * [观察者模式](knowledge/设计模式/observer.md)
-  * [原型模式](knowledge/设计模式/prototype.md)
+- [设计模式](knowledge/设计模式/README.md)
+  - [单例模式](knowledge/设计模式/singleton.md)
+  - [工厂方法模式](knowledge/设计模式/factorymethod.md)
+  - [抽象工厂模式](knowledge/设计模式/abstractfactory.md)
+  - [模板方法模式](knowledge/设计模式/model.md)
+  - [代理模式](knowledge/设计模式/proxy.md)
+  - [适配器模式](knowledge/设计模式/adapter.md)
+  - [建造者模式](knowledge/设计模式/builder.md)
+  - [观察者模式](knowledge/设计模式/observer.md)
+  - [原型模式](knowledge/设计模式/prototype.md)
 
 
 # 其他
