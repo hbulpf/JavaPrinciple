@@ -78,7 +78,7 @@ add、removee和element操作在你试图为一个已满的队列增加元素或
 
  
 
-![img](../imgs/queue2.jpg)
+![img](pics/queue2.jpg)
 
 
 

@@ -17,7 +17,7 @@ permanet generation区域（也称为非堆区域）比较稳定，主要存放c
 
 young generation 由eden、2个survivor 区域组成。其中一个survivor区域一直是空的，是eden区域和另一个survivor区域在下一次copy collection后活着的object的目的地。object在survivo区域被复制,直到转移到tenured区。
 
-![](../imgs/jvm3.jpg)
+![](imgs/jvm3.jpg)
 
 我们要尽量减少 Full gc 的次数。*tenured generation* 一般比较大,收集的时间较长, 频繁的FGC(Full gc)会导致应用的性能受到严重的影响。
 

@@ -285,11 +285,11 @@ java  -Dcom.sun.management.jmxremote.port=5000
 ```
 
 
-![查看jconsole连接密码](../imgs/jconsole3.png)
+![查看jconsole连接密码](imgs/jconsole3.png)
 
-![jconsole新建连接](../imgs/jconsole2.jpg)
+![jconsole新建连接](imgs/jconsole2.jpg)
 
-![jconsole数据](../imgs/jconsole1.jpg)
+![jconsole数据](imgs/jconsole1.jpg)
 
 
 
@@ -312,11 +312,11 @@ CATALINA_OPTS="$CATALINA_OPTS \
 1、用 `hostname -i` 查看是否为127.0.01，如果是，则必须配置 `-Djava.rmi.server.hostname` 为本机IP。
 2、检查防火墙（iptables）是否开启，以及是否开放jmxremote.port所指定的端口。
 
-![jvisualvm监控主界面](../imgs/jvisualvm1.png)
+![jvisualvm监控主界面](imgs/jvisualvm1.png)
 
-![jvisualvm实时线程信息](../imgs/jvisualvm2.png)
+![jvisualvm实时线程信息](imgs/jvisualvm2.png)
 
-![jvisualvm查看线程快照信息](../imgs/jvisualvm3.png)
+![jvisualvm查看线程快照信息](imgs/jvisualvm3.png)
 
 
 
@@ -332,9 +332,9 @@ JProfiler是由ej-technologies GmbH公司开发的一款性能瓶颈分析工具
 * 支持多种模式(离线，在线)的分析
 
 
-![JProfiler](../imgs/jprofier.png)
+![JProfiler](imgs/jprofier.png)
 
-##### A1. 分析的数据主要来自于两部分
+#### A1. 分析的数据主要来自于两部分
 
 1. 一部分来自于jvm的分析接口**JVMTI**(JVM Tool Interface) , JDK必须>=1.6. 主要采集 例如: 对象的生命周期，thread的生命周期等信息
 
@@ -342,7 +342,7 @@ JProfiler是由ej-technologies GmbH公司开发的一款性能瓶颈分析工具
 
 2. 一部分来自于instruments classes(可理解为class的重写,增加JProfiler相关统计功能)：主要采集 例如：方法执行时间，次数，方法栈等信息
 
-##### 2. 数据收集的原理
+#### 2. 数据收集的原理
 1. 用户在JProfiler GUI中下达监控的指令(一般就是点击某个按钮)
 2. JProfiler GUI JVM 通过socket(默认端口8849)，发送指令给被分析的jvm中的JProfile Agent。
 3. JProfiler Agent(如果不清楚Agent请看文章第三部分"启动模式") 收到指令后，将该指令转换成相关需要监听的事件或者指令,来注册到JVMTI上或者直接让JVMTI去执行某功能(例如dump jvm内存)
@@ -357,7 +357,7 @@ JProfiler是由ej-technologies GmbH公司开发的一款性能瓶颈分析工具
 
 [Arthas](https://alibaba.github.io/arthas/) 是阿里开源的一款好用的jvm监控工具，有点像是把jdk中自带的命令行工具做了集合。
 
-##### 安装
+### 安装
 
 ```php
 # 安装方式一
@@ -366,14 +366,14 @@ curl -L https://alibaba.github.io/arthas/install.sh | sh
 java -jar arthas-boot.jar --repo-mirror aliyun --use-http
 ```
 
-##### 启动
+### 启动
 
 启动 arthas-boot.jar
 ```css
 java -jar arthas-boot.jar
 ```
 
-![Arthas启动](../imgs/arthas.jpg)
+![Arthas启动](imgs/arthas.jpg)
 
 
 # 参考

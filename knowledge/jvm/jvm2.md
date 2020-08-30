@@ -19,7 +19,7 @@ GC在 HotSpot VM 5.0里有四种：
 
 
 
-![](../imgs/jvm3.jpg)
+![](imgs/jvm3.jpg)
 
 注：
 
