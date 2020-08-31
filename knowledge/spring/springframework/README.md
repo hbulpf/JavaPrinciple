@@ -47,4 +47,4 @@ MVC框架是一个全功能的构建Web应用程序的MVC实现。通过策略�
 
 ## 学习
 
-1. [Spring.IO官方文档](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-application )
+1. [Spring.IO官方文档](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-spring-application)
