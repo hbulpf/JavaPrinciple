@@ -29,6 +29,7 @@
 - [Spring](knowledge/spring/README.md)
   - [spring框架](knowledge/spring/springframework/README.md)
     - [Spring常用注解总结](knowledge/spring/springframework/Spring常用注解总结.md)
+    - [CrossOrigin允许跨域](knowledge/spring/springframework/CrossOrigin允许跨域.md)
     - [springtest](knowledge/spring/springtest.md)
   - [SpringBoot](knowledge/spring/springboot/README.md)
     - [springboot同时支持http和https访问](knowledge/spring/springboot/springboot同时支持http和https访问.md)
