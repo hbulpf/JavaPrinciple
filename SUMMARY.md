@@ -42,7 +42,7 @@
         - [pom介绍](knowledge/框架工具/maven/maven_pom.md)
     - [Mybatis](knowledge/框架工具/mybatis.md)
     - [Lambda表达式](knowledge/java8/Lambda.md)
-- [Tomcat](knowledge/tomcat.md)
+- [Tomcat](knowledge/tomcat/tomcat.md)
 - [JVM](knowledge/jvm/jvm.md)
     - [JVM基础工具](knowledge/jvm/jvmtools_1_基础工具.md)
     - [JVM: arthas](knowledge/jvm/jvmtools_2_arthas.md)
