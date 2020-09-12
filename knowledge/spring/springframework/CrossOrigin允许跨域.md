@@ -252,7 +252,7 @@ b、子类可以通过重写 `AbstractHandlerMapping` 类的 `getCorsConfigurati
 c、处理程序可以实现 [`CorsConfigurationSource`](https://docs.spring.io/spring/docs/4.2.x/javadoc-api/org/springframework/web/cors/CorsConfigurationSource.html)接口（如[`ResourceHttpRequestHandler`](https://github.com/spring-projects/spring-framework/blob/master/spring-webmvc/src/main/java/org/springframework/web/servlet/resource/ResourceHttpRequestHandler.java)），以便为每个请求提供一个[CorsConfiguration](https://docs.spring.io/spring/docs/4.2.x/javadoc-api/org/springframework/web/cors/CorsConfiguration.html)。
 
 ### 基于过滤器的CORS支持
-作为上述其他方法的替代，Spring框架还提供了[CorsFilter](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/filter/CorsFilter.html)。在这种情况下，不用使用`@CrossOrigin或``WebMvcConfigurer#addCorsMappings(CorsRegistry)`,，例如，可以在Spring Boot应用程序中声明如下的过滤器：
+作为上述其他方法的替代，Spring框架还提供了[CorsFilter](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/filter/CorsFilter.html)。在这种情况下，不用使用`@CrossOrigin`或`WebMvcConfigurer#addCorsMappings(CorsRegistry)`,，例如，可以在Spring Boot应用程序中声明如下的过滤器：
 
 ```
 @Configuration

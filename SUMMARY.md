@@ -34,6 +34,7 @@
   - [SpringBoot](knowledge/spring/springboot/README.md)
     - [springboot同时支持http和https访问](knowledge/spring/springboot/springboot同时支持http和https访问.md)
     - [SpringBoot使用腾讯云SSL证书并开启HTTPS访问](knowledge/spring/springboot/SpringBoot使用腾讯云SSL证书并开启HTTPS访问.md)
+    - [使用Druid数据源](knowledge/spring/springboot/使用Druid数据源.md)
   - [SpringCloud](knowledge/spring/springcloud/README.md)
 - [框架工具](knowledge/框架工具/README.md)
     - [logback](knowledge/框架工具/logback/README.md)
