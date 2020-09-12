@@ -62,6 +62,8 @@
     - [JVM7:classLoader的卸载机制](knowledge/jvm/jvm7.md)
     - [JVM8:Dynamic Code Evolution for Java dcevm原理](knowledge/jvm/jvm8.md)
     - [一文看懂JVM的GC](knowledge/jvm/一文看懂JVM的GC.md)  
+- [面试题](knowledge/面试题.md)
+
 
 # 算法
 
