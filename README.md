@@ -87,6 +87,17 @@
   - [观察者模式](knowledge/设计模式/observer.md)
   - [原型模式](knowledge/设计模式/prototype.md)
 
+# 数据库
+## clickhouse
+
+-  [clickhosue](knowledge/数据库/README.md)
+  - [clickhouse分析：结合grafana和metabase完成监控和数据分析](knowledge/数据库/clickhouse/clickhouse分析：结合grafana和metabase完成监控和数据分析.md)
+  - [clickhouse分析：chproxy使用](knowledge/数据库/clickhouse/clickhouse分析：chproxy使用.md)
+  - [clickhouse分析：jdbc返回failed-to-respond问题排查](knowledge/数据库/clickhouse/clickhouse分析：clickhouse jdbc返回failed to respond问题排查.md)
+  - [clickhouse分析：springboot项目结合mybatis和mybatis-plus](knowledge/数据库/clickhouse/clickhouse分析：springboot项目结合mybatis和mybatis-plus.md)
+  - [clickhouse分析：zookeeper减压概述](knowledge/数据库/clickhouse/clickhouse分析：zookeeper减压概述.md)
+  - [clickhouse源码：函数分析和自定义函数UDF](knowledge/数据库/clickhouse/clickhouse源码：函数分析和自定义函数UDF.md)
+
 
 # 其他
 
