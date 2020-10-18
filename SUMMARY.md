@@ -81,8 +81,7 @@
   - [原型模式](knowledge/设计模式/prototype.md)
 
 # 数据库
-## clickhouse
--  [clickhosue](knowledge/数据库/README.md)
+-  [clickhouse](knowledge/数据库/README.md)
   - [clickhouse分析：结合grafana和metabase完成监控和数据分析](knowledge/数据库/clickhouse/clickhouse分析：结合grafana和metabase完成监控和数据分析.md)
   - [clickhouse分析：chproxy使用](knowledge/数据库/clickhouse/clickhouse分析：chproxy使用.md)
   - [clickhouse分析：jdbc返回failed-to-respond问题排查](knowledge/数据库/clickhouse/clickhouse分析：clickhouse-jdbc返回failed-to-respond问题排查.md)
