@@ -8,3 +8,7 @@
 ## 安全问题
 
 1. [MyBatis SQL 注入问题](https://www.anquanke.com/post/id/190170#)
+
+
+# 参考
+1. [mybatis官方文档](https://mybatis.org/mybatis-3/zh/index.html)
