@@ -1,5 +1,7 @@
 # Tomcat
 
+更多 tomcat 见专题系列: https://gitee.com/RunAtWorld/tomcatdemo/tree/master/docs
+
 ## windows 下 tomcat后台运行的方法
 
 我们使用tomcat 启动一个新的项目，会出现一个窗口。如果有人需要使用这台电脑的时候，就很容易关掉tomcat 导致程序停止运行。为避免这种错误把tomcat设置为后台运行。
@@ -31,4 +33,4 @@ service.bat install
  
  # 参考
  
- 1. tomcat后台运行的两种方法 . https://www.cnblogs.com/citime/p/10062289.html
+ 1. [tomcat后台运行的两种方法](https://www.cnblogs.com/citime/p/10062289.html)
