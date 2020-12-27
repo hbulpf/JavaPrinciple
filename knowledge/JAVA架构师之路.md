@@ -1,5 +1,9 @@
 # JAVA架构师之路
 
+## 校招学习路线
+
+针对校招学习路线：javase->mysql基础->jdbc->javaweb（如果不想学前端的话，那么只需要重点学Servlet程序、Filter过滤器、Listener监听器、Cookie技术、Session会话、JSON使用这几个即可）->Spring->SpringMVC->mybatis->maven->ssm框架整合案例->linux基础->mysql高级->redis->nginx->尚筹网项目->仅供参考！！
+
 ## 初级水平（认知理解技术为主）
 
 
