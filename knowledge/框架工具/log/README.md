@@ -1,4 +1,4 @@
-# Java 日志工具
+# 日志框架
 
 ## java自带log:java.util.logging.Logger
 

@@ -49,3 +49,5 @@ log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n
 # 参考
 1. [Log4j.properties配置详解](https://www.cnblogs.com/zhangguangxiang/p/12007924.html)
 2. [mybatis log4j打印sql语句](https://www.cnblogs.com/chenyanbin/p/13027973.html)
+3. https://www.cnblogs.com/LemonFive/p/10737658.html
+4. https://blog.csdn.net/baixf/article/details/89925352

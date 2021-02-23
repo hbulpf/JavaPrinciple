@@ -1,11 +1,6 @@
 # httpClient相关使用
 
-## 使用原生的HttpUrlConnection
 
-1. https://www.cnblogs.com/crazylqy/p/4180385.html
-1. https://blog.csdn.net/xie389124248/article/details/9231481
-1. https://blog.csdn.net/xie389124248/article/details/9231481
-2. [HttpUrlConnection Get请求](https://www.cnblogs.com/xiaolei121/p/5889758.html)
 
 ## 使用httpclient
 
